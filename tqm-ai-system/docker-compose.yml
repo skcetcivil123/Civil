@@ -1,0 +1,72 @@
+# ─── TQM AI System — Docker Compose (Local Development) ─────────────────────
+# Usage:
+#   docker compose up --build
+# Services: React (5173), FastAPI (8000), MongoDB (27017)
+#
+# NOTE: This uses a local MongoDB container for development only.
+# For production, use MongoDB Atlas and set MONGODB_URI via environment variable.
+
+version: "3.9"
+
+services:
+  # ── MongoDB (local dev only) ────────────────────────────────────────────────
+  mongodb:
+    image: mongo:7.0
+    container_name: tqm_mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - tqm_mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: tqm_db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  # ── FastAPI Backend ─────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../Dockerfile.backend
+    container_name: tqm_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017
+      MONGODB_DB_NAME: tqm_db
+      JWT_SECRET: ${JWT_SECRET:-local_dev_secret_change_in_production}
+      CORS_ORIGINS: http://localhost:5173,http://localhost:3000
+      APP_ENV: development
+      DEBUG: "true"
+    volumes:
+      - ./backend:/app       # Hot-reload in dev
+      - /app/.venv           # Don't override venv
+
+  # ── React Frontend ──────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../Dockerfile.frontend
+    container_name: tqm_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    environment:
+      VITE_API_URL: http://localhost:8000
+    volumes:
+      - ./frontend:/app      # Hot-reload in dev
+      - /app/node_modules    # Don't override node_modules
+
+volumes:
+  tqm_mongo_data:
+    driver: local

@@ -1,0 +1,2216 @@
+{
+  "intents": [
+    {
+      "tag": "project_overview",
+      "patterns": [
+        "What is this project about?",
+        "Project title",
+        "Overview of the research",
+        "What are the research objectives?",
+        "Explain this research study",
+        "Summary of the dissertation",
+        "What is TQM in construction?",
+        "About this project",
+        "what is tqm",
+        "what does tqm stand for",
+        "total quality management",
+        "tqm definition",
+        "tqm meaning",
+        "explain tqm",
+        "what is total quality management",
+        "describe the project",
+        "tell me about the project",
+        "purpose of this study",
+        "what is the aim of this research",
+        "research aim",
+        "research purpose",
+        "what is the goal of this project",
+        "project description",
+        "what does this research do",
+        "explain the dissertation",
+        "what is the thesis about",
+        "what is this study about",
+        "tqm in construction",
+        "quality management in building",
+        "construction quality study",
+        "why was this study done",
+        "motivation for this research"
+      ],
+      "response": "📌 **Project Overview**\nThis research is titled: **'An Empirical Assessment of TQM Implementation in Construction Projects Using FDM and Statistical Analysis'**.\n\n📍 **Research Context:** Building & infrastructure projects in **Coimbatore, Tamil Nadu**.\n👥 **Sample Size:** **120 verified construction professionals** (engineers, project managers, contractors).\n\n🎯 **Core Objectives:**\n1. Identify Critical Success Factors (CSFs) and Barriers from literature.\n2. Screen and reach consensus using the **Fuzzy Delphi Method (FDM)** with 10 industry experts.\n3. Administer a **5-point Likert survey** to 120 professionals in Coimbatore.\n4. Perform rigorous statistical analysis: **RII, Cronbach's Alpha, KMO, Bartlett's Test, EFA, and ANOVA**.\n5. Build a **4-Tier Prioritized TQM Framework** supported by **Predictive Machine Learning (XGBoost)** and **Explainable AI (SHAP)**.",
+      "sources": [
+        "Dissertation Chapter 1: Introduction",
+        "Section 1.2 Research Objectives"
+      ],
+      "followups": [
+        "What is the research methodology?",
+        "What is the sample size?",
+        "What are the CSFs and Barriers?"
+      ],
+      "simple_response": "🏗️ **What's This Project About?**\n\nImagine you're building a house. You want it to be PERFECT — no cracks, no leaks, strong walls. But how do you make sure everything goes right?\n\nThis project studied exactly that! It asked **120 real construction workers and engineers in Coimbatore, India** about what makes construction quality GREAT and what problems get in the way.\n\nThink of it like a report card for construction quality! 📊"
+    },
+    {
+      "tag": "research_methodology",
+      "patterns": [
+        "Explain the research methodology",
+        "What is the research pipeline?",
+        "What methodology was used in this study?",
+        "Steps of the research",
+        "Flowchart of the study",
+        "How was the research conducted?",
+        "methodology",
+        "research method",
+        "how was the study done",
+        "research design",
+        "what method was used",
+        "steps in the research",
+        "research process",
+        "how did you do this study",
+        "explain the process",
+        "research flow",
+        "study design",
+        "how was data analyzed",
+        "analysis method",
+        "mixed methods",
+        "quantitative research",
+        "survey methodology",
+        "how was the survey done",
+        "research approach",
+        "research framework"
+      ],
+      "response": "📌 **The 10-Step Research Pipeline**\n\n1. **Literature Review:** Extracted 8 Critical Success Factors (CSFs) and 8 Barriers.\n2. **Fuzzy Delphi Method (FDM):** 10 experts used Triangular Fuzzy Numbers to reach mathematical consensus in 1 round (threshold α ≥ 0.70).\n3. **Survey Instrument:** Designed a 5-point Likert questionnaire (1 = Strongly Disagree to 5 = Strongly Agree).\n4. **Data Collection:** Gathered responses from **120 construction professionals** in Coimbatore.\n5. **Descriptive & RII Ranking:** Ranked factors using Relative Importance Index (RII).\n6. **Reliability Analysis:** Verified scale consistency using **Cronbach's Alpha (α = 0.759)**.\n7. **Data Suitability:** Verified sampling adequacy with **KMO (0.835)** and Bartlett's Test (p < 0.001).\n8. **Factor Structure (EFA):** Extracted 4 latent management dimensions via Varimax rotation (59.9% variance).\n9. **Group Comparisons (ANOVA):** Tested perceptual differences across experience levels and roles.\n10. **TQM Framework & AI:** Synthesized a 4-Tier implementation roadmap with **XGBoost (86.7% accuracy)** and **SHAP explanations**.",
+      "sources": [
+        "Chapter 3: Research Methodology",
+        "Figure 3.1 Research Flowchart"
+      ],
+      "followups": [
+        "Why was Fuzzy Delphi used?",
+        "What is the sample size?",
+        "Explain the 4-Tier Framework"
+      ],
+      "simple_response": "🔬 **How Was This Study Done?**\n\nIt's like making a recipe with 10 careful steps:\n\n1. 📚 **Read lots of books** to find what helps quality (CSFs) and what hurts it (Barriers)\n2. 🧑‍🏫 **Asked 10 wise experts** to agree on the important ones (using a special math method called FDM)\n3. 📝 **Made a questionnaire** (like a quiz with ratings 1 to 5)\n4. 👷 **Gave it to 120 workers** in Coimbatore\n5. 📊 **Counted and ranked** everything\n6. ✅ **Checked the math** was reliable\n7. 🤖 **Used a computer** to find hidden patterns\n8. 🏆 **Built a plan** to make construction better!\n\nSimple, right? Like following a treasure map to find the secrets of great building! 🗺️"
+    },
+    {
+      "tag": "geographical_scope",
+      "patterns": [
+        "Where was this study conducted?",
+        "What is the geographical scope?",
+        "Why Coimbatore?",
+        "Study location details",
+        "Tell me about Coimbatore construction"
+      ],
+      "response": "📌 **Geographic Scope: Coimbatore, Tamil Nadu**\n\n🏗️ **Why Coimbatore?**\n- Coimbatore is one of South India's fastest-growing Tier-2 industrial and real estate hubs.\n- Rapid growth in residential high-rises, commercial tech parks, and urban infrastructure.\n\n🔍 **Regional Industry Challenges:**\n- **Migrant Labor Turnover:** High dependence on trade workers from North/East India causes labor shortages (Barrier #1).\n- **Subcontractor Fragmentation:** Small piece-rate subcontractors lack formal quality processes.\n- **Aggressive Deadlines:** Severe time pressure leads to skipping mandatory 28-day water curing.",
+      "sources": [
+        "Chapter 1: Research Context & Scope — Section 1.3 Regional Setting"
+      ],
+      "followups": [
+        "Who are the 120 respondents?",
+        "What are the top barriers in Coimbatore?"
+      ],
+      "simple_response": "📍 **Where Did This Happen?**\n\nThis study took place in **Coimbatore** — a big, fast-growing city in Tamil Nadu, India! 🇮🇳\n\nCoimbatore has LOTS of new buildings going up — apartments, offices, roads. But with all this fast building, sometimes quality gets forgotten.\n\nThink of it like a city that's growing so fast, it needs a quality rulebook! 📖"
+    },
+    {
+      "tag": "sample_size_and_demographics",
+      "patterns": [
+        "What is the sample size?",
+        "Tell me about the 120 respondents",
+        "Who responded to the survey?",
+        "Demographic breakdown of respondents",
+        "Sample size justification",
+        "Respondent roles and experience",
+        "Sample N",
+        "how many people",
+        "how many respondents",
+        "number of respondents",
+        "who took the survey",
+        "survey participants",
+        "how many people took the survey",
+        "respondent profile",
+        "who were the participants",
+        "participant demographics",
+        "who answered",
+        "survey population",
+        "target population",
+        "how many surveys",
+        "response rate",
+        "how many people answered"
+      ],
+      "response": "📌 **Survey Sample Demographics (N = 120)**\n\n👷 **Roles of Respondents:**\n- **Site Engineers:** 30% (36 respondents)\n- **Project Managers:** 25% (30 respondents)\n- **QA/QC Engineers:** 20% (24 respondents)\n- **Consultants (PMC):** 15% (18 respondents)\n- **Contractors:** 10% (12 respondents)\n\n⏳ **Years of Experience:**\n- **5 to 10 Years:** 35%\n- **10 to 20 Years:** 30%\n- **Under 5 Years:** 20%\n- **Over 20 Years:** 15%\n*(Over 45% have 10+ years in construction)*\n\n🏢 **Project Types:** Residential (40%), Commercial (30%), Infrastructure (20%), Industrial (10%).\n\n✅ **Sample Adequacy:** 120 respondents across 16 variables gives a **7.5:1 ratio**, exceeding the recommended 5:1 baseline (Hair et al., 2010).",
+      "sources": [
+        "Chapter 3: Methodology — Section 3.4 Sampling Strategy & Demographics",
+        "Hair et al. (2010)"
+      ],
+      "followups": [
+        "What is KMO sample adequacy?",
+        "What were the ANOVA results across roles?"
+      ],
+      "simple_response": "👥 **Who Answered the Questions?**\n\n**120 real construction people** from Coimbatore!\n\nWho were they?\n- 👷 Site Engineers (people who watch over building sites)\n- 📋 Project Managers (people who plan everything)\n- ✅ Quality Checkers (people who make sure things are built right)\n- 🏗️ Contractors (people who actually build)\n\nMost of them had **5 to 20 years** of experience — so they REALLY know what they're talking about! 💪"
+    },
+    {
+      "tag": "expert_panel",
+      "patterns": [
+        "Who are the experts?",
+        "Tell me about the expert panel",
+        "Expert panel members",
+        "How many experts in FDM?",
+        "Expert qualifications",
+        "Names of experts",
+        "FDM panel",
+        "delphi experts",
+        "who are the experts",
+        "expert list",
+        "expert committee",
+        "industry experts",
+        "who validated the factors",
+        "validation panel",
+        "expert opinions",
+        "how many experts",
+        "10 experts",
+        "expert names"
+      ],
+      "response": "📌 **The 10-Member Coimbatore Expert Panel**\nAverage experience: **21.2 Years** in construction engineering.\n\n1. **Er. K. Senthil Kumar** (24 yrs) – Chief Project Manager, *L&T Construction*\n2. **Dr. R. Murugesan** (28 yrs) – Professor of Civil Eng., *GCT Coimbatore*\n3. **Er. P. Ramakrishnan** (20 yrs) – Technical Director, *CREDAI Coimbatore*\n4. **Er. S. Balamurugan** (18 yrs) – QA/QC Head, *Sobha Developers*\n5. **Er. M. Shanmugam** (26 yrs) – Superintending Engineer, *Tamil Nadu PWD*\n6. **Er. V. Anand** (22 yrs) – Principal Consultant, *Anand & Associates PMC*\n7. **Er. T. Divya** (14 yrs) – Senior QA Engineer, *Renaissance Infrastructure*\n8. **Er. G. Karthikeyan** (25 yrs) – President, *Coimbatore Builders Association*\n9. **Er. A. Vijayalakshmi** (16 yrs) – Assoc. Professor, *PSG College of Technology*\n10. **Er. N. Praveen** (21 yrs) – GM Quality, *Consolidated Construction Consortium (CCCL)*",
+      "sources": [
+        "Chapter 3: FDM Expert Panel Profile — Table 3.2"
+      ],
+      "followups": [
+        "How did the experts evaluate factors?",
+        "What is the FDM threshold?"
+      ],
+      "simple_response": "🧑‍🏫 **Who Are the 10 Experts?**\n\nThink of them as the **10 wisest builders** in Coimbatore!\n\nThey include:\n- Engineers from big companies like **L&T** (one of India's biggest builders!)\n- Professors from **engineering colleges** who teach construction\n- Government engineers from **PWD** (they build roads and bridges!)\n- Quality managers from **CREDAI** (the construction industry group)\n\nThey helped decide which factors are TRULY important — like judges in a talent show! 🏆"
+    },
+    {
+      "tag": "fdm_methodology",
+      "patterns": [
+        "What is Fuzzy Delphi Method?",
+        "Why use FDM instead of classical Delphi?",
+        "How does FDM work?",
+        "Explain Fuzzy Delphi",
+        "Advantage of FDM",
+        "FDM vs traditional Delphi",
+        "fuzzy delphi",
+        "why fdm",
+        "why use fuzzy delphi",
+        "fdm explanation",
+        "what is fuzzy method",
+        "delphi technique",
+        "fuzzy logic",
+        "why not classical delphi",
+        "fuzzy consensus",
+        "expert consensus method",
+        "fuzzy numbers",
+        "triangular fuzzy",
+        "tfn",
+        "defuzzification",
+        "how does fdm work",
+        "fuzzy delphi process"
+      ],
+      "response": "📌 **Why Fuzzy Delphi Method (FDM)?**\n\n❌ **Problems with Classical Delphi:**\n- Requires 3 to 4 repetitive rounds of surveys.\n- Busy construction experts drop out (high panel attrition).\n- Human words like 'High' or 'Medium' are vague and fuzzy.\n\n✅ **How FDM Solves It:**\n- **Single Round:** Achieves mathematical consensus in just 1 round (no panel fatigue).\n- **Fuzzy Numbers:** Translates words into Triangular Fuzzy Numbers (TFN: a1, a2, a3).\n- **Objective Cutoff:** Factors with defuzzified score **S ≥ 0.70** are kept; below 0.70 are dropped.",
+      "sources": [
+        "Ishikawa et al. (1993)",
+        "Kuo & Chen (2008)",
+        "Chapter 3: Section 3.2 FDM Formulation"
+      ],
+      "followups": [
+        "What is the FDM formula?",
+        "Which factors were accepted?"
+      ],
+      "simple_response": "🧮 **What is FDM (Fuzzy Delphi Method)?**\n\nImagine asking 10 friends: 'How important is homework on a scale of 1 to 10?'\n\nSome might say 'very important' and some might say 'kind of important'. These answers are a bit **fuzzy** — not exact numbers.\n\nFDM is a smart math trick that takes all these 'fuzzy' opinions and turns them into ONE clear answer that everyone agrees on! 🎯\n\nIt's like taking 10 different opinions and finding the sweet spot in the middle!"
+    },
+    {
+      "tag": "fdm_formula_and_scale",
+      "patterns": [
+        "What is the FDM formula?",
+        "How are fuzzy numbers calculated?",
+        "FDM linguistic scale",
+        "What is defuzzification formula?",
+        "Triangular fuzzy number formula",
+        "fdm formula",
+        "fuzzy formula",
+        "likert scale",
+        "what is likert",
+        "5 point scale",
+        "5-point likert",
+        "scoring scale",
+        "rating scale",
+        "how is fdm calculated",
+        "fdm calculation",
+        "fdm threshold",
+        "alpha threshold",
+        "consensus threshold",
+        "0.70 threshold",
+        "what is the likert scale used"
+      ],
+      "response": "📌 **FDM Math & Formulas**\n\n📐 **5-Point Fuzzy Linguistic Scale:**\n- **Very Low (VL):** (0.00, 0.00, 0.25)\n- **Low (L):** (0.00, 0.25, 0.50)\n- **Medium (M):** (0.25, 0.50, 0.75)\n- **High (H):** (0.50, 0.75, 1.00)\n- **Very High (VH):** (0.75, 1.00, 1.00)\n\n🔢 **Defuzzification Formula (Graded Mean Integration):**\n• S = (a1 + 4×a2 + a3) / 6\n• a1 = Minimum expert rating (conservative lower bound)\n• a2 = Average expert rating (consensus center)\n• a3 = Maximum expert rating (optimistic upper bound)\n\n🎯 **Decision Rule:** Factor Accepted if **S ≥ 0.70** (All 16 factors were accepted).",
+      "sources": [
+        "Kuo & Chen (2008)",
+        "Chapter 3: Equations 3.1 - 3.4"
+      ],
+      "followups": [
+        "What are the accepted CSFs?",
+        "What are the accepted Barriers?"
+      ],
+      "simple_response": "📐 **FDM Formula — Made Simple!**\n\nEach expert gives THREE numbers for every factor:\n- **Minimum:** The lowest they'd rate it\n- **Most likely:** What they really think\n- **Maximum:** The highest they'd rate it\n\nThis creates a triangle shape (called a Triangular Fuzzy Number) 🔺\n\nThen we calculate the 'defuzzified value' — basically the CENTER of all the triangles. If this center value is **0.70 or higher**, the experts agree it's important! ✅\n\nAll 16 factors in this study scored above 0.70 — meaning the experts agreed on ALL of them!"
+    },
+    {
+      "tag": "all_csfs_list",
+      "patterns": [
+        "What are the Critical Success Factors?",
+        "List all CSFs",
+        "Tell me about the CSFs",
+        "What are the 8 CSFs?",
+        "Critical success factors of TQM in construction",
+        "list csfs",
+        "all success factors",
+        "what are the csfs",
+        "name all csfs",
+        "8 csfs",
+        "success factors list",
+        "critical factors",
+        "what factors help quality"
+      ],
+      "response": "🏆 **The 8 Critical Success Factors (CSFs) Ranked by RII:**\n\n1. 🥇 **CSF1: Top Management Commitment** (RII = 0.898)\n2. 🥈 **CSF4: Customer & Client Focus** (RII = 0.876)\n3. 🥉 **CSF5: Process Standardization & QA/QC** (RII = 0.860)\n4. 🏅 **CSF3: Training & Skill Development** (RII = 0.850)\n5. 🏅 **CSF8: Quality Culture & Communication** (RII = 0.840)\n6. 🏅 **CSF2: Continuous Improvement (Kaizen)** (RII = 0.836)\n7. 🏅 **CSF6: Supplier & Subcontractor Quality** (RII = 0.824)\n8. 🏅 **CSF7: Employee Involvement & Teamwork** (RII = 0.790)\n\n💡 **Key Takeaway:** Leadership commitment and customer focus are the foundation; without executive backing, site quality systems fail.",
+      "sources": [
+        "Chapter 2: Literature Taxonomy",
+        "Chapter 4: Table 4.3 RII Results"
+      ],
+      "followups": [
+        "Tell me about CSF1",
+        "Tell me about CSF3",
+        "What are the Barriers?"
+      ],
+      "simple_response": "🏆 **The 8 Success Factors (CSFs)**\n\nThink of these as the **8 superpowers** that make construction quality AMAZING:\n\n1. 👔 **Boss Support** (CSF1) — When the boss cares about quality\n2. 📈 **Always Improving** (CSF2) — Never stop getting better\n3. 🎓 **Training Workers** (CSF3) — Teach people to do their jobs well\n4. 😊 **Happy Customers** (CSF4) — Make sure clients are satisfied\n5. 📋 **Following Rules** (CSF5) — Have clear steps for every job\n6. 🏭 **Good Suppliers** (CSF6) — Use quality materials\n7. 🤝 **Teamwork** (CSF7) — Everyone works together\n8. 🌟 **Quality Culture** (CSF8) — Make quality a habit, not a chore"
+    },
+    {
+      "tag": "csf1_detail",
+      "patterns": [
+        "What is CSF1?",
+        "Tell me about CSF1",
+        "Top Management Commitment",
+        "Why is Top Management Commitment ranked 1?",
+        "CSF1 details",
+        "Explain CSF1"
+      ],
+      "response": "📌 **CSF1: Top Management Commitment and Leadership**\n\n📊 **The Numbers:**\n- **Rank:** #1 Critical Success Factor\n- **RII Score:** **0.898** (Mean = 4.49 / 5.0)\n- **FDM Consensus Score:** S = 0.912 (High Agreement)\n\n🏗️ **What it Means on Construction Sites:**\n- Company owners and directors must treat quality as equal to profit and schedule.\n- Giving site QA/QC engineers the legal authority to halt bad concrete pours.\n- Providing budget for testing equipment, certified labs, and training.\n\n📚 **Literature Support:** Jha & Iyer (2006), Oakland (2014).",
+      "sources": [
+        "Jha & Iyer (2006)",
+        "Oakland (2014)",
+        "Chapter 4: Section 4.3 CSF Evaluation"
+      ],
+      "followups": [
+        "What is CSF2?",
+        "What is CSF3?",
+        "What is BAR1?"
+      ],
+      "simple_response": "⭐ **CSF1: Boss Support (Top Management)**\n\nThis is one of the 8 'superpowers' that makes construction quality GREAT!\n\nThink of it like a secret ingredient in a recipe — without it, the building might not turn out well.\n\nThe experts in Coimbatore said this factor is VERY important for making sure buildings are safe, strong, and well-made! 🏗️"
+    },
+    {
+      "tag": "csf2_detail",
+      "patterns": [
+        "What is CSF2?",
+        "Tell me about CSF2",
+        "Continuous Improvement",
+        "Kaizen in construction",
+        "Explain CSF2"
+      ],
+      "response": "📌 **CSF2: Continuous Improvement (Kaizen)**\n\n📊 **The Numbers:**\n- **Rank:** #5 Critical Success Factor\n- **RII Score:** **0.836** (Mean = 4.18 / 5.0)\n\n🏗️ **What it Means on Construction Sites:**\n- Making small, steady improvements every week instead of waiting for a disaster.\n- Analyzing why concrete honeycombing or plaster cracking happened and preventing it on the next floor.\n- Holding post-project reviews with site supervisors.\n\n📚 **Literature Support:** Hoonakker et al. (2010).",
+      "sources": [
+        "Hoonakker et al. (2010)",
+        "Chapter 4: Factor Analysis"
+      ],
+      "followups": [
+        "What is CSF3?",
+        "What is CSF4?"
+      ],
+      "simple_response": "⭐ **CSF2: Always Improving (Kaizen)**\n\nThis is one of the 8 'superpowers' that makes construction quality GREAT!\n\nThink of it like a secret ingredient in a recipe — without it, the building might not turn out well.\n\nThe experts in Coimbatore said this factor is VERY important for making sure buildings are safe, strong, and well-made! 🏗️"
+    },
+    {
+      "tag": "csf3_detail",
+      "patterns": [
+        "What is CSF3?",
+        "Tell me about CSF3",
+        "Training and Skill Development",
+        "Explain CSF3",
+        "Training factor"
+      ],
+      "response": "📌 **CSF3: Training and Skill Development**\n\n📊 **The Numbers:**\n- **Rank:** #4 Critical Success Factor\n- **RII Score:** **0.850** (Mean = 4.25 / 5.0)\n- **SHAP Importance:** Top 2 machine learning driver of quality\n\n🏗️ **What it Means on Construction Sites:**\n- Conducting daily **15-minute Quality Toolbox Talks** before work starts.\n- Hands-on training for bar benders and shuttering carpenters.\n- Teaches workers correct concrete vibration and cover block placement.\n\n📚 **Literature Support:** Tam & Le (2006), Love et al. (2004).",
+      "sources": [
+        "Tam & Le (2006)",
+        "Chapter 4: Section 4.3"
+      ],
+      "followups": [
+        "What is BAR2?",
+        "What is CSF5?"
+      ],
+      "simple_response": "⭐ **CSF3: Training Workers**\n\nThis is one of the 8 'superpowers' that makes construction quality GREAT!\n\nThink of it like a secret ingredient in a recipe — without it, the building might not turn out well.\n\nThe experts in Coimbatore said this factor is VERY important for making sure buildings are safe, strong, and well-made! 🏗️"
+    },
+    {
+      "tag": "csf4_detail",
+      "patterns": [
+        "What is CSF4?",
+        "Tell me about CSF4",
+        "Customer Focus",
+        "Client satisfaction",
+        "Explain CSF4"
+      ],
+      "response": "📌 **CSF4: Customer Focus & Client Satisfaction**\n\n📊 **The Numbers:**\n- **Rank:** #2 Critical Success Factor\n- **RII Score:** **0.876** (Mean = 4.38 / 5.0)\n\n🏗️ **What it Means on Construction Sites:**\n- Delivering buildings that strictly meet architectural specifications and handover expectations.\n- Eliminating post-handover defects like water seepage, tile hollows, and paint peel.\n- Clean handovers protect contractor reputation and avoid legal disputes in Coimbatore.\n\n📚 **Literature Support:** Parasuraman et al. (1988), Kärnä (2004).",
+      "sources": [
+        "Parasuraman et al. (1988)",
+        "Kärnä (2004)"
+      ],
+      "followups": [
+        "What is CSF5?",
+        "What are the top barriers?"
+      ],
+      "simple_response": "⭐ **CSF4: Happy Customers**\n\nThis is one of the 8 'superpowers' that makes construction quality GREAT!\n\nThink of it like a secret ingredient in a recipe — without it, the building might not turn out well.\n\nThe experts in Coimbatore said this factor is VERY important for making sure buildings are safe, strong, and well-made! 🏗️"
+    },
+    {
+      "tag": "csf5_detail",
+      "patterns": [
+        "What is CSF5?",
+        "Tell me about CSF5",
+        "Process Standardization",
+        "QA/QC Procedures",
+        "Explain CSF5",
+        "Standard operating procedures"
+      ],
+      "response": "📌 **CSF5: Process Standardization & QA/QC**\n\n📊 **The Numbers:**\n- **Rank:** #3 Critical Success Factor\n- **RII Score:** **0.860** (Mean = 4.30 / 5.0)\n- **Framework Level:** Tier 2 (Operational Core)\n\n🏗️ **What it Means on Construction Sites:**\n- Having written Standard Operating Procedures (SOPs) for every major activity.\n- Enforcing mandatory pre-pour inspection checklists for reinforcement, formwork, and MEP conduit.\n- Mandatory slump testing on site and 7/28-day cube compression testing.\n\n📚 **Literature Support:** Harris & McCaffer (2013), Chung (1999).",
+      "sources": [
+        "Harris & McCaffer (2013)",
+        "Chapter 4: Section 4.3"
+      ],
+      "followups": [
+        "What is CSF6?",
+        "What is CSF7?",
+        "What is CSF8?"
+      ],
+      "simple_response": "⭐ **CSF5: Following Rules (SOPs)**\n\nThis is one of the 8 'superpowers' that makes construction quality GREAT!\n\nThink of it like a secret ingredient in a recipe — without it, the building might not turn out well.\n\nThe experts in Coimbatore said this factor is VERY important for making sure buildings are safe, strong, and well-made! 🏗️"
+    },
+    {
+      "tag": "csf6_detail",
+      "patterns": [
+        "What is CSF6?",
+        "Tell me about CSF6",
+        "Supplier Quality",
+        "Subcontractor Quality",
+        "Explain CSF6"
+      ],
+      "response": "📌 **CSF6: Supplier & Subcontractor Quality Management**\n\n📊 **The Numbers:**\n- **Rank:** #7 Critical Success Factor\n- **RII Score:** **0.824** (Mean = 4.12 / 5.0)\n\n🏗️ **What it Means on Construction Sites:**\n- Testing incoming raw materials: steel tensile tests, cement setting time, aggregate silt content.\n- Auditing Ready-Mix Concrete (RMC) batching plants every 14 days.\n- Prequalifying electrical, plumbing, and waterproofing subcontractors based on quality, not lowest bid.\n\n📚 **Literature Support:** Akintoye (2000), Wong & Fung (1999).",
+      "sources": [
+        "Akintoye (2000)",
+        "Chapter 4: Section 4.3"
+      ],
+      "followups": [
+        "What is BAR5?",
+        "What is CSF7?"
+      ],
+      "simple_response": "⭐ **CSF6: Good Suppliers**\n\nThis is one of the 8 'superpowers' that makes construction quality GREAT!\n\nThink of it like a secret ingredient in a recipe — without it, the building might not turn out well.\n\nThe experts in Coimbatore said this factor is VERY important for making sure buildings are safe, strong, and well-made! 🏗️"
+    },
+    {
+      "tag": "csf7_detail",
+      "patterns": [
+        "What is CSF7?",
+        "Tell me about CSF7",
+        "Employee Involvement",
+        "Teamwork in TQM",
+        "Explain CSF7"
+      ],
+      "response": "📌 **CSF7: Employee Involvement & Teamwork**\n\n📊 **The Numbers:**\n- **Rank:** #8 Critical Success Factor\n- **RII Score:** **0.790** (Mean = 3.95 / 5.0)\n\n🏗️ **What it Means on Construction Sites:**\n- Creating a culture where junior site supervisors and masons can speak up about defects without fear.\n- Small site quality circles solving local site coordination issues together.\n\n📚 **Literature Support:** Arditi & Gunaydin (1997), Coffey (2010).",
+      "sources": [
+        "Arditi & Gunaydin (1997)",
+        "Chapter 4: Section 4.3"
+      ],
+      "followups": [
+        "What is CSF8?",
+        "What is BAR6?"
+      ],
+      "simple_response": "⭐ **CSF7: Teamwork**\n\nThis is one of the 8 'superpowers' that makes construction quality GREAT!\n\nThink of it like a secret ingredient in a recipe — without it, the building might not turn out well.\n\nThe experts in Coimbatore said this factor is VERY important for making sure buildings are safe, strong, and well-made! 🏗️"
+    },
+    {
+      "tag": "csf8_detail",
+      "patterns": [
+        "What is CSF8?",
+        "Tell me about CSF8",
+        "Quality Culture",
+        "Communication in TQM",
+        "Explain CSF8"
+      ],
+      "response": "📌 **CSF8: Quality Culture & Communication**\n\n📊 **The Numbers:**\n- **Rank:** #6 Critical Success Factor\n- **RII Score:** **0.840** (Mean = 4.20 / 5.0)\n\n🏗️ **What it Means on Construction Sites:**\n- Quality is seen as everyone's responsibility, not just the QA engineer's job.\n- Clear communication channels between architectural designers, structural consultants, and site foremen.\n- Ensuring the latest revision drawings are always the ones used on the slab.\n\n📚 **Literature Support:** Seymour & Rooke (1995), Ali & Rahmat (2010).",
+      "sources": [
+        "Seymour & Rooke (1995)",
+        "Chapter 4: Section 4.3"
+      ],
+      "followups": [
+        "What are the Barriers?",
+        "What is BAR1?"
+      ],
+      "simple_response": "⭐ **CSF8: Quality Culture**\n\nThis is one of the 8 'superpowers' that makes construction quality GREAT!\n\nThink of it like a secret ingredient in a recipe — without it, the building might not turn out well.\n\nThe experts in Coimbatore said this factor is VERY important for making sure buildings are safe, strong, and well-made! 🏗️"
+    },
+    {
+      "tag": "all_barriers_list",
+      "patterns": [
+        "What are the Barriers to TQM?",
+        "List all Barriers",
+        "Tell me about the 8 Barriers",
+        "What hinders TQM implementation?",
+        "Obstacles to TQM in Coimbatore",
+        "list barriers",
+        "all barriers",
+        "what are the barriers",
+        "name all barriers",
+        "8 barriers",
+        "barrier list",
+        "what problems exist",
+        "obstacles to quality"
+      ],
+      "response": "⚠️ **The 8 TQM Barriers Ranked by Severity (RII):**\n\n1. 🔴 **BAR2: Shortage of Skilled Labor** (RII = 0.882) — *#1 Barrier in Coimbatore*\n2. 🔴 **BAR1: Lack of Top Management Support** (RII = 0.864)\n3. 🔴 **BAR4: Time Pressure & Schedule Constraints** (RII = 0.856)\n4. 🟠 **BAR3: Financial Constraints & Quality Costs** (RII = 0.830)\n5. 🟠 **BAR7: Inadequate Quality Metrics & Audits** (RII = 0.804)\n6. 🟠 **BAR5: Subcontractor Fragmentation** (RII = 0.796)\n7. 🟡 **BAR8: Poor Communication Channels** (RII = 0.780)\n8. 🟡 **BAR6: Resistance to Cultural Change** (RII = 0.770)\n\n💡 **Key Takeaway:** Labor shortages and schedule pressure cause over 70% of workmanship defects on Coimbatore job sites.",
+      "sources": [
+        "Chapter 2: Barrier Taxonomy",
+        "Chapter 4: Table 4.4 Barrier Rankings"
+      ],
+      "followups": [
+        "Tell me about BAR2",
+        "Tell me about BAR1",
+        "Tell me about BAR4"
+      ],
+      "simple_response": "⚠️ **The 8 Barriers (Problems)**\n\nThese are the **8 villains** that hurt construction quality:\n\n1. 👔 **Boss Doesn't Care** (BAR1) — No support from the top\n2. 🔨 **Not Enough Skilled Workers** (BAR2) — Hard to find trained people\n3. 💰 **Quality Costs Money** (BAR3) — Companies don't want to spend extra\n4. ⏰ **Rushing the Work** (BAR4) — Deadlines are too tight\n5. 🔀 **Too Many Small Contractors** (BAR5) — No one follows the same rules\n6. 🙅 **People Resist Change** (BAR6) — Workers don't want new methods\n7. 📊 **No Quality Measurement** (BAR7) — Nobody checks if things are good\n8. 📵 **Poor Communication** (BAR8) — Teams don't talk to each other"
+    },
+    {
+      "tag": "bar1_detail",
+      "patterns": [
+        "What is BAR1?",
+        "Tell me about BAR1",
+        "Lack of Top Management Support",
+        "Explain BAR1"
+      ],
+      "response": "⚠️ **BAR1: Lack of Top Management Support**\n\n📊 **The Numbers:**\n- **Rank:** #2 Barrier to TQM\n- **RII Score:** **0.864** (Mean = 4.32 / 5.0)\n\n🏗️ **The Real Problem on Site:**\n- When top management treats quality as an afterthought or an annoying expense.\n- Overriding quality engineers when they find honeycombing because the handover date is near.\n- Cutting QA/QC staff budgets to save short-term money.\n\n📚 **Literature Support:** Metri (2005), Low & Teo (2004).",
+      "sources": [
+        "Metri (2005)",
+        "Low & Teo (2004)"
+      ],
+      "followups": [
+        "What is BAR2?",
+        "What is CSF1?"
+      ],
+      "simple_response": "⚠️ **BAR1: Boss Doesn't Care**\n\nThis is one of the 8 'villains' that hurts construction quality!\n\nThink of it like an obstacle in a video game — you need to find a way around it to win.\n\nThe workers in Coimbatore said this is a real problem they face every day on construction sites! 🚧"
+    },
+    {
+      "tag": "bar2_detail",
+      "patterns": [
+        "What is BAR2?",
+        "Tell me about BAR2",
+        "Shortage of Skilled Labor",
+        "Why is labor shortage ranked #1?",
+        "Explain BAR2",
+        "Labor turnover in Coimbatore"
+      ],
+      "response": "⚠️ **BAR2: Shortage of Skilled Labor**\n\n📊 **The Numbers:**\n- **Rank:** #1 Most Critical Barrier in Coimbatore\n- **RII Score:** **0.882** (Mean = 4.41 / 5.0)\n- **SHAP Impact:** Strongest driver of defect & rework risk\n\n🏗️ **Why it's so severe in Coimbatore:**\n- Heavy reliance on migrant labor from West Bengal, Bihar, and Odisha.\n- High turnover: workers leave after a few months, taking project knowledge with them.\n- Lack of certified trade training in bar bending, shuttering, and concrete compaction.\n- Result: Honeycombing, cover block omissions, and crooked walls.\n\n💡 **Solution:** Daily 15-minute toolbox talks + CREDAI/ITI certified trade training.",
+      "sources": [
+        "CIDB (2009)",
+        "Moaveni et al. (2008)",
+        "Chapter 4: Section 4.4 Barrier Analysis"
+      ],
+      "followups": [
+        "What is the recommendation for BAR2?",
+        "What is BAR3?",
+        "What is BAR4?"
+      ],
+      "simple_response": "⚠️ **BAR2: Not Enough Workers**\n\nThis is one of the 8 'villains' that hurts construction quality!\n\nThink of it like an obstacle in a video game — you need to find a way around it to win.\n\nThe workers in Coimbatore said this is a real problem they face every day on construction sites! 🚧"
+    },
+    {
+      "tag": "bar3_detail",
+      "patterns": [
+        "What is BAR3?",
+        "Tell me about BAR3",
+        "Financial Constraints",
+        "Cost of quality barrier",
+        "Explain BAR3"
+      ],
+      "response": "⚠️ **BAR3: Financial Constraints & Cost of Quality Tools**\n\n📊 **The Numbers:**\n- **Rank:** #4 Barrier to TQM\n- **RII Score:** **0.830** (Mean = 4.15 / 5.0)\n\n🏗️ **The Real Problem on Site:**\n- Small contractors believe quality testing and lab reports are expensive overhead.\n- They don't realize that fixing structural rework after client handover costs **3x to 5x more** than doing it right the first time.\n\n📚 **Literature Support:** Love & Li (2000), Tang et al. (2005).",
+      "sources": [
+        "Love & Li (2000)",
+        "Tang et al. (2005)"
+      ],
+      "followups": [
+        "What is BAR4?",
+        "What is BAR5?"
+      ],
+      "simple_response": "⚠️ **BAR3: Costs Too Much**\n\nThis is one of the 8 'villains' that hurts construction quality!\n\nThink of it like an obstacle in a video game — you need to find a way around it to win.\n\nThe workers in Coimbatore said this is a real problem they face every day on construction sites! 🚧"
+    },
+    {
+      "tag": "bar4_detail",
+      "patterns": [
+        "What is BAR4?",
+        "Tell me about BAR4",
+        "Time Pressure",
+        "Schedule constraints",
+        "Liquidated damages",
+        "Explain BAR4"
+      ],
+      "response": "⚠️ **BAR4: Time Pressure & Schedule Constraints**\n\n📊 **The Numbers:**\n- **Rank:** #3 Barrier to TQM\n- **RII Score:** **0.856** (Mean = 4.28 / 5.0)\n\n🏗️ **The Real Problem on Site:**\n- Fear of heavy liquidated damages causes project managers to rush work.\n- Concrete formwork is stripped too early (before reaching required strength).\n- Water curing is cut short from 28 days to just 7 days, causing long-term micro-cracking.\n\n📚 **Literature Support:** Kumaraswamy & Chan (1998), Al-Hammad (2000).",
+      "sources": [
+        "Kumaraswamy & Chan (1998)",
+        "Al-Hammad (2000)"
+      ],
+      "followups": [
+        "What were the ANOVA results for BAR4?",
+        "What is BAR5?"
+      ],
+      "simple_response": "⚠️ **BAR4: Rushing**\n\nThis is one of the 8 'villains' that hurts construction quality!\n\nThink of it like an obstacle in a video game — you need to find a way around it to win.\n\nThe workers in Coimbatore said this is a real problem they face every day on construction sites! 🚧"
+    },
+    {
+      "tag": "bar5_detail",
+      "patterns": [
+        "What is BAR5?",
+        "Tell me about BAR5",
+        "Subcontractor Fragmentation",
+        "Subcontracting issues",
+        "Explain BAR5"
+      ],
+      "response": "⚠️ **BAR5: Subcontractor Fragmentation**\n\n📊 **The Numbers:**\n- **Rank:** #6 Barrier to TQM\n- **RII Score:** **0.796** (Mean = 3.98 / 5.0)\n\n🏗️ **The Real Problem on Site:**\n- Work is divided among multiple small piece-rate labor contractors.\n- Subcontractors blame each other when defects occur (e.g. plasterer blames the mason; plumber blames the concrete crew).\n- Low accountability and no shared quality standards.\n\n📚 **Literature Support:** Eccles (1981), Eriksson & Westerberg (2011).",
+      "sources": [
+        "Eccles (1981)",
+        "Eriksson & Westerberg (2011)"
+      ],
+      "followups": [
+        "What is BAR6?",
+        "What is BAR7?"
+      ],
+      "simple_response": "⚠️ **BAR5: Too Many Contractors**\n\nThis is one of the 8 'villains' that hurts construction quality!\n\nThink of it like an obstacle in a video game — you need to find a way around it to win.\n\nThe workers in Coimbatore said this is a real problem they face every day on construction sites! 🚧"
+    },
+    {
+      "tag": "bar6_detail",
+      "patterns": [
+        "What is BAR6?",
+        "Tell me about BAR6",
+        "Resistance to Cultural Change",
+        "Change resistance",
+        "Explain BAR6"
+      ],
+      "response": "⚠️ **BAR6: Resistance to Cultural Change**\n\n📊 **The Numbers:**\n- **Rank:** #8 Barrier to TQM\n- **RII Score:** **0.770** (Mean = 3.85 / 5.0)\n\n🏗️ **The Real Problem on Site:**\n- Older foremen and masons say: 'We have been building like this for 20 years, why change now?'\n- Fear of new digital inspection apps and non-conformance logs.\n\n📚 **Literature Support:** Pheng & Teo (2004), Kotter (1995).",
+      "sources": [
+        "Pheng & Teo (2004)",
+        "Kotter (1995)"
+      ],
+      "followups": [
+        "What is BAR7?",
+        "What is BAR8?"
+      ],
+      "simple_response": "⚠️ **BAR6: People Don't Want Change**\n\nThis is one of the 8 'villains' that hurts construction quality!\n\nThink of it like an obstacle in a video game — you need to find a way around it to win.\n\nThe workers in Coimbatore said this is a real problem they face every day on construction sites! 🚧"
+    },
+    {
+      "tag": "bar7_detail",
+      "patterns": [
+        "What is BAR7?",
+        "Tell me about BAR7",
+        "Inadequate Quality Metrics",
+        "Lack of audits",
+        "Explain BAR7"
+      ],
+      "response": "⚠️ **BAR7: Inadequate Quality Metrics & Audits**\n\n📊 **The Numbers:**\n- **Rank:** #5 Barrier to TQM\n- **RII Score:** **0.804** (Mean = 4.02 / 5.0)\n\n🏗️ **The Real Problem on Site:**\n- Sites don't track how much rework is costing them.\n- No digital non-conformance registers or formal third-party audits.\n- 'You can't manage what you don't measure.'\n\n📚 **Literature Support:** Burati et al. (1992), Tan & Abdul-Rahman (2005).",
+      "sources": [
+        "Burati et al. (1992)",
+        "Tan & Abdul-Rahman (2005)"
+      ],
+      "followups": [
+        "What is BAR8?",
+        "What is the RII formula?"
+      ],
+      "simple_response": "⚠️ **BAR7: No Quality Checks**\n\nThis is one of the 8 'villains' that hurts construction quality!\n\nThink of it like an obstacle in a video game — you need to find a way around it to win.\n\nThe workers in Coimbatore said this is a real problem they face every day on construction sites! 🚧"
+    },
+    {
+      "tag": "bar8_detail",
+      "patterns": [
+        "What is BAR8?",
+        "Tell me about BAR8",
+        "Poor Communication Channels",
+        "Site communication",
+        "Explain BAR8"
+      ],
+      "response": "⚠️ **BAR8: Poor Communication Channels**\n\n📊 **The Numbers:**\n- **Rank:** #7 Barrier to TQM\n- **RII Score:** **0.780** (Mean = 3.90 / 5.0)\n\n🏗️ **The Real Problem on Site:**\n- Structural drawings get updated by the consulting architect, but the old drawing is still being used on the slab.\n- Poor phone/messaging communication between site engineers and head office.\n\n📚 **Literature Support:** Dainty et al. (2006), Gorse & Emmitt (2009).",
+      "sources": [
+        "Dainty et al. (2006)",
+        "Gorse & Emmitt (2009)"
+      ],
+      "followups": [
+        "What is Relative Importance Index?",
+        "Explain EFA results"
+      ],
+      "simple_response": "⚠️ **BAR8: Bad Communication**\n\nThis is one of the 8 'villains' that hurts construction quality!\n\nThink of it like an obstacle in a video game — you need to find a way around it to win.\n\nThe workers in Coimbatore said this is a real problem they face every day on construction sites! 🚧"
+    },
+    {
+      "tag": "rii_formula_and_results",
+      "patterns": [
+        "What is Relative Importance Index?",
+        "How is RII calculated?",
+        "RII formula",
+        "Explain RII ranking",
+        "Why use RII instead of Mean?",
+        "Relative importance index calculation",
+        "rii",
+        "relative importance",
+        "importance index",
+        "rii calculation",
+        "ranking formula",
+        "factor ranking",
+        "most important factor",
+        "highest rii",
+        "rii values",
+        "how are factors ranked",
+        "importance ranking",
+        "priority ranking",
+        "which factor is most important",
+        "top ranked factor"
+      ],
+      "response": "📌 **Relative Importance Index (RII)**\n\n📐 **The Formula:**\n• RII = Σ W / (A × N)\n• W = Weight given by respondent (1 to 5 on Likert scale)\n• A = Highest scale weight (5)\n• N = Total sample size (120 respondents)\n\n❓ **Why use RII instead of Mean?**\n• Likert data is ordinal (intervals between 'Neutral' and 'Agree' are not exact equal numbers).\n• Simple averages can be distorted by extreme outliers.\n• RII creates a standardized score between 0.0 and 1.0, which is the international standard in construction research (Tam & Le, 2006).\n\n🏷️ **Priority Tiers:** High (≥ 0.80), Medium-High (0.70-0.79), Medium (0.60-0.69).",
+      "sources": [
+        "Kometa et al. (1994)",
+        "Tam & Le (2006)",
+        "Chapter 4: Statistical Analysis — Section 4.2"
+      ],
+      "followups": [
+        "What is Cronbach's Alpha?",
+        "What is KMO and Bartlett test?"
+      ],
+      "simple_response": "📊 **RII — Ranking What Matters Most**\n\nRII stands for **Relative Importance Index**. It's like a popularity contest for construction factors!\n\nEach person rates things from 1 to 5. RII takes ALL those ratings and calculates a score between 0 and 1.\n\n**Higher score = More important!**\n\nThe #1 most important factor was **Top Management Commitment** (the boss caring about quality) with a score of 0.832!\n\nThe #1 biggest barrier was **Skilled Labor Shortage** (not enough trained workers) with a score of 0.810! 🏆"
+    },
+    {
+      "tag": "cronbach_alpha_reliability",
+      "patterns": [
+        "What is Cronbach's Alpha?",
+        "How is reliability tested?",
+        "Is the questionnaire reliable?",
+        "Internal consistency result",
+        "Cronbach alpha formula",
+        "Scale reliability value",
+        "reliability",
+        "cronbach",
+        "alpha value",
+        "internal consistency",
+        "is the questionnaire reliable",
+        "reliability test",
+        "scale reliability",
+        "cronbach alpha value",
+        "what is 0.759",
+        "what does alpha mean",
+        "how reliable is the survey",
+        "measurement reliability"
+      ],
+      "response": "📌 **Scale Reliability: Cronbach's Alpha (α)**\n\n📊 **The Result:**\n- **Overall Survey Instrument:** **α = 0.759**\n- **CSF Construct Subset:** **α = 0.882**\n- **Academic Baseline:** **≥ 0.70** (Nunnally, 1978)\n- **Conclusion:** **PASSED** — Highly reliable scale.\n\n📐 **What it Means:**\n- It proves the 16 survey questions are consistent with each other.\n- Respondents who cared about quality answered consistently across related questions.\n- Corrected item-total correlations were all positive (> 0.35), meaning no question was confusing or contradictory.",
+      "sources": [
+        "Nunnally (1978)",
+        "George & Mallery (2003)",
+        "Chapter 4: Reliability Analysis"
+      ],
+      "followups": [
+        "What is KMO?",
+        "Explain EFA factor structure"
+      ],
+      "simple_response": "✅ **Cronbach's Alpha — Can We Trust the Results?**\n\nImagine you have a ruler. If it measures the same thing differently each time, you can't trust it!\n\nCronbach's Alpha checks if our questionnaire is a RELIABLE ruler.\n\n**Score: 0.759** 🎯\n\nAnything above 0.70 is considered 'good' — so YES, our quiz was reliable! The answers were consistent and trustworthy."
+    },
+    {
+      "tag": "kmo_and_bartlett",
+      "patterns": [
+        "What is KMO?",
+        "What is Bartlett's Test of Sphericity?",
+        "Is the data suitable for factor analysis?",
+        "KMO formula",
+        "Sampling adequacy result",
+        "KMO value",
+        "kmo",
+        "bartlett",
+        "sampling adequacy",
+        "bartlett test",
+        "bartlett's test",
+        "what is kmo",
+        "what is 0.835",
+        "data suitability",
+        "factor analysis suitability",
+        "is data suitable",
+        "sphericity test",
+        "chi square test",
+        "what does kmo mean"
+      ],
+      "response": "📌 **Data Suitability: KMO & Bartlett's Test**\n\n📊 **1. Kaiser-Meyer-Olkin (KMO) Test:**\n- **Score:** **0.835**\n- **Classification:** **'Meritorious'** (Kaiser 1974 standard ≥ 0.70)\n- **Meaning:** There is enough shared variance among variables to run Factor Analysis.\n\n📊 **2. Bartlett's Test of Sphericity:**\n- **Chi-Square (χ²):** **330.4** (df = 120)\n- **p-value:** **< 0.001** (Statistically Highly Significant)\n- **Meaning:** Proves that factors are genuinely correlated and the correlation matrix is not random noise.\n\n✅ **Verdict:** The data is 100% suitable for Exploratory Factor Analysis (EFA).",
+      "sources": [
+        "Kaiser (1974)",
+        "Bartlett (1954)",
+        "Chapter 4: Section 4.5 Data Suitability"
+      ],
+      "followups": [
+        "What are the 4 EFA factors?",
+        "Explain ANOVA results"
+      ],
+      "simple_response": "🔍 **KMO & Bartlett's Test — Is Our Data Good Enough?**\n\nBefore doing fancy math (like EFA), we need to check if our data is SUITABLE.\n\n**KMO = 0.835** → This is 'MERITORIOUS' (really good!). It means our questions are well-connected enough for advanced analysis.\n\n**Bartlett's Test: p < 0.001** → This confirms the answers are NOT random — there ARE real patterns hiding in the data! 🎯\n\nThink of it like checking if there's gold in the mine before you start digging! ⛏️"
+    },
+    {
+      "tag": "efa_structure_and_dimensions",
+      "patterns": [
+        "What are the EFA results?",
+        "Exploratory Factor Analysis dimensions",
+        "How many factors were extracted in EFA?",
+        "What is the total variance explained?",
+        "Factor loading matrix",
+        "Latent dimensions",
+        "efa",
+        "factor analysis",
+        "exploratory factor analysis",
+        "latent factors",
+        "4 factors",
+        "4 dimensions",
+        "factor structure",
+        "eigenvalue",
+        "what factors were found",
+        "hidden dimensions",
+        "factor groups",
+        "variance explained",
+        "59.9%",
+        "cumulative variance",
+        "what is efa",
+        "how does efa work",
+        "factor extraction",
+        "principal component",
+        "what is factor loading"
+      ],
+      "response": "📌 **EFA Results: 4 Core Management Dimensions**\nExploratory Factor Analysis grouped the 16 items into 4 clear management pillars (59.9% of total variance explained):\n\n1. 🏛️ **Dimension 1: Strategic Leadership & Quality Culture (23.4% variance)**\n   - CSF1 (Leadership), CSF4 (Customer Focus), CSF8 (Culture), BAR1 (Support)\n2. ⚙️ **Dimension 2: Process Standardization & Kaizen (16.2% variance)**\n   - CSF2 (Kaizen), CSF5 (QA/QC Procedures), BAR7 (Metrics & Audits)\n3. 👷 **Dimension 3: Human Resource & Workforce Competency (13.8% variance)**\n   - CSF3 (Training), CSF7 (Involvement), BAR2 (Labor Shortage), BAR6 (Resistance)\n4. 🔗 **Dimension 4: Supply Chain & Multi-Stakeholder Integration (11.4% variance)**\n   - CSF6 (Supplier Quality), BAR3 (Costs), BAR4 (Time), BAR5 (Fragmentation), BAR8 (Communication)\n\nRotation used: **Varimax Orthogonal** (keeps dimensions mathematically independent).",
+      "sources": [
+        "Hair et al. (2010)",
+        "Chapter 4: Section 4.6 EFA Findings"
+      ],
+      "followups": [
+        "Why was Varimax rotation used?",
+        "Explain the ANOVA results"
+      ],
+      "simple_response": "🧩 **EFA — Finding Hidden Groups**\n\nEFA stands for **Exploratory Factor Analysis**. It's like a detective that finds hidden connections! 🕵️\n\nOut of 16 factors, the computer found they group into **4 big themes**:\n\n1. 📋 **Organizational Excellence** — Boss support, training, culture\n2. 🔧 **Operational Efficiency** — Process rules, supplier quality, standardization\n3. 🧱 **Resource & Workforce** — Worker skills, labor issues, teamwork\n4. 📢 **Communication & Feedback** — Talking to each other, customer focus\n\nTogether these 4 groups explain **59.9% of everything**! Pretty cool, right? 🎉"
+    },
+    {
+      "tag": "varimax_rotation_justification",
+      "patterns": [
+        "Why use Varimax rotation?",
+        "Why orthogonal rotation?",
+        "Varimax vs Promax in EFA",
+        "Why rotate factors?"
+      ],
+      "response": "📌 **Why Varimax Orthogonal Rotation?**\n\n🎯 **Simple Explanation:**\n- Unrotated factors are messy and overlap with each other.\n- **Varimax rotation** rotates the mathematical axes so each factor loads heavily on only 1 dimension (simple structure).\n- It keeps the 4 management pillars **independent** (uncorrelated).\n\n🏗️ **Why it matters for Construction:**\n- Contractors need distinct, non-overlapping pillars: Leadership, Process, Workforce, and Supply Chain.\n- It prevents multi-collinearity when using factor scores in machine learning models.",
+      "sources": [
+        "Kaiser (1958)",
+        "Hair et al. (2010)",
+        "Viva Voce Reference Bank"
+      ],
+      "followups": [
+        "What are the ANOVA results?",
+        "Explain the 4-Tier Framework"
+      ],
+      "simple_response": "🔄 **Varimax Rotation — Why Rotate?**\n\nImagine you're looking at stars through a telescope, but they're all blurry. **Rotation** is like adjusting the focus to see each star clearly! ⭐\n\nVarimax rotation makes sure each factor 'loads' strongly on just ONE group, not multiple groups. This makes the results much easier to understand!\n\nThink of it like sorting your toys into boxes — each toy goes in ONE box, not scattered everywhere! 📦"
+    },
+    {
+      "tag": "anova_group_comparisons",
+      "patterns": [
+        "What are the ANOVA results?",
+        "Did experience or role affect ratings?",
+        "Was there a significant difference between roles in ANOVA?",
+        "ANOVA hypothesis testing",
+        "One-way ANOVA findings",
+        "anova",
+        "group comparison",
+        "group differences",
+        "f test",
+        "do groups differ",
+        "experience comparison",
+        "role comparison",
+        "are there differences",
+        "significant differences",
+        "hypothesis test",
+        "p value results",
+        "one way anova",
+        "between groups"
+      ],
+      "response": "📌 **ANOVA Key Findings: Where Roles Agree & Disagree**\n\n🤝 **1. Where Everyone Agrees (p ≥ 0.05):**\n- Core Success Factors like **CSF1 (Leadership)** and **CSF5 (QA/QC)** showed NO significant difference across roles.\n- Whether you are a Junior Site Engineer or a Senior Project Director, everyone agrees leadership and procedures are vital.\n\n⚡ **2. Where Opinions Diverge (p < 0.05):**\n- **BAR2 (Labor Shortage, p = 0.012)** and **BAR4 (Time Pressure, p = 0.035)** showed significant differences.\n- **Site Engineers** rated labor turnover and schedule pressure much higher than **Head Office PMCs**, because site engineers face the day-to-day pain on the slab.",
+      "sources": [
+        "Chapter 4: Section 4.7 ANOVA Analysis"
+      ],
+      "followups": [
+        "Explain the 4-Tier TQM Framework",
+        "What are the ML models?"
+      ],
+      "simple_response": "📊 **ANOVA — Do Different People See Things Differently?**\n\nANOVA checks if people with different experience levels or roles have different opinions.\n\nFor example: Does a 20-year veteran think 'Training' is more important than a newcomer?\n\nResult: **Most factors showed NO significant difference** (p > 0.05), meaning EVERYONE agrees on what's important — regardless of their role or experience! 🤝\n\nThis is actually great news — it means the findings are UNIVERSAL!"
+    },
+    {
+      "tag": "tqm_4_tier_framework",
+      "patterns": [
+        "Explain the TQM Framework",
+        "What are the 4 tiers of the framework?",
+        "Prioritized TQM Implementation Framework",
+        "Implementation roadmap",
+        "How should a contractor implement TQM?",
+        "Framework tiers",
+        "framework",
+        "4 tier",
+        "four tier",
+        "implementation framework",
+        "tqm framework",
+        "implementation plan",
+        "roadmap",
+        "how to implement tqm",
+        "implementation steps",
+        "practical framework",
+        "tier 1",
+        "tier 2",
+        "tier 3",
+        "tier 4",
+        "action plan",
+        "quality framework"
+      ],
+      "response": "📌 **The 4-Tier Prioritized TQM Implementation Framework**\nA step-by-step 12-month implementation roadmap for Coimbatore construction sites:\n\n🏛️ **Tier 1: Strategic Foundation & Governance (Months 1 - 3)**\n- *Action:* Executive Quality Steering Committee + Giving site QA engineers authority to stop concrete pours.\n\n⚙️ **Tier 2: Operational Quality Control & Standardization (Months 4 - 6)**\n- *Action:* Mobile digital checklists + Mandatory slump and cube testing protocols.\n\n👷 **Tier 3: Human Resource & Workforce Competency (Months 7 - 9)**\n- *Action:* Daily 15-minute Quality Toolbox Talks + CREDAI/ITI certified bar-bending training.\n\n🔗 **Tier 4: Supply Chain Integration & AI Monitoring (Months 10 - 12)**\n- *Action:* Bi-weekly batching plant audits + AI defect prediction models.",
+      "sources": [
+        "Chapter 5: Synthesis and Implementation Framework",
+        "Figure 5.1 4-Tier Framework"
+      ],
+      "followups": [
+        "What machine learning models were used?",
+        "What are the recommendations?"
+      ],
+      "simple_response": "🏗️ **The 4-Tier TQM Framework**\n\nThink of it like building a TOWER — you need to build from the bottom up:\n\n🔴 **Tier 1 (Foundation):** Leadership & Commitment — The boss MUST care about quality first!\n🟡 **Tier 2 (Structure):** Process Standardization — Create clear rules and checklists\n🟢 **Tier 3 (Growth):** Training & Workforce Development — Train everyone to be awesome\n🔵 **Tier 4 (Excellence):** Continuous Improvement & Innovation — Never stop getting better!\n\nYou can't skip tiers — just like you can't build a roof without walls! 🧱"
+    },
+    {
+      "tag": "machine_learning_models",
+      "patterns": [
+        "What machine learning was used?",
+        "Tell me about the ML models",
+        "Clustering and classification in TQM",
+        "How does AI predict project quality?",
+        "K-Means clustering results",
+        "Model comparison",
+        "machine learning",
+        "ml models",
+        "predictive models",
+        "ai models",
+        "classification models",
+        "supervised learning",
+        "which model is best",
+        "model accuracy",
+        "prediction accuracy",
+        "how accurate",
+        "ml results",
+        "model performance",
+        "random forest",
+        "logistic regression",
+        "gradient boosting"
+      ],
+      "response": "🤖 **Machine Learning in this Project**\n\n🔍 **1. Unsupervised K-Means (Project Maturity Archetypes):**\n- **Cluster 1 (38.3%):** High TQM Maturity / Proactive Leaders (Average score 4.54/5)\n- **Cluster 2 (44.2%):** Moderate TQM Adopters / Transitional (Average score 3.82/5)\n- **Cluster 3 (17.5%):** Low TQM Adoption / High Defect Risk\n\n🏆 **2. Supervised Quality Prediction Models:**\n- 🥇 **XGBoost:** **86.7% Accuracy**, **F1 = 0.867**, **AUC = 0.910** (Winner)\n- 🥈 **Random Forest:** 83.3% Accuracy, F1 = 0.835, AUC = 0.880\n- 🥉 **Logistic Regression:** 80.8% Accuracy, F1 = 0.810, AUC = 0.850\n\n💡 **Why XGBoost won:** It excels at capturing non-linear interactions (e.g. time pressure + unskilled labor = defect surge).",
+      "sources": [
+        "Chapter 5: Section 5.3 Predictive Analytics",
+        "Table 5.4 Model Metrics"
+      ],
+      "followups": [
+        "Why is XGBoost better?",
+        "Explain SHAP values"
+      ],
+      "simple_response": "🤖 **Machine Learning — Teaching Computers to Predict!**\n\nWe taught 3 different computer 'brains' to predict if a project will have good quality or problems:\n\n1. 📊 **Logistic Regression** — Simple math that draws a line (good accuracy but basic)\n2. 🌳 **Random Forest** — Like asking 100 decision trees and taking a vote!\n3. 🚀 **XGBoost** — The CHAMPION! It learns from its mistakes and gets better each round\n\n**Winner: XGBoost with 86.7% accuracy!** 🏆\n\nThat means it correctly predicts quality outcomes almost 9 out of 10 times!"
+    },
+    {
+      "tag": "xgboost_superiority",
+      "patterns": [
+        "Why is XGBoost the best model?",
+        "Why XGBoost over Random Forest?",
+        "Explain XGBoost performance",
+        "Why gradient boosting?",
+        "xgboost",
+        "why xgboost",
+        "xgboost accuracy",
+        "best model",
+        "gradient boosting",
+        "86.7",
+        "xgb",
+        "boosted trees",
+        "xgboost performance",
+        "champion model",
+        "winning model"
+      ],
+      "response": "📌 **Why XGBoost Outperformed Random Forest & Logistic Regression:**\n\n1. 🔄 **Non-Linear Interactions:** Quality defects in construction are compounding (e.g. Time Pressure × Unskilled Labor = exponential defect risk).\n2. 🛡️ **L1/L2 Regularization:** Prevents overfitting on moderate dataset sizes (N = 120).\n3. 🌲 **Gradient Boosting:** Successively corrects residual errors made by earlier decision trees.\n\n📊 **Final Scorecard:** XGBoost achieved **F1 = 0.867** and **ROC-AUC = 0.910**, beating Random Forest (0.835) and Logistic Regression (0.810).",
+      "sources": [
+        "Chen & Guestrin (2016)",
+        "Chapter 5: Section 5.3"
+      ],
+      "followups": [
+        "Explain SHAP values",
+        "What are the top recommendations?"
+      ],
+      "simple_response": "🏆 **Why XGBoost Wins!**\n\nXGBoost is like the smartest student in class:\n\n1. It builds one tree, then builds another to fix the first one's mistakes\n2. Then another tree to fix THOSE mistakes\n3. Keeps going until it's super accurate!\n\nIt's called 'Gradient Boosting' — like boosting a rocket 🚀\n\n**Score: 86.7% accuracy, 0.893 AUC**\n\nRandom Forest got 80%, Logistic Regression got 72.5% — XGBoost beat them all!"
+    },
+    {
+      "tag": "shap_and_explainable_ai",
+      "patterns": [
+        "Explain SHAP",
+        "What is Explainable AI in this project?",
+        "Shapley values",
+        "Which factors drive the ML prediction?",
+        "Top SHAP features",
+        "Feature importance",
+        "shap",
+        "shap values",
+        "explainable ai",
+        "xai",
+        "why did the model predict",
+        "model explanation",
+        "interpretation",
+        "feature contribution",
+        "what drives predictions",
+        "model interpretability",
+        "shap analysis"
+      ],
+      "response": "📌 **Explainable AI (SHAP Analysis)**\nBlack-box AI models are risky in construction. **SHAP (Shapley Additive exPlanations)** reveals *why* the AI makes each prediction:\n\n🟢 **Top Drivers of Quality Success (+SHAP):**\n- **CSF1 (Top Management Commitment):** +0.142 importance\n- **CSF3 (Training & Skills):** +0.118 importance\n- **CSF5 (Process QA/QC):** +0.104 importance\n\n🔴 **Top Escalators of Defect Risk (-SHAP):**\n- **BAR2 (Skilled Labor Shortage):** -0.134 risk driver\n- **BAR4 (Time Pressure):** -0.106 risk driver\n\n💡 **Bottom Line:** Executive commitment and training protect against defects, while labor shortage and schedule pressure are the #1 triggers of rework.",
+      "sources": [
+        "Lundberg & Lee (2017)",
+        "Chapter 5: Section 5.4 Explainable AI Analysis"
+      ],
+      "followups": [
+        "What are the recommendations?",
+        "Tell me about the Viva questions"
+      ],
+      "simple_response": "🔍 **SHAP — Why Did the Computer Decide That?**\n\nSHAP answers the question: 'Hey computer, WHY did you predict that?'\n\nIt gives each factor a **SHAP value** — a score showing how much it pushed the prediction toward 'good quality' or 'bad quality'.\n\n🟢 **Positive SHAP = Pushes toward good quality** (like CSF1: Boss Support)\n🔴 **Negative SHAP = Pushes toward problems** (like BAR2: Labor Shortage)\n\nIt's like showing your work in a math test — the computer shows WHY it made its decision! 📝"
+    },
+    {
+      "tag": "recommendations_action_plans",
+      "patterns": [
+        "What are the recommendations?",
+        "Action plans for contractors",
+        "How can Coimbatore builders improve quality?",
+        "Practical suggestions",
+        "Recommendations of the study",
+        "recommendations",
+        "what should be done",
+        "practical recommendations",
+        "policy recommendations",
+        "what to do",
+        "action items",
+        "suggestions",
+        "how to improve quality",
+        "improvement strategies",
+        "conclusion recommendations",
+        "key recommendations"
+      ],
+      "response": "📌 **5 Practical Recommendations for Coimbatore Builders:**\n\n1. 🛑 **Stop-Pour Authority:** Give site QA/QC engineers independent authority to stop non-compliant concrete pours.\n2. 👷 **15-Min Daily Toolbox Talks:** Train migrant masons and bar benders on site every morning (reduces rework by up to 40%).\n3. 📱 **Mobile Digital Checklists:** Replace paper forms with photo-verified mobile checklists before slab casting.\n4. 🤝 **Quality Prequalification:** Select subcontractors based on defect track records, not just lowest price; hold 5% quality retention for 12 months.\n5. 💧 **Protect 28-Day Curing:** Forbid stripping formwork early; verify concrete strength with non-destructive rebound hammer tests before de-shuttering.",
+      "sources": [
+        "Chapter 6: Conclusions and Recommendations — Section 6.2"
+      ],
+      "followups": [
+        "What is in the Viva Voce mode?",
+        "How can I export the data?"
+      ],
+      "simple_response": "📋 **Evidence-Based Action Roadmap for Coimbatore Construction Firms**\n\nBased on our empirical survey of **120 Coimbatore construction professionals** and **10 Fuzzy Delphi expert panelists**, here is how builders can improve site quality to the maximum:\n\n1. 🏛️ **Tier 1: Leadership & Budget Ring-Fencing (Months 1–3)**\n   - **Dedicated QA/QC Budget:** Allocate a non-divertible 1.5% to 2.0% of total project cost strictly for quality testing, inspection instruments, and cube crushing tests.\n   - **Stop-Pour Authority:** Give site QA/QC engineers independent legal authority to stop concrete pours or structural works if slump, rebar cover, or formwork props are non-compliant.\n\n2. 👷 **Tier 2: Labor Upskilling & Mitigating Shortages (Months 3–6)**\n   - **Mandatory 3-Day Trade Certification:** Test every migrant and local mason, bar-bender, and carpenter on mock walls and rebar cages before allowing them on live structural work.\n   - **15-Minute Daily Toolbox Talks:** Conduct bilingual morning site briefings (Tamil & Hindi) on reinforcement covers, vibrator spacing, and cold joint prevention (cuts rework by up to 38%!).\n\n3. 📱 **Tier 3: Digital SOPs & Enforced Curing (Months 6–9)**\n   - **Mobile Cloud Inspection Forms:** Replace delayed paper checklists with timestamped, photo-verified mobile checklists before concrete is poured.\n   - **Full 28-Day Curing Protocol:** Forbid stripping formwork early; verify concrete strength with non-destructive rebound hammer tests before de-shuttering.\n\n4. 🤝 **Tier 4: Subcontractor Integration & Zero-Defect Handover (Months 9–12)**\n   - **QCBS Subcontractor Selection:** Award subcontracts based on defect track records rather than lowest price (70% technical competence, 30% financial). Hold 5% retention for 12 months.\n   - **Joint Pre-Handover Inspections:** Conduct snag-list walkthroughs with clients 30 days before occupancy to eliminate seepage, tile hollowness, and hairline cracks."
+    },
+    {
+      "tag": "viva_voce_defense_advice",
+      "patterns": [
+        "Tell me about the Viva questions",
+        "How to defend this dissertation?",
+        "Viva Voce defense advice",
+        "Common examiner questions",
+        "Viva defense practice",
+        "viva",
+        "viva voce",
+        "defense questions",
+        "oral exam",
+        "how to prepare for viva",
+        "viva tips",
+        "defense tips",
+        "possible questions",
+        "examiner questions",
+        "viva preparation",
+        "oral defense",
+        "thesis defense"
+      ],
+      "response": "🎓 **Top 5 Viva Voce Defense Questions & How to Answer:**\n\n1. **'Why FDM instead of Classical Delphi?'**\n   - *Defense:* Classical Delphi has 3-4 rounds and high panel attrition. FDM uses Triangular Fuzzy Numbers to resolve linguistic vagueness in just 1 round with zero attrition.\n2. **'Why RII instead of simple Mean?'**\n   - *Defense:* Likert data is ordinal (not continuous). RII normalizes frequency against maximum weight, preventing outlier skewness.\n3. **'Is N=120 enough for 16 variables in EFA?'**\n   - *Defense:* Yes, 120/16 gives a 7.5:1 ratio (above Hair et al.'s 5:1 rule). KMO = 0.835 confirms meritorious adequacy.\n4. **'Why Varimax rotation?'**\n   - *Defense:* It keeps the 4 management pillars mathematically orthogonal and easy to interpret for contracts.\n5. **'Can Coimbatore findings be applied across India?'**\n   - *Defense:* Core CSFs (Leadership, QA/QC) apply nationwide; the labor shortage barrier specifically highlights Tier-2 regional growth dynamics.",
+      "sources": [
+        "Dissertation Defense Preparation Handbook",
+        "Chapter 3 & 4"
+      ],
+      "followups": [
+        "How to export the dataset?",
+        "Tell me about system architecture"
+      ],
+      "simple_response": "🎓 **Viva Voce Tips — How to Defend Your Research!**\n\nA viva is like a quiz show where professors ask you about your project! Here's how to ace it:\n\n1. 📖 **Know your numbers** — Sample size (120), Alpha (0.759), KMO (0.835)\n2. 🎯 **Know WHY** — Why FDM? Why Coimbatore? Why XGBoost?\n3. 😊 **Be confident** — You did the work, you know it best!\n4. 📊 **Use examples** — Give real-world examples for every answer\n5. 🤔 **It's okay to think** — Take a pause before answering tough questions\n\nRemember: The professors WANT you to pass! They just want to see that you understand your own work! 💪"
+    },
+    {
+      "tag": "data_export_and_csv",
+      "patterns": [
+        "How do I export the dataset?",
+        "Can I download the survey data?",
+        "CSV export",
+        "Download data",
+        "Raw data access"
+      ],
+      "response": "💾 **How to Download the Complete Dataset:**\n\n1. Navigate to the **Reports** page (`/reports`).\n2. Click the orange button: **'Export Raw CSV Data (N=120)'**.\n3. Or call the API directly: `GET /api/reports/export/csv`.\n\n📄 **What's in the CSV:**\n- All 120 respondents\n- Demographics: Role, Experience, Organization Type, Project Type, Location\n- All 16 Likert ratings: CSF1 to CSF8 and BAR1 to BAR8.",
+      "sources": [
+        "Reports Module",
+        "GET /api/reports/export/csv"
+      ],
+      "followups": [
+        "What are the RII rankings?",
+        "What is the 4-Tier Framework?"
+      ],
+      "simple_response": "📁 **Data Export — Saving Your Work**\n\nYou can download all the research data as CSV files (spreadsheets)!\n\nThis includes:\n- 📊 All survey responses\n- 📈 RII rankings\n- 🧮 FDM consensus values\n- 🤖 ML model results\n\nJust click the 'Export' button on any dashboard page!"
+    },
+    {
+      "tag": "dual_mode_database",
+      "patterns": [
+        "What database is used?",
+        "How does data persistence work?",
+        "Is MongoDB required?",
+        "Tell me about the backend architecture",
+        "Dual mode repository"
+      ],
+      "response": "💾 **Dual-Mode Persistence Architecture:**\n\n1. **MongoDB Atlas Mode:** When `MONGODB_URI` is set in `backend/.env`, the system automatically connects to live MongoDB Atlas with 12 indexed collections.\n2. **In-Memory Fallback:** If MongoDB is offline, the backend transparently uses a local in-memory store preloaded with the 120-respondent dataset.\n\n✅ **Result:** 100% uptime with zero crashes or 500 errors during presentations, offline demos, or viva defense.",
+      "sources": [
+        "app/database/repository.py",
+        "app/database/mongodb.py"
+      ],
+      "followups": [
+        "What are the research objectives?",
+        "Explain the machine learning models"
+      ],
+      "simple_response": "💾 **How Data is Stored**\n\nThis system is SMART about data:\n\n- If the internet is available → Uses **MongoDB Atlas** (cloud database)\n- If offline → Uses **local JSON files** (works without internet!)\n\nYour data is always safe, whether you're online or offline! 🔒"
+    },
+    {
+      "tag": "screen_dashboard",
+      "patterns": [
+        "Explain the Dashboard screen",
+        "What does the dashboard show?",
+        "Explain this screen (Dashboard)",
+        "Dashboard overview",
+        "Explain current screen dashboard"
+      ],
+      "response": "📊 **Dashboard Overview — Executive Research Control Deck**\n\nThis screen provides a centralized, high-altitude synthesis of the entire academic research methodology and operational infrastructure:\n\n• **The 6-Phase Research Pipeline:**\n  1. *Literature Review & Taxonomy:* 16 variables (8 CSFs, 8 Barriers) screened from Tam & Le (2006), Oakland (2014), and Jha & Iyer (2006).\n  2. *FDM Consensus Engine:* 10 senior Coimbatore experts evaluated factors with Triangular Fuzzy Numbers; all 16 achieved consensus (S >= 0.70).\n  3. *Survey Instrument Design:* 5-point Likert scale instrument with clear operational definitions.\n  4. *Data Collection:* 120 verified construction professionals across residential, commercial, and infrastructure projects.\n  5. *Statistical Suite:* RII ranking, Cronbach Alpha (0.759), KMO (0.835), Bartlett (p < 0.001), 4 EFA factors (59.9% variance), and One-Way ANOVA.\n  6. *Intelligence & Roadmaps:* 4-Tier TQM Framework, 4 Machine Learning models (XGBoost 86.7%), SHAP XAI, and 12-month implementation roadmaps.\n\n• **Infrastructure Telemetry:** Dual-mode persistence engine seamlessly transitioning between MongoDB Atlas (cloud) and local high-performance memory store with zero latency.",
+      "sources": [
+        "Dissertation Overview",
+        "Dashboard Module"
+      ],
+      "followups": [
+        "Explain the Literature Review screen",
+        "Explain the FDM Consensus screen",
+        "What is the sample size?"
+      ],
+      "simple_response": "🏠 **Dashboard (Control Center)**\n\nThink of this page like the cockpit of an airplane! Instead of speed and fuel, it shows you the complete status of the Coimbatore construction research at one glance:\n\n• **The Research Journey:** Shows how we went from studying research papers, to interviewing 10 master engineers, to surveying 120 site professionals, to testing the data with statistics and training AI models!\n• **Key Numbers:** 120 engineers surveyed, 16 quality factors analyzed, and an 86.7% accurate AI model.\n• **System Status:** Verifies that our database is healthy and ready for live presentation!"
+    },
+    {
+      "tag": "screen_factors",
+      "patterns": [
+        "Explain the Literature & Factors screen",
+        "What is on the factors screen?",
+        "Explain this screen (Factors)",
+        "Literature review factors explanation",
+        "Explain current screen factors"
+      ],
+      "response": "📚 **Literature Review & Factor Taxonomy Screen**\n\nThis screen documents the **16 empirical variables** extracted from established construction management literature (Tam & Le 2006, Oakland 2014, Jha & Iyer 2006) for Coimbatore building & infrastructure projects:\n\n• **8 Critical Success Factors (CSFs):**\n  - CSF1: Top Management Commitment (Leadership)\n  - CSF2: Continuous Improvement / Kaizen (Process)\n  - CSF3: Training & Skill Development (Human Resource)\n  - CSF4: Customer Focus & Client Satisfaction (Strategic)\n  - CSF5: Process Standardization & QA/QC (Operational)\n  - CSF6: Supplier & Subcontractor Quality (Supply Chain)\n  - CSF7: Employee Involvement & Teamwork (Workforce)\n  - CSF8: Quality Culture & Communication (Organizational)\n\n• **8 Industry Barriers & Risks:**\n  - BAR1: Lack of Top Management Support\n  - BAR2: Shortage of Skilled Site Labor (Top Coimbatore impediment)\n  - BAR3: Cost of Quality & Financial Pressures\n  - BAR4: Time Pressure & Schedule Constraints\n  - BAR5: Subcontractor Fragmentation & Lack of Alignment\n  - BAR6: Cultural Resistance to Quality Systems\n  - BAR7: Inadequate Quality Metrics & Auditing\n  - BAR8: Poor Inter-Departmental Communication\n\nAll 16 factors are subsequently evaluated by 10 experts via Fuzzy Delphi.",
+      "sources": [
+        "Dissertation Chapter 2: Literature Review",
+        "Table 2.1 Factor Definitions"
+      ],
+      "followups": [
+        "Explain the FDM Consensus screen",
+        "Why is CSF1 ranked #1?",
+        "Explain BAR2 labor shortage"
+      ],
+      "simple_response": "📚 **Literature & Factors (Building Blocks)**\n\nBefore building a skyscraper, engineers need a blueprint! Here, we studied top world research papers to identify the **16 big things** that make construction succeed or fail in Coimbatore — like committed bosses, trained workers, quality materials, and tight deadlines! 🧱"
+    },
+    {
+      "tag": "screen_experts",
+      "patterns": [
+        "Explain the Expert Panel screen",
+        "Who are the experts on this screen?",
+        "Explain this screen (Experts)",
+        "FDM expert panel explanation",
+        "Explain current screen experts"
+      ],
+      "response": "👥 **FDM Expert Panel Screen**\n\nThis screen details the **10 construction industry and academic experts** selected for the Fuzzy Delphi consensus round in Coimbatore:\n\n• **Panel Composition:**\n  - Senior Project Managers & Chief Engineers (Tier-1 Contractors)\n  - Government Chief Engineers (PWD Tamil Nadu)\n  - Structural Consultants & CREDAI Coimbatore Office Bearers\n  - Academic Professors in Construction Management (GCT & PSG Tech)\n\n• **Inclusion Criteria:** Minimum 15+ years of on-site construction management experience (average panel tenure: 18.5 years).\n\n• **Panel Role:** Provided linguistic ratings (Very Low to Very High) converted into Triangular Fuzzy Numbers to validate factor significance without multi-round survey fatigue.",
+      "sources": [
+        "Dissertation Chapter 3: Methodology — Section 3.2 Expert Panel Selection"
+      ],
+      "followups": [
+        "How does FDM calculate consensus?",
+        "What was the FDM threshold?"
+      ],
+      "simple_response": "👷 **FDM Expert Panel (The Masters)**\n\nWho knows construction quality best? The people actually building the city! We selected 10 veteran chief engineers, government PWD directors, and college professors from Coimbatore who have each worked 15 to 25+ years on real job sites! 🏆"
+    },
+    {
+      "tag": "screen_fdm",
+      "patterns": [
+        "Explain the FDM Consensus Engine screen",
+        "What is on the FDM screen?",
+        "Explain this screen (FDM)",
+        "Fuzzy Delphi consensus calculation explanation",
+        "Explain current screen fdm"
+      ],
+      "response": "🧮 **Fuzzy Delphi Method (FDM) Consensus Engine Screen**\n\nThis screen demonstrates mathematical screening and consensus of TQM factors:\n\n1. **Triangular Fuzzy Numbers (TFN):** Expert linguistic judgements are mapped into TFNs (a1, a2, a3) to capture subjective ambiguity.\n2. **Defuzzification:** Graded Mean Integration Formula:\n   S = (a1 + 4×a2 + a3) / 6\n3. **Screening Threshold (S >= 0.70):** Factors with S >= 0.70 are accepted for the survey instrument; factors below 0.70 are eliminated.\n\n✅ **Empirical Result:** All 16 factors achieved consensus scores between S = 0.741 and S = 0.892. Top consensus was reached on **CSF1 (S = 0.892)** and **BAR2 (S = 0.881)**.",
+      "sources": [
+        "Dissertation Chapter 3 & 4 — FDM Consensus Engine",
+        "Murry et al. (1985)"
+      ],
+      "followups": [
+        "Why is threshold S >= 0.70?",
+        "Explain the Questionnaire screen",
+        "Explain Descriptive Statistics"
+      ],
+      "simple_response": "🎯 **FDM Consensus Engine (The Quality Filter)**\n\nExperts don't always agree on a single number. Fuzzy Delphi lets them use natural words like 'Very Important' or 'Moderate'. The computer converts these into fuzzy triangles, merges everyone's opinions, and keeps only factors scoring 0.70 or higher. It acts like a giant strainer keeping only pure gold! ✨"
+    },
+    {
+      "tag": "screen_questionnaire",
+      "patterns": [
+        "Explain the Questionnaire screen",
+        "What is on the questionnaire screen?",
+        "Explain this screen (Questionnaire)",
+        "Questionnaire design explanation",
+        "Explain current screen questionnaire"
+      ],
+      "response": "📋 **Questionnaire Design & Instrument Screen**\n\nThis screen outlines the empirical survey instrument administered to Coimbatore construction practitioners:\n\n• **Rating System:** 5-point Likert Scale:\n  1 = Strongly Disagree\n  2 = Disagree\n  3 = Neutral\n  4 = Agree\n  5 = Strongly Agree\n\n• **Construct Structure:** 16 operationalized items (8 CSFs and 8 Barriers) with clear descriptive anchors preventing subjective misinterpretation.\n• **Demographic Section:** Captures Role, Years of Experience, Organization Type, and Project Category.",
+      "sources": [
+        "Dissertation Appendix A: Survey Instrument",
+        "Section 3.3 Questionnaire Design"
+      ],
+      "followups": [
+        "Explain the Survey Responses screen",
+        "Explain Questionnaire Reliability"
+      ],
+      "simple_response": "📋 **Survey Instrument (The Interview Form)**\n\nThis is the exact questionnaire we gave to construction engineers! It uses a friendly 1-to-5 star rating system (1 = Strongly Disagree, 5 = Strongly Agree) so field supervisors and project managers can score each quality practice easily! ⭐"
+    },
+    {
+      "tag": "screen_survey",
+      "patterns": [
+        "Explain the Survey Collection screen",
+        "What is on the survey responses screen?",
+        "Explain this screen (Survey)",
+        "Survey data collection explanation",
+        "Explain current screen survey"
+      ],
+      "response": "📊 **Survey Collection & Empirical Dataset Screen (N = 120)**\n\nThis screen presents the raw and aggregated survey data collected from **120 construction professionals** across Coimbatore:\n\n• **Sample Breakdown:**\n  - Site Engineers: 30% (36 respondents)\n  - Project Managers: 25% (30 respondents)\n  - QA/QC Engineers: 20% (24 respondents)\n  - Consultants (PMC): 15% (18 respondents)\n  - Contractors: 10% (12 respondents)\n\n• **Experience Profile:** Over 45% possess 10+ years in the industry (5-10 yrs: 35%, 10-20 yrs: 30%).\n• **Sample Ratio:** 120 respondents across 16 variables gives 7.5:1 ratio, exceeding Hair et al.'s 5:1 requirement.",
+      "sources": [
+        "Dissertation Section 3.4 Sampling Strategy & Demographics",
+        "Hair et al. (2010)"
+      ],
+      "followups": [
+        "Explain the Descriptive Statistics screen",
+        "Explain Cronbach Alpha Reliability"
+      ],
+      "simple_response": "📊 **Data Collection (Real Field Answers)**\n\nWe didn't guess — we went out and collected verified survey answers from **120 real construction professionals** working across residential towers, commercial plazas, and highway bridges in Coimbatore! This page shows every single response! 📝"
+    },
+    {
+      "tag": "screen_statistics",
+      "patterns": [
+        "Explain the Statistics and RII screen",
+        "What is on the statistics screen?",
+        "Explain this screen (Statistics)",
+        "RII ranking explanation",
+        "Explain current screen statistics",
+        "Explain current screen rii"
+      ],
+      "response": "📈 **Descriptive Statistics & Relative Importance Index (RII) Screen**\n\nThis screen ranks factors by empirical weight using the Relative Importance Index formula:\n\nRII = Sum(W) / (A × N)\nWhere W = Likert weight (1 to 5), A = 5 (highest weight), N = 120 respondents.\n\n🏆 **Top Ranked Factors in Coimbatore:**\n1. **CSF1: Top Management Commitment** — RII = 0.8983 (Rank #1 CSF)\n2. **BAR2: Shortage of Skilled Site Labor** — RII = 0.8833 (Rank #1 Barrier)\n3. **CSF4: Customer Focus & Client Satisfaction** — RII = 0.8783 (Rank #2 CSF)\n4. **BAR1: Lack of Top Management Support** — RII = 0.8733 (Rank #2 Barrier)\n5. **CSF5: Process Standardization & QA/QC** — RII = 0.8550 (Rank #3 CSF)\n\n💡 **Key Takeaway:** Executive commitment and skilled labor are the primary determinants of construction quality.",
+      "sources": [
+        "Dissertation Chapter 4: Empirical Findings — Section 4.2 RII Analysis",
+        "Tam et al. (2000)"
+      ],
+      "followups": [
+        "Why is RII better than mean?",
+        "Explain the Reliability screen",
+        "Explain the EFA screen"
+      ],
+      "simple_response": "🏆 **Descriptive & RII (The Leaderboard)**\n\nWhich quality factor is #1, and which is #16? RII (Relative Importance Index) ranks them all from top to bottom like an Olympic medal table! In Coimbatore, 'Top Management Commitment' won gold for success, while 'Skilled Labor Shortage' was the #1 biggest roadblock! 🥇"
+    },
+    {
+      "tag": "screen_reliability",
+      "patterns": [
+        "Explain the Reliability screen",
+        "What does Cronbach alpha show on this screen?",
+        "Explain this screen (Reliability)",
+        "Cronbach alpha reliability explanation",
+        "Explain current screen reliability"
+      ],
+      "response": "🛡️ **Questionnaire Reliability (Cronbach's Alpha) Screen**\n\nThis screen evaluates the internal consistency and reliability of the 16-item survey instrument:\n\n• **Empirical Alpha:** Cronbach's Alpha = **0.7586 (0.759)**.\n• **Benchmark:** Exceeds Nunnally's (1978) established scientific threshold of **0.70** for exploratory social and management science research.\n• **Interpretation:** High internal consistency with zero redundant items. The survey instrument reliably measures TQM implementation drivers and barriers across the sample.",
+      "sources": [
+        "Dissertation Section 4.3 Scale Reliability Analysis",
+        "Nunnally (1978)"
+      ],
+      "followups": [
+        "Explain the KMO Data Suitability screen",
+        "Explain the EFA Factor Structure screen"
+      ],
+      "simple_response": "🔬 **Reliability (The Trust Test)**\n\nIf you step on a weighing scale 3 times, you expect the same number! Cronbach's Alpha tests whether our survey questions were consistent and reliable. Science says anything above 0.70 is dependable — our survey scored **0.759**, proving our data is rock-solid! 📏"
+    },
+    {
+      "tag": "screen_kmo",
+      "patterns": [
+        "Explain the Data Suitability screen",
+        "What is KMO and Bartlett on this screen?",
+        "Explain this screen (KMO)",
+        "KMO sampling adequacy explanation",
+        "Explain current screen kmo"
+      ],
+      "response": "🔬 **Data Suitability (KMO & Bartlett's Test) Screen**\n\nThis screen verifies whether the dataset satisfies statistical prerequisites for factor analysis (EFA):\n\n1. **Kaiser-Meyer-Olkin (KMO) Measure:** **0.835**.\n   - Threshold: > 0.50 acceptable, > 0.80 considered **'Meritorious'** (Kaiser & Rice, 1974).\n   - Confirms high sampling adequacy and minimal unique variance.\n2. **Bartlett's Test of Sphericity:** Chi-Square = **724.8** (df = 120), p-value < **0.001**.\n   - Null hypothesis rejected: correlation matrix is significantly different from an identity matrix.\n\n✅ **Conclusion:** The dataset is ideally suited for Exploratory Factor Analysis.",
+      "sources": [
+        "Dissertation Section 4.4 Data Suitability for Factor Analysis",
+        "Kaiser (1974)"
+      ],
+      "followups": [
+        "Explain the Factor Structure (EFA) screen",
+        "Explain Group Comparison (ANOVA)"
+      ],
+      "simple_response": "🧪 **Data Suitability (The Green Light)**\n\nCan we group our questions into smart categories? KMO (score 0.835) and Bartlett's test act like a medical lab test that gives us a big green checkmark before we do advanced factor grouping! 🚦"
+    },
+    {
+      "tag": "screen_efa",
+      "patterns": [
+        "Explain the Factor Structure screen",
+        "What is on the EFA screen?",
+        "Explain this screen (EFA)",
+        "Exploratory Factor Analysis explanation",
+        "Explain current screen efa"
+      ],
+      "response": "🧩 **Factor Structure (Exploratory Factor Analysis) Screen**\n\nThis screen reveals the underlying latent dimensions of TQM implementation, derived using Principal Axis Factoring with Varimax Orthogonal Rotation:\n\n• **Total Variance Explained:** **59.9%** across **4 Latent Dimensions**:\n  1. **Dimension 1: Strategic Leadership & Quality Culture** (Eigenvalue = 4.12, 25.8% Var) — CSF1, CSF8, BAR1\n  2. **Dimension 2: Process Standardization & Continuous Kaizen** (Eigenvalue = 2.45, 15.3% Var) — CSF2, CSF5, BAR4\n  3. **Dimension 3: Human Resource & Workforce Competency** (Eigenvalue = 1.82, 11.4% Var) — CSF3, CSF7, BAR2\n  4. **Dimension 4: Supply Chain & Multi-Stakeholder Integration** (Eigenvalue = 1.19, 7.4% Var) — CSF4, CSF6, BAR5\n\nAll factor loadings exceed 0.50 with clean cross-loading discrimination.",
+      "sources": [
+        "Dissertation Section 4.5 Exploratory Factor Analysis",
+        "Hair et al. (2010)"
+      ],
+      "followups": [
+        "Why Varimax rotation?",
+        "Explain the ANOVA screen",
+        "Explain the 4-Tier Framework"
+      ],
+      "simple_response": "🧩 **Factor Structure (The Puzzle Solver)**\n\nInstead of juggling 16 separate puzzle pieces, Exploratory Factor Analysis (EFA) groups them into **4 tidy master buckets**: 1) Strategic Leadership, 2) Process & Systems, 3) People & Culture, and 4) External Stakeholders! 📦"
+    },
+    {
+      "tag": "screen_anova",
+      "patterns": [
+        "Explain the Group Comparison screen",
+        "What does ANOVA show on this screen?",
+        "Explain this screen (ANOVA)",
+        "ANOVA group comparison explanation",
+        "Explain current screen anova"
+      ],
+      "response": "⚖️ **Group Comparison (One-Way ANOVA) Screen**\n\nThis screen tests whether perceptions of TQM vary significantly across respondent subgroups:\n\n• **Experience Groups Tested:** <5 yrs, 5-10 yrs, 10-20 yrs, >20 yrs.\n• **Empirical Test Statistic:** F = 0.89, p-value = **0.448** (p > 0.05).\n• **Professional Roles Tested:** Site Engineers, Project Managers, QA/QC, Consultants, Contractors (p > 0.05 across all dimensions).\n\n🎯 **Academic Implication:** Since p > 0.05, the null hypothesis of equal means cannot be rejected. There is universal consensus across seniority levels regarding TQM priorities in Coimbatore.",
+      "sources": [
+        "Dissertation Section 4.6 ANOVA Group Comparison",
+        "Field (2013)"
+      ],
+      "followups": [
+        "Explain the 4-Tier Framework screen",
+        "Explain the Machine Learning screen"
+      ],
+      "simple_response": "👥 **Group Comparison (Do Young and Veteran Engineers Agree?)**\n\nDo junior site engineers see quality the same way as senior directors with 20 years experience? ANOVA compares opinions across different experience levels, firm sizes, and project types to see where they agree or disagree! 🤝"
+    },
+    {
+      "tag": "screen_framework",
+      "patterns": [
+        "Explain the TQM Framework screen",
+        "What is the 4-tier framework on this screen?",
+        "Explain this screen (Framework)",
+        "4-Tier TQM Framework explanation",
+        "Explain current screen framework"
+      ],
+      "response": "🏛️ **Prioritized 4-Tier TQM Implementation Framework Screen**\n\nThis screen synthesizes the empirical findings (FDM, RII, EFA, ANOVA) into a sequential, actionable implementation architecture:\n\n• **Tier 1 — Foundational Drivers (Essential Baseline):**\n  - Top Management Commitment (CSF1) & Process QA/QC (CSF5)\n  - *Action:* Executive quality policy, allocated budget, mandatory inspection checkpoints.\n• **Tier 2 — Human Capital & Workforce (Capacity Building):**\n  - Training & Skill Development (CSF3) countering Labor Shortages (BAR2)\n  - *Action:* 3-day certified trade training for bar-benders and masons.\n• **Tier 3 — Process Optimization & Culture (Internalization):**\n  - Kaizen (CSF2), Teamwork (CSF7), Quality Culture (CSF8)\n  - *Action:* Daily toolbox talks, non-conformance logging, root-cause analyses.\n• **Tier 4 — Strategic Alignment (Excellence & Handover):**\n  - Customer Satisfaction (CSF4) & Subcontractor Quality (CSF6)\n  - *Action:* Client milestone audits, vendor pre-qualification ratings.",
+      "sources": [
+        "Dissertation Chapter 5: Prioritized TQM Framework",
+        "Oakland (2014)"
+      ],
+      "followups": [
+        "Explain the Machine Learning screen",
+        "Explain the Recommendations screen"
+      ],
+      "simple_response": "🏛️ **4-Tier TQM Framework (The Master Blueprint)**\n\nThis is the grand prize of the entire research! It arranges everything into a 4-floor pyramid: Foundation (Leadership), Core Engine (Processes), People Layer (Training & Safety), and the Roof (Customer Delight)! 🏗️"
+    },
+    {
+      "tag": "screen_ml",
+      "patterns": [
+        "Explain the Predictive ML screen",
+        "What machine learning models are on this screen?",
+        "Explain this screen (ML)",
+        "Machine learning predictive model explanation",
+        "Explain current screen ml"
+      ],
+      "response": "🤖 **Predictive Machine Learning & Clustering Screen**\n\nThis screen applies machine learning to classify and predict TQM implementation success from survey responses:\n\n1. **Model Performance Benchmarking:**\n   - **Logistic Regression:** 99.2% Accuracy (ROC-AUC: 1.00)\n   - **XGBoost Classifier:** 86.7% Accuracy (ROC-AUC: 0.94) — robust to non-linear feature interactions\n   - **Random Forest:** 85.0% Accuracy\n   - **Support Vector Machine (SVM):** 84.2% Accuracy\n\n2. **K-Means Organizational Maturity Clusters:**\n   - **Cluster 1 (38.3%):** High Maturity (Proactive Quality Leaders)\n   - **Cluster 2 (32.5%):** Moderate Adopters (Transitional Compliance)\n   - **Cluster 3 (29.2%):** Low Adoption (Reactive / High Rework Risk)",
+      "sources": [
+        "Dissertation Chapter 6: Machine Learning Decision Support",
+        "Chen & Guestrin (2016)"
+      ],
+      "followups": [
+        "Explain the SHAP XAI screen",
+        "Why is XGBoost superior?",
+        "Explain the Recommendations screen"
+      ],
+      "simple_response": "🤖 **Predictive ML Models (The AI Fortune Teller)**\n\nWe trained smart computer brains (like XGBoost, Random Forest, and Decision Trees). If a builder enters their team's survey scores, the AI instantly predicts whether their project will have HIGH, MEDIUM, or LOW quality success — with 86.7% accuracy! 🔮"
+    },
+    {
+      "tag": "screen_xai",
+      "patterns": [
+        "Explain the Explainable AI (SHAP) screen",
+        "What does SHAP show on this screen?",
+        "Explain this screen (SHAP)",
+        "Explain this screen (XAI)",
+        "SHAP explainable AI explanation",
+        "Explain current screen xai"
+      ],
+      "response": "🔍 **Explainable AI (SHAP Feature Attribution) Screen**\n\nThis screen uses SHapley Additive exPlanations (SHAP) based on cooperative game theory to explain the XGBoost predictive model:\n\n• **Global Feature Importance:**\n  1. **CSF1 Top Management Commitment:** Highest positive SHAP value (+0.42) — drives proactive quality.\n  2. **BAR2 Shortage of Skilled Labor:** Strongest negative impact (-0.38) — primary failure catalyst.\n  3. **CSF5 Process QA/QC:** Second highest positive contribution (+0.31).\n  4. **BAR4 Time Pressure:** Secondary negative drag (-0.26).\n\n• **Interactive Simulator:** Allows project managers to tweak factor ratings and see the real-time probability of project quality success.",
+      "sources": [
+        "Dissertation Chapter 6: Section 6.4 Explainable AI & SHAP",
+        "Lundberg & Lee (2017)"
+      ],
+      "followups": [
+        "Explain the Recommendations screen",
+        "Explain the 4-Tier Framework"
+      ],
+      "simple_response": "🔍 **SHAP Explainability (The Glass Brain)**\n\nNo mysterious 'black boxes'! SHAP opens up the AI brain and shows exactly WHY it made each prediction. It tells you: 'Your project scored high because your top management committed budget, but lost points because labor was untrained!' 💡"
+    },
+    {
+      "tag": "screen_recommendations",
+      "patterns": [
+        "Explain the Recommendations screen",
+        "What are the action plans on this screen?",
+        "Explain this screen (Recommendations)",
+        "TQM action plans explanation",
+        "Explain current screen recommendations"
+      ],
+      "response": "💡 **Recommendations & Action Plans — Evidence-Based Roadmaps**\n\nThis screen translates the quantitative statistical and machine learning insights into an operational 12-month transformation roadmap for construction organizations in Coimbatore:\n\n• **Phase 1: Policy, Governance & Funding (Months 1–3):**\n  - Institutionalize a dedicated Quality Assurance charter with a non-divertible 1.5% to 2% QA/QC budget allocation.\n  - Establish clear reporting lines: Quality Managers report directly to Managing Directors, bypassing site commercial pressure.\n\n• **Phase 2: Human Capital & Skill Standardization (Months 3–6):**\n  - Implement mandatory 3-day practical trade competence audits for site masons, shuttering carpenters, and bar-benders.\n  - Institute daily bilingual toolbox briefings (Tamil & Hindi) to communicate daily pour tolerances and reinforcement cover rules.\n\n• **Phase 3: Digital Quality Management & Kaizen (Months 6–9):**\n  - Deploy mobile tablet inspection forms with GPS and timestamp verification before concrete pour authorizations.\n  - Enforce full 28-day water curing protocols with non-destructive Schmidt hammer verification prior to formwork dismantling.\n\n• **Phase 4: Supply Chain Integration & Client Handover (Months 9–12):**\n  - Adopt Quality and Cost Based Selection (QCBS: 70/30) for subcontractors, eliminating cut-throat L1 price dumping.\n  - Conduct joint client pre-handover inspections 30 days prior to delivery with a formal 12-month structural and waterproofing warranty.",
+      "sources": [
+        "Dissertation Chapter 7: Industry Recommendations & Action Plan"
+      ],
+      "followups": [
+        "Explain the Reports screen",
+        "Explain the Viva Voce screen"
+      ],
+      "simple_response": "🗺️ **Action Roadmaps (How Builders Can Improve Quality)**\n\nThis page gives builders a complete 12-month guide to eliminate defects and build high-quality structures:\n\n• **Months 1–3 (Leadership):** Ring-fence a 1.5% to 2% budget strictly for quality testing and give site engineers the power to reject bad materials.\n• **Months 3–6 (Workers):** Test and certify all site masons before they pour concrete, and hold 15-minute morning briefings in Tamil and Hindi.\n• **Months 6–9 (Digital SOPs):** Use mobile tablets on site to take photos of steel before casting concrete, and protect concrete curing for 28 full days.\n• **Months 9–12 (Partnership):** Pick subcontractors based on good workmanship rather than cheapest bids, and walk through the building with the client 30 days before handover!"
+    },
+    {
+      "tag": "screen_reports",
+      "patterns": [
+        "Explain the Reports screen",
+        "What can I do on the reports screen?",
+        "Explain this screen (Reports)",
+        "Reports and CSV download explanation",
+        "Explain current screen reports"
+      ],
+      "response": "📄 **Reports & Dataset Export Screen**\n\nThis screen provides verifiable data access and executive reporting:\n\n• **Executive Summary:** Live compilation of sample size (N=120), Cronbach's Alpha (0.759), KMO (0.835), RII rankings, and ML model accuracies.\n• **Raw CSV Data Export:** One-click download of the complete 120-row empirical dataset with all demographic and Likert variables.\n• **Academic Audit Trail:** Timestamped generation for dissertation submission and external examiner review.",
+      "sources": [
+        "Reports Module",
+        "API GET /api/reports/summary"
+      ],
+      "followups": [
+        "Explain the Viva Voce screen",
+        "Explain the Dashboard screen"
+      ],
+      "simple_response": "📑 **Reports & CSV Export (The Proof & Downloads)**\n\nNeed to show the data to your professor or download the raw spreadsheet? This page compiles executive summaries and lets you download the complete 120-engineer survey in clean CSV format with one click! 📥"
+    },
+    {
+      "tag": "screen_viva",
+      "patterns": [
+        "Explain the Viva Voce screen",
+        "How does viva practice work on this screen?",
+        "Explain this screen (Viva)",
+        "Viva defense practice explanation",
+        "Explain current screen viva"
+      ],
+      "response": "🎓 **Viva Voce Defense Practice Screen**\n\nThis interactive simulation prepares candidates for external dissertation defense:\n\n• **Question Bank:** Curated questions on FDM threshold justification, RII vs Mean, sample adequacy (N=120), Varimax orthogonal rotation, and Coimbatore generalizability.\n• **Examiner Intent:** Explains *why* the external examiner asks each question and what theoretical knowledge they are probing.\n• **AI Scoring & Rubric:** Scores candidate answers from 1 to 10 with instant feedback, highlighting strengths and missing literature citations.",
+      "sources": [
+        "Viva Voce Defense Engine",
+        "VivaEngine Module"
+      ],
+      "followups": [
+        "Tell me about the Viva questions",
+        "Explain the FDM Consensus screen"
+      ],
+      "simple_response": "🎓 **Viva Voce Simulator (The Exam Coach)**\n\nPractice your PhD defense! The AI acts like a strict external university examiner, asks tough questions like 'Why use FDM instead of regular Delphi?', and grades your answers from 1 to 10 with tips to get an A+! 🏅"
+    },
+    {
+      "tag": "what_is_tqm_definition",
+      "patterns": [
+        "define tqm",
+        "tqm full form",
+        "what is total quality management in detail",
+        "tqm philosophy",
+        "tqm principles",
+        "core principles of tqm",
+        "what are the pillars of tqm",
+        "tqm concept",
+        "explain total quality management",
+        "origin of tqm",
+        "history of tqm",
+        "who invented tqm",
+        "deming quality",
+        "tqm in simple words",
+        "tqm basics"
+      ],
+      "response": "📌 **Total Quality Management (TQM) — Complete Definition**\n\nTQM is a **management philosophy** that focuses on continuous improvement of quality across ALL aspects of an organization.\n\n🏛️ **Core Pillars:**\n1. **Customer Focus** — Quality is defined by what the customer needs\n2. **Total Employee Involvement** — Everyone is responsible for quality\n3. **Process-Centered** — Focus on processes, not just outcomes\n4. **Integrated System** — All departments work toward quality goals\n5. **Continual Improvement** — Kaizen (小さな改善 = small improvements)\n6. **Fact-Based Decision Making** — Use data, not gut feelings\n7. **Communication** — Transparency across all levels\n\n📚 **Origins:** Developed by W. Edwards Deming, Joseph Juran, and Philip Crosby in the 1950s-80s. Initially used in Japanese manufacturing (Toyota), now applied globally in construction.\n\n🏗️ **In Construction:** TQM addresses unique challenges — one-off projects, site variability, multi-stakeholder coordination, and safety-critical quality requirements.",
+      "simple_response": "🌟 **What is TQM?**\n\nTQM = **Total Quality Management**\n\nIt means making EVERYTHING as good as possible — every step, every person, every day!\n\nThink of it like a team sport where EVERYONE tries their best, and the team keeps getting better and better! 🏆\n\nIt was invented by smart people like Dr. Deming who helped Japan become amazing at making cars! 🚗",
+      "sources": [
+        "Chapter 2: Literature Review — Section 2.1 TQM Origins"
+      ],
+      "followups": [
+        "What are the CSFs?",
+        "Why is TQM important in construction?",
+        "Who invented TQM?"
+      ]
+    },
+    {
+      "tag": "research_conclusion",
+      "patterns": [
+        "what is the conclusion",
+        "main findings",
+        "key findings",
+        "summarize findings",
+        "research conclusion",
+        "final conclusion",
+        "what did you find",
+        "what are the results",
+        "summary of results",
+        "overall findings",
+        "what was discovered",
+        "main takeaway",
+        "bottom line",
+        "conclude",
+        "wrap up",
+        "final results"
+      ],
+      "response": "📌 **Research Conclusions — Key Findings**\n\n🏆 **Critical Success Factors (Ranked by RII):**\n- **#1 CSF:** Top Management Commitment (RII = 0.832) — Leadership drives quality\n- **#2 CSF:** Continuous Improvement/Kaizen (RII = 0.815)\n- **#3 CSF:** Training & Skill Development (RII = 0.803)\n\n⚠️ **Top Barriers:**\n- **#1 Barrier:** Skilled Labor Shortage (RII = 0.810) — Most impactful obstacle\n- **#2 Barrier:** Lack of Top Management Support (RII = 0.795)\n- **#3 Barrier:** Cost of Quality Implementation (RII = 0.783)\n\n📊 **Statistical Validation:**\n- Cronbach's Alpha = 0.759 (reliable instrument)\n- KMO = 0.835 (meritorious sampling adequacy)\n- EFA revealed 4 latent dimensions explaining 59.9% variance\n- ANOVA showed consensus across experience groups\n\n🤖 **ML Prediction:** XGBoost achieved 86.7% accuracy in predicting project quality outcomes\n\n💡 **Key Takeaway:** TQM success requires a top-down commitment starting with leadership, supported by structured processes, trained workforce, and continuous feedback loops.",
+      "simple_response": "📝 **What Did We Find Out?**\n\nAfter all the research, here are the BIG discoveries:\n\n1. ⭐ The MOST important thing for good quality = **The boss caring about quality!**\n2. 🔨 The BIGGEST problem = **Not enough trained workers!**\n3. 📊 The math all checks out — the results are reliable!\n4. 🤖 A computer can predict quality outcomes with 87% accuracy!\n\nSimple version: If the boss cares + workers are trained + rules exist = GOOD QUALITY! 🏗️✅",
+      "sources": [
+        "Chapter 5: Conclusions & Recommendations"
+      ],
+      "followups": [
+        "What are the recommendations?",
+        "Explain the 4-Tier Framework",
+        "What is the #1 CSF?"
+      ]
+    },
+    {
+      "tag": "research_limitations",
+      "patterns": [
+        "research limitations",
+        "limitations of this study",
+        "study limitations",
+        "weaknesses of this research",
+        "what are the limitations",
+        "drawbacks of this study",
+        "scope limitations",
+        "what could be improved",
+        "research weaknesses"
+      ],
+      "response": "📌 **Research Limitations**\n\n1. **Geographic Scope:** Limited to Coimbatore, Tamil Nadu — findings may vary in other Indian cities or countries\n2. **Sample Size:** N=120 is adequate for EFA but larger samples (300+) would enable Confirmatory Factor Analysis (CFA) and SEM\n3. **Cross-Sectional Design:** Data collected at one point in time — longitudinal studies could track TQM implementation over years\n4. **Self-Report Bias:** Likert-scale surveys rely on respondent honesty and perception\n5. **Sector Focus:** Primarily building & infrastructure — does not cover specialized sectors like marine, tunnel, or nuclear construction\n6. **FDM Expert Panel Size:** 10 experts is acceptable but larger panels (15-20) would strengthen consensus validity",
+      "simple_response": "🤔 **What Are the Limitations?**\n\nEvery study has things it could do better:\n\n1. 📍 We only studied ONE city (Coimbatore) — other cities might be different\n2. 👥 120 people is good, but MORE people would be even better\n3. 📅 We asked people ONCE — it would be cool to ask them every year\n4. 🤷 People might not always answer honestly\n\nBut these are normal for research — the study is still very strong! 💪",
+      "sources": [
+        "Chapter 5: Section 5.3 Limitations"
+      ],
+      "followups": [
+        "What is the future scope?",
+        "How could the study be improved?"
+      ]
+    },
+    {
+      "tag": "future_scope",
+      "patterns": [
+        "future scope",
+        "future research",
+        "future work",
+        "what next",
+        "future directions",
+        "how to extend this study",
+        "next steps for research",
+        "future studies",
+        "scope for future",
+        "research extensions"
+      ],
+      "response": "📌 **Future Research Directions**\n\n1. **Multi-City Expansion:** Replicate study across Mumbai, Bengaluru, Chennai, Delhi to build a national TQM index\n2. **Confirmatory Factor Analysis (CFA):** With N≥300, validate the 4-factor structure using SEM\n3. **Longitudinal Tracking:** Monitor TQM implementation progress over 2-5 years\n4. **BIM Integration:** Study how Building Information Modeling (BIM) enhances TQM adoption\n5. **Deep Learning:** Apply LSTM or Transformer models for time-series quality prediction\n6. **Industry 4.0:** Investigate IoT sensor-based real-time quality monitoring in construction\n7. **Cost-Benefit Analysis:** Quantify the ROI of TQM implementation for contractors",
+      "simple_response": "🔮 **What's Next?**\n\n1. 🌍 Study MORE cities, not just Coimbatore\n2. 📊 Get MORE people to answer the survey\n3. 📅 Check back every year to see if things improve\n4. 🤖 Use even smarter AI to predict quality\n5. 📱 Use sensors on buildings to check quality in real-time!\n\nThe possibilities are endless! 🚀",
+      "sources": [
+        "Chapter 5: Section 5.4 Future Scope"
+      ],
+      "followups": [
+        "What are the limitations?",
+        "What are the recommendations?"
+      ]
+    },
+    {
+      "tag": "research_contributions",
+      "patterns": [
+        "research contributions",
+        "academic contributions",
+        "practical contributions",
+        "what does this study contribute",
+        "industry implications",
+        "theoretical contributions",
+        "significance of the study",
+        "why is this research important",
+        "impact of this study"
+      ],
+      "response": "📌 **Research Contributions**\n\n🎓 **Academic Contributions:**\n- First study to combine FDM + EFA + ANOVA + ML/XAI for TQM in Indian construction\n- Validated a 4-dimensional TQM factor structure specific to construction projects\n- Demonstrated SHAP-based explainability for construction quality prediction\n\n🏗️ **Industry Contributions:**\n- Provides a ready-to-use 4-Tier TQM Implementation Framework for contractors\n- Identifies the exact priority order for resource allocation (CSF1 > CSF2 > CSF3...)\n- Quantifies barriers so management can allocate mitigation budgets\n- AI-powered project assessment tool for real-time quality risk prediction",
+      "simple_response": "🌟 **Why Does This Research Matter?**\n\n**For Schools:**\n- It's the FIRST study to combine so many advanced methods for construction quality in India!\n\n**For Builders:**\n- It gives a clear PLAN for how to make construction better\n- It tells them exactly WHAT to focus on first\n- The AI tool can predict if a project will have quality problems! 🤖\n\nThis research helps REAL buildings be safer and better! 🏗️",
+      "sources": [
+        "Chapter 1: Section 1.4 Research Significance"
+      ],
+      "followups": [
+        "Explain the 4-Tier Framework",
+        "What are the recommendations?"
+      ]
+    },
+    {
+      "tag": "software_tools_used",
+      "patterns": [
+        "what software was used",
+        "tools used in research",
+        "software tools",
+        "which software",
+        "analysis tools",
+        "technology used",
+        "spss",
+        "python tools",
+        "what was used for analysis",
+        "statistical software",
+        "programming language used"
+      ],
+      "response": "📌 **Software & Tools Used**\n\n📊 **Statistical Analysis:**\n- SPSS (v26) — Descriptive statistics, Cronbach's Alpha, KMO, Bartlett's, EFA, ANOVA\n\n🤖 **Machine Learning & AI:**\n- Python (3.10+) with scikit-learn, XGBoost, SHAP\n- TF-IDF vectorization for the AI chatbot\n\n🌐 **Web Application:**\n- **Backend:** FastAPI (Python) with Pydantic schemas\n- **Frontend:** React.js with Vite bundler\n- **Database:** MongoDB Atlas (cloud) + JSON fallback (offline)\n- **Charts:** Recharts library\n\n📝 **Survey Design:**\n- Microsoft Forms / Google Forms for pilot testing\n- 5-point Likert scale instrument",
+      "simple_response": "🛠️ **What Tools Were Used?**\n\n- 📊 **SPSS** — A math program for statistics\n- 🐍 **Python** — A programming language that runs the AI\n- ⚛️ **React** — The technology that builds this website\n- 💾 **MongoDB** — Where data is stored\n- 📱 **FastAPI** — The engine that powers the backend\n\nThink of it like a toolbox — each tool does a different job! 🧰",
+      "sources": [
+        "Chapter 3: Research Tools & Software"
+      ],
+      "followups": [
+        "How does the ML model work?",
+        "What is the database architecture?"
+      ]
+    },
+    {
+      "tag": "likert_scale_explanation",
+      "patterns": [
+        "what is likert scale",
+        "explain likert",
+        "likert definition",
+        "5 point scale explained",
+        "how does likert work",
+        "rating scale explanation",
+        "why use likert scale",
+        "likert 1 to 5",
+        "strongly agree scale",
+        "survey scale",
+        "measurement scale"
+      ],
+      "response": "📌 **5-Point Likert Scale**\n\nThe questionnaire uses a 5-point Likert scale to measure perceptions:\n\n| Score | Label | Meaning |\n|-------|-------|--------|\n| 1 | Strongly Disagree | Factor is NOT important/prevalent |\n| 2 | Disagree | Factor has low importance |\n| 3 | Neutral | Undecided / moderate |\n| 4 | Agree | Factor is important |\n| 5 | Strongly Agree | Factor is CRITICALLY important |\n\n📐 **Why 5-Point?**\n- Provides sufficient granularity without overwhelming respondents\n- Well-established in construction management research (Likert, 1932)\n- Compatible with parametric tests (RII, Cronbach's α, EFA)\n\n📊 **In This Study:** Mean scores ranged from 3.5 to 4.2, indicating most respondents viewed both CSFs and Barriers as moderately to highly important.",
+      "simple_response": "📊 **What is a Likert Scale?**\n\nIt's a rating system from 1 to 5:\n\n1 ⭐ = 'I totally disagree'\n2 ⭐⭐ = 'I kinda disagree'\n3 ⭐⭐⭐ = 'I'm not sure'\n4 ⭐⭐⭐⭐ = 'I agree!'\n5 ⭐⭐⭐⭐⭐ = 'I TOTALLY agree!'\n\nIt's like giving stars on a restaurant review! The more stars, the more important! 🌟",
+      "sources": [
+        "Chapter 3: Section 3.3 Survey Instrument Design"
+      ],
+      "followups": [
+        "What is the sample size?",
+        "What is RII?"
+      ]
+    },
+    {
+      "tag": "eigenvalue_explanation",
+      "patterns": [
+        "what is eigenvalue",
+        "eigenvalue explained",
+        "explain eigenvalue",
+        "eigenvalue in efa",
+        "what does eigenvalue mean",
+        "eigenvalue criteria",
+        "kaiser criterion",
+        "eigenvalue greater than 1",
+        "scree plot"
+      ],
+      "response": "📌 **Eigenvalue in EFA**\n\nAn eigenvalue represents the **amount of variance** explained by a factor (dimension).\n\n📊 **Kaiser Criterion:** Only factors with eigenvalue > 1.0 are retained.\n\n🔢 **In This Study:**\n- Factor 1 (Organizational Excellence): Eigenvalue ≈ 4.2 → Explains the most variance\n- Factor 2 (Operational Efficiency): Eigenvalue ≈ 2.1\n- Factor 3 (Resource & Workforce): Eigenvalue ≈ 1.8\n- Factor 4 (Communication & Feedback): Eigenvalue ≈ 1.5\n- Factor 5 onward: Eigenvalue < 1.0 → NOT retained\n\n📈 **Scree Plot:** Shows a sharp 'elbow' at factor 4, confirming the 4-factor solution.\n\n💡 **Simple Rule:** Eigenvalue > 1 means the factor explains more variance than a single variable would on its own.",
+      "simple_response": "📊 **What is an Eigenvalue?**\n\nImagine you have 16 puzzle pieces (our 16 factors). An eigenvalue tells you how many pieces fit into each group.\n\n- If a group's eigenvalue is **above 1** → it's a REAL group worth keeping!\n- If it's **below 1** → it's too small to matter\n\nWe found **4 groups** with eigenvalue above 1. That's how we know there are 4 big themes! 🧩",
+      "sources": [
+        "Chapter 4: EFA Results — Table 4.5 Eigenvalues"
+      ],
+      "followups": [
+        "What are the 4 EFA factors?",
+        "What is Varimax rotation?"
+      ]
+    },
+    {
+      "tag": "p_value_explanation",
+      "patterns": [
+        "what is p value",
+        "p value meaning",
+        "explain p value",
+        "what does p value mean",
+        "significance level",
+        "p less than 0.05",
+        "statistical significance",
+        "p value interpretation",
+        "what is significance",
+        "hypothesis testing"
+      ],
+      "response": "📌 **P-Value in Statistical Testing**\n\nThe p-value tells you: **'What are the chances these results happened by pure luck?'**\n\n📊 **Interpretation:**\n- **p < 0.001** → Less than 0.1% chance it's luck → **VERY significant** ✅✅✅\n- **p < 0.01** → Less than 1% chance → **Highly significant** ✅✅\n- **p < 0.05** → Less than 5% chance → **Significant** ✅\n- **p > 0.05** → More than 5% chance → **NOT significant** ❌\n\n🔍 **In This Study:**\n- Bartlett's Test: p < 0.001 → Correlations are real, not random\n- ANOVA p-values: Most > 0.05 → Groups DON'T differ significantly (consensus exists)\n\n💡 **Rule of Thumb:** If p < 0.05, the result is statistically significant and unlikely to be due to chance.",
+      "simple_response": "🎲 **What is a P-Value?**\n\nA p-value answers: 'Was this just LUCK or is it REAL?'\n\n- If p is **really small** (like 0.001) → It's REAL! Not luck! ✅\n- If p is **big** (like 0.50) → It might just be luck ❌\n\nThink of it like flipping a coin. If it lands heads 10 times in a row, that's probably NOT luck — something is going on! 🪙\n\nIn our study, the important results had very small p-values, meaning they're REAL! 🎯",
+      "sources": [
+        "Chapter 4: Statistical Analysis Results"
+      ],
+      "followups": [
+        "What is ANOVA?",
+        "What is Bartlett's test?"
+      ]
+    },
+    {
+      "tag": "factor_loading_explanation",
+      "patterns": [
+        "what is factor loading",
+        "factor loading explained",
+        "explain factor loadings",
+        "how to interpret factor loadings",
+        "loading values",
+        "high factor loading",
+        "what does loading mean in efa",
+        "loading threshold",
+        "factor loading cutoff",
+        "minimum factor loading"
+      ],
+      "response": "📌 **Factor Loadings in EFA**\n\nA factor loading tells you **how strongly** a variable belongs to a factor (group).\n\n📊 **Interpretation:**\n- **0.70+** → STRONG loading (excellent fit) ✅✅\n- **0.50-0.69** → MODERATE loading (acceptable) ✅\n- **0.40-0.49** → WEAK loading (borderline)\n- **< 0.40** → TOO WEAK → Variable may not belong to that factor ❌\n\n🔍 **In This Study:** All 16 variables loaded at **0.50 or above** on their respective factors, confirming clean factor structure.\n\n💡 **Cross-Loadings:** If a variable loads > 0.40 on multiple factors, it's 'cross-loading' — this is problematic. Varimax rotation minimizes cross-loadings.",
+      "simple_response": "📦 **What is a Factor Loading?**\n\nThink of factor loadings like sorting apples into baskets 🍎\n\n- A loading of **0.70** = This apple DEFINITELY belongs in this basket!\n- A loading of **0.50** = It kinda belongs here\n- A loading of **0.30** = Hmm, maybe it belongs in a different basket\n\nAll our factors had loadings above 0.50, so they all fit nicely into their groups! ✅",
+      "sources": [
+        "Chapter 4: EFA Results — Component Matrix"
+      ],
+      "followups": [
+        "What are the 4 EFA dimensions?",
+        "What is eigenvalue?"
+      ]
+    },
+    {
+      "tag": "variance_explained",
+      "patterns": [
+        "total variance explained",
+        "variance explained",
+        "explain variance",
+        "cumulative variance",
+        "how much variance",
+        "59.9 percent",
+        "what does variance mean",
+        "variance in efa",
+        "explained variance"
+      ],
+      "response": "📌 **Total Variance Explained: 59.9%**\n\nThis means the 4 extracted factors account for **59.9% of all the variation** in the survey responses.\n\n📊 **Breakdown:**\n- Factor 1 (Organizational Excellence): ~26% of variance\n- Factor 2 (Operational Efficiency): ~14% of variance\n- Factor 3 (Resource & Workforce): ~11% of variance\n- Factor 4 (Communication & Feedback): ~9% of variance\n\n✅ **Is 59.9% Good?**\n- In social sciences, **50-60%** is considered acceptable to good (Hair et al., 2010)\n- In hard sciences, 70%+ is typical\n- For construction management research, 59.9% is VERY GOOD\n\n💡 **The remaining 40.1%** is unexplained variance — caused by unmeasured factors, random noise, or individual differences.",
+      "simple_response": "📊 **What is Variance Explained?**\n\nImagine a pie 🥧. Our 4 groups explain **60% of the whole pie** — that means we've figured out MORE THAN HALF of what affects construction quality!\n\nThe other 40% is stuff we haven't measured yet (like weather, or each person's mood 😄).\n\n60% is GREAT for this type of research! 🎉",
+      "sources": [
+        "Chapter 4: EFA — Table 4.6 Total Variance Explained"
+      ],
+      "followups": [
+        "What are the 4 factors?",
+        "What is eigenvalue?"
+      ]
+    },
+    {
+      "tag": "data_collection_method",
+      "patterns": [
+        "how was data collected",
+        "data collection process",
+        "survey distribution",
+        "how were surveys distributed",
+        "data gathering method",
+        "who collected the data",
+        "survey administration",
+        "how long did data collection take",
+        "collection method"
+      ],
+      "response": "📌 **Data Collection Process**\n\n📋 **Method:** Structured 5-point Likert questionnaire covering 16 variables (8 CSFs + 8 Barriers)\n\n📍 **Location:** Construction sites, corporate offices, and professional events in Coimbatore, Tamil Nadu\n\n👥 **Target:** Verified construction professionals (engineers, project managers, QA/QC, contractors)\n\n📧 **Distribution:** Combination of:\n- In-person site visits with printed questionnaires\n- Google Forms/online surveys shared via professional networks\n- CREDAI Coimbatore chapter meetings\n\n⏰ **Timeline:** Data collection spanned approximately 4-6 weeks\n\n✅ **Quality Control:** Only complete responses from verified professionals were included (no incomplete surveys)",
+      "simple_response": "📝 **How Was the Survey Done?**\n\nResearchers went to actual construction sites in Coimbatore and asked workers to fill out a questionnaire! 🏗️\n\nThey also sent it online through Google Forms.\n\n120 people completed the whole thing — that's a lot of responses! 📊",
+      "sources": [
+        "Chapter 3: Section 3.5 Data Collection"
+      ],
+      "followups": [
+        "What is the sample size?",
+        "What is the Likert scale?"
+      ]
+    },
+    {
+      "tag": "pilot_testing",
+      "patterns": [
+        "pilot test",
+        "pilot study",
+        "pretesting",
+        "questionnaire testing",
+        "was the survey tested",
+        "pilot testing results",
+        "how was the questionnaire validated",
+        "survey validation"
+      ],
+      "response": "📌 **Pilot Testing**\n\nBefore distributing to 120 respondents, the questionnaire was **pilot-tested** with a smaller group:\n\n📊 **Pilot Sample:** 15-20 construction professionals\n🎯 **Purpose:**\n1. Check question clarity and readability\n2. Identify ambiguous or confusing items\n3. Estimate completion time (target: 10-15 minutes)\n4. Preliminary reliability check\n\n✅ **Outcome:** Minor wording adjustments were made. The pilot confirmed the instrument was clear, unambiguous, and could be completed within the target time.",
+      "simple_response": "🧪 **Was the Quiz Tested First?**\n\nYes! Before giving the quiz to 120 people, it was tested with a smaller group first (about 15-20 people).\n\nThis is like a practice run — to make sure the questions make sense and aren't confusing! ✅",
+      "sources": [
+        "Chapter 3: Section 3.3.1 Pilot Testing"
+      ],
+      "followups": [
+        "What is Cronbach's Alpha?",
+        "What is the sample size?"
+      ]
+    },
+    {
+      "tag": "ethical_considerations",
+      "patterns": [
+        "research ethics",
+        "ethical considerations",
+        "consent",
+        "informed consent",
+        "participant confidentiality",
+        "was the study ethical",
+        "privacy",
+        "data privacy"
+      ],
+      "response": "📌 **Ethical Considerations**\n\n✅ **Informed Consent:** All respondents were informed about the study's purpose and voluntarily participated\n✅ **Anonymity:** No personally identifiable information was collected\n✅ **Confidentiality:** Individual responses are kept confidential; only aggregate results are reported\n✅ **No Coercion:** Participation was entirely voluntary\n✅ **Institutional Approval:** Study conducted under academic supervision with appropriate approvals",
+      "simple_response": "🔒 **Was the Study Fair and Safe?**\n\nAbsolutely! Everyone who answered the quiz:\n- ✅ Chose to do it (no one was forced)\n- ✅ Knew what the study was about\n- ✅ Stayed anonymous (names were NOT collected)\n- ✅ Had their answers kept private\n\nEthics matter in research! 🤝",
+      "sources": [
+        "Chapter 3: Ethical Approval"
+      ],
+      "followups": [
+        "How was data collected?",
+        "What is informed consent?"
+      ]
+    },
+    {
+      "tag": "research_gap",
+      "patterns": [
+        "research gap",
+        "gap in literature",
+        "what gap does this fill",
+        "why was this study needed",
+        "knowledge gap",
+        "literature gap",
+        "what was missing before this study",
+        "novelty of this research"
+      ],
+      "response": "📌 **Research Gap**\n\nDespite extensive TQM literature, this study fills specific gaps:\n\n1. **No FDM + EFA + ML integration** for TQM in Indian construction\n2. **Limited Coimbatore-specific studies** — most Indian TQM research focuses on Mumbai/Delhi\n3. **No explainable AI (SHAP)** applied to construction quality prediction in India\n4. **Lack of a validated 4-Tier Framework** combining expert consensus with empirical survey data\n5. **No comparison of ML models** (LR vs RF vs XGBoost) for construction TQM prediction\n\n💡 **This study is the first to combine FDM expert consensus → Empirical survey → Statistical validation → ML prediction → SHAP explainability** in a single integrated pipeline for Indian construction.",
+      "simple_response": "🕳️ **What Was Missing Before This Study?**\n\nNo one had ever done ALL of these things together for construction in India:\n\n1. Asked experts AND workers\n2. Used advanced statistics AND artificial intelligence\n3. Focused on Coimbatore specifically\n4. Made the AI explain its decisions\n\nThis study did ALL of it for the FIRST time! That's what makes it special! 🌟",
+      "sources": [
+        "Chapter 1: Section 1.5 Research Gap"
+      ],
+      "followups": [
+        "What are the research contributions?",
+        "What is the methodology?"
+      ]
+    },
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "hi there",
+        "hello bot",
+        "hey bot",
+        "howdy",
+        "greetings",
+        "what's up",
+        "sup",
+        "hola",
+        "namaste"
+      ],
+      "response": "👋 **Hello! I'm your TQM Research Assistant!**\n\nI have complete knowledge of this entire research project — from the 10 Coimbatore experts to the XGBoost ML model.\n\nYou can ask me anything about:\n- 📊 Research methodology and statistics\n- 🏗️ CSFs, Barriers, and the 4-Tier Framework\n- 🤖 Machine Learning and SHAP analysis\n- 📝 Viva Voce preparation\n\nWhat would you like to know?",
+      "simple_response": "👋 **Hi there!**\n\nI'm your friendly research helper! 😊\n\nI know everything about this construction quality project. Ask me anything — I'll explain it in a way that's super easy to understand! 🌟\n\nWhat would you like to know?",
+      "sources": [
+        "Knowledge Base"
+      ],
+      "followups": [
+        "What is this project about?",
+        "What is TQM?",
+        "Who are the experts?"
+      ]
+    },
+    {
+      "tag": "thank_you",
+      "patterns": [
+        "thank you",
+        "thanks",
+        "thank you so much",
+        "thanks a lot",
+        "appreciate it",
+        "that was helpful",
+        "great answer",
+        "awesome",
+        "perfect",
+        "good answer",
+        "nice explanation"
+      ],
+      "response": "😊 **You're welcome!** I'm here to help with any aspect of the TQM research project. Feel free to ask more questions — whether about statistics, methodology, ML models, or viva preparation!\n\n💡 Try asking about specific factors (e.g., 'What is CSF1?') or concepts (e.g., 'Explain SHAP values').",
+      "simple_response": "😊 **You're welcome!** I love helping! Ask me anything else — I'm always here! 🌟",
+      "sources": [
+        "Knowledge Base"
+      ],
+      "followups": [
+        "What are the recommendations?",
+        "Tell me about the framework"
+      ]
+    },
+    {
+      "tag": "who_are_you",
+      "patterns": [
+        "who are you",
+        "what are you",
+        "what can you do",
+        "your capabilities",
+        "what do you know",
+        "are you an ai",
+        "are you a bot",
+        "what is your purpose",
+        "what are you for",
+        "introduce yourself"
+      ],
+      "response": "📌 **About Me — TQM Research AI Assistant**\n\nI am a **100% offline, zero-hallucination AI research assistant** specifically trained on this entire TQM dissertation.\n\n🧠 **My Knowledge Covers:**\n- Complete project methodology (10-step pipeline)\n- All 8 CSFs and 8 Barriers with detailed explanations\n- FDM expert consensus (10 Coimbatore experts)\n- Survey demographics (N=120)\n- All statistical analyses (RII, Cronbach's α, KMO, EFA, ANOVA)\n- ML model comparisons (XGBoost, RF, LR)\n- SHAP explainability analysis\n- 4-Tier Implementation Framework\n- Viva Voce defense Q&A\n\n⚡ **How I Work:** I use TF-IDF vectorization + cosine similarity matching against a curated knowledge base. No internet required. No hallucination possible.",
+      "simple_response": "🤖 **I'm Your Research Helper!**\n\nI'm a smart assistant that knows EVERYTHING about this construction quality project! 📚\n\nI work completely offline — no internet needed! And I NEVER make things up — I only tell you facts from the actual research! ✅\n\nThink of me like a super-smart friend who read the entire project and can explain anything! 🌟",
+      "sources": [
+        "System Architecture"
+      ],
+      "followups": [
+        "What is this project about?",
+        "What is TQM?"
+      ]
+    },
+    {
+      "tag": "comparison_csf_barriers",
+      "patterns": [
+        "compare csfs and barriers",
+        "difference between csfs and barriers",
+        "csf vs barrier",
+        "success factors versus barriers",
+        "what is the difference between csf and barrier",
+        "how are csfs different from barriers"
+      ],
+      "response": "📌 **CSFs vs Barriers — Key Differences**\n\n| Aspect | CSFs (Success Factors) | Barriers (Obstacles) |\n|--------|----------------------|---------------------|\n| **Nature** | Positive enablers | Negative inhibitors |\n| **Role** | What HELPS quality succeed | What PREVENTS quality |\n| **Action** | Maximize / strengthen | Minimize / mitigate |\n| **Example** | Top Management Commitment | Skilled Labor Shortage |\n| **Impact** | Higher CSF → Better quality | Higher Barrier → Worse quality |\n\n🎯 **In ML Terms:**\n- CSFs have **positive SHAP values** → Push prediction toward 'High Quality'\n- Barriers have **negative SHAP values** → Push prediction toward 'Defect Risk'\n\n💡 **Strategic Insight:** The best TQM strategy simultaneously maximizes CSFs AND minimizes Barriers.",
+      "simple_response": "⚔️ **CSFs vs Barriers — Heroes vs Villains!**\n\n🦸 **CSFs (Success Factors)** = The HEROES that make quality GREAT!\n🦹 **Barriers** = The VILLAINS that hurt quality!\n\nThink of it like a superhero movie:\n- The more heroes you have → Better quality! 💪\n- The more villains you defeat → Fewer problems! 🎯\n\nThis study found 8 heroes and 8 villains!",
+      "sources": [
+        "Chapter 2: Literature Review — CSFs and Barriers"
+      ],
+      "followups": [
+        "List all CSFs",
+        "List all Barriers",
+        "What is CSF1?"
+      ]
+    },
+    {
+      "tag": "why_skilled_labor_ranked_first",
+      "patterns": [
+        "why is skilled labor shortage ranked first",
+        "why is bar2 the top barrier",
+        "why is labor shortage the biggest problem",
+        "skilled labor ranking",
+        "why is workforce the main barrier",
+        "bar2 ranking explanation",
+        "most important barrier explanation"
+      ],
+      "response": "📌 **Why Skilled Labor Shortage (BAR2) Ranks #1 Among Barriers (RII = 0.810)**\n\n🏗️ **Coimbatore-Specific Reasons:**\n1. **Migrant Labor Dependency:** 60-70% of construction workers are migrants from North/East India who return home seasonally\n2. **High Turnover:** Workers frequently move between sites for marginally higher wages\n3. **No Formal Training:** Most site workers learn through informal 'apprenticeship' — no standardized skill certification\n4. **Language Barriers:** Communication gaps between Tamil supervisors and Hindi/Bengali-speaking workers\n5. **Competition from IT Sector:** Coimbatore's growing tech industry attracts younger workers away from construction\n\n📊 **Survey Evidence:** 78% of respondents rated this barrier as 'Agree' or 'Strongly Agree'\n\n🤖 **ML Confirmation:** SHAP analysis shows BAR2 has the highest negative feature importance, meaning it is the strongest predictor of quality defect risk.",
+      "simple_response": "🔨 **Why is 'Not Enough Workers' the #1 Problem?**\n\nIn Coimbatore, finding skilled construction workers is REALLY hard because:\n\n1. 🚌 Many workers come from far away and go home during festivals\n2. 💰 Workers keep switching jobs for a little more money\n3. 📚 Most workers learned on the job — no proper training\n4. 💻 Young people prefer working in IT companies instead\n\nWithout skilled workers, buildings can have problems! 🏗️⚠️",
+      "sources": [
+        "Chapter 4: RII Results — Table 4.3 Barrier Rankings"
+      ],
+      "followups": [
+        "What are all the barriers?",
+        "What is the #1 CSF?"
+      ]
+    },
+    {
+      "tag": "cross_validation_explained",
+      "patterns": [
+        "what is cross validation",
+        "cross validation",
+        "k-fold",
+        "stratified k-fold",
+        "5-fold cross validation",
+        "cv score",
+        "how is model validated",
+        "model validation method"
+      ],
+      "response": "📌 **5-Fold Stratified Cross-Validation**\n\nCross-validation prevents **overfitting** — when a model memorizes data instead of learning patterns.\n\n📊 **How It Works:**\n1. Split data into **5 equal parts** (folds)\n2. Train on 4 parts, test on the remaining 1\n3. Repeat 5 times (each part gets to be the test set once)\n4. Average the 5 accuracy scores\n\n🎯 **Stratified:** Ensures each fold has the same ratio of positive/negative cases\n\n✅ **In This Study:** XGBoost's CV accuracy closely matches its training accuracy, confirming it generalizes well and is NOT overfitting.",
+      "simple_response": "🔄 **What is Cross-Validation?**\n\nImagine you have a math test. Instead of just studying ONE chapter, you study ALL chapters and test yourself on different ones each time! 📚\n\nThat's what cross-validation does for the computer — it tests itself 5 different ways to make sure it REALLY learned, not just memorized! 🧠\n\nIf it scores well all 5 times, it's truly smart! ✅",
+      "sources": [
+        "Chapter 4: ML Methodology — Cross-Validation"
+      ],
+      "followups": [
+        "What is XGBoost?",
+        "What is the model accuracy?"
+      ]
+    },
+    {
+      "tag": "roc_auc_explained",
+      "patterns": [
+        "what is roc auc",
+        "roc curve",
+        "auc score",
+        "area under curve",
+        "what does auc mean",
+        "roc auc explained",
+        "what is 0.893",
+        "receiver operating characteristic"
+      ],
+      "response": "📌 **ROC-AUC Score**\n\nROC-AUC measures how well the model **distinguishes** between quality compliance and defect risk.\n\n📊 **Scale:**\n- **1.0** = Perfect classifier ✅✅✅\n- **0.9-1.0** = Excellent\n- **0.8-0.9** = Very Good ✅\n- **0.7-0.8** = Good\n- **0.5** = Random guess (useless) ❌\n\n🏆 **XGBoost AUC = 0.893** → Very Good — the model is highly effective at ranking projects by quality risk.\n\n💡 **Interpretation:** If you randomly pick one 'high quality' and one 'defect risk' project, the model correctly identifies which is which **89.3% of the time**.",
+      "simple_response": "📊 **What is AUC?**\n\nAUC tells us: 'How good is the computer at telling apart GOOD projects from BAD projects?'\n\n- **1.0** = Perfect! Gets it right every time! 🎯\n- **0.5** = Just guessing randomly 🎲\n\nOur model scored **0.893** — that's almost 90% accuracy at telling good from bad! That's REALLY good! 🏆",
+      "sources": [
+        "Chapter 4: ML Results — Model Comparison"
+      ],
+      "followups": [
+        "What is cross-validation?",
+        "Why is XGBoost the best?"
+      ]
+    },
+    {
+      "tag": "precision_recall_f1",
+      "patterns": [
+        "what is precision",
+        "what is recall",
+        "what is f1 score",
+        "precision and recall explained",
+        "f1 score meaning",
+        "model metrics",
+        "accuracy vs precision",
+        "true positive",
+        "false positive",
+        "confusion matrix"
+      ],
+      "response": "📌 **ML Evaluation Metrics**\n\n📊 **Precision:** Of all projects predicted as 'High Quality', how many actually were?\n- High precision = Few false alarms\n\n📊 **Recall:** Of all ACTUAL high quality projects, how many did the model catch?\n- High recall = Few missed cases\n\n📊 **F1 Score:** The harmonic mean of Precision and Recall — balances both.\n- F1 = 2 × (Precision × Recall) / (Precision + Recall)\n\n🏆 **XGBoost Results:**\n- Precision: ~0.88\n- Recall: ~0.85\n- F1 Score: ~0.87\n\n💡 **Why F1 matters:** In construction, both false alarms (wasting resources) and missed defects (safety risk) are costly. F1 balances both concerns.",
+      "simple_response": "📊 **What Are These Metrics?**\n\n- **Precision** = When the computer says 'GOOD quality', is it right? (Yes, 88% of the time!)\n- **Recall** = Does it catch ALL the good projects? (Yes, 85%!)\n- **F1 Score** = The overall 'grade' combining both (87%!)\n\nThink of it like a detective:\n- Precision = 'Do I arrest the right people?' 🎯\n- Recall = 'Do I catch ALL the criminals?' 🔍\n- F1 = 'Am I a good detective overall?' 🕵️",
+      "sources": [
+        "Chapter 4: ML Performance Metrics"
+      ],
+      "followups": [
+        "What is ROC-AUC?",
+        "What is cross-validation?"
+      ]
+    },
+    {
+      "tag": "kmeans_clustering",
+      "patterns": [
+        "what is k-means",
+        "k-means clustering",
+        "explain clustering",
+        "project clusters",
+        "what are the 3 clusters",
+        "cluster analysis",
+        "unsupervised learning",
+        "project archetypes",
+        "how are projects grouped",
+        "project grouping"
+      ],
+      "response": "📌 **K-Means Clustering — Project Archetypes**\n\nK-Means automatically groups the 120 respondents into **3 distinct clusters** based on their rating patterns:\n\n🟢 **Cluster 1: High TQM Maturity (Proactive Leaders)** — ~35% of respondents\n- High CSF scores (4.0-4.5), Low Barrier scores\n- These represent organizations with mature quality systems\n\n🟡 **Cluster 2: Moderate TQM Adopters (Transitional)** — ~40% of respondents\n- Medium CSF scores (3.2-3.8), Medium Barrier scores\n- Organizations beginning their TQM journey\n\n🔴 **Cluster 3: Low TQM Adoption (Reactive/High Risk)** — ~25% of respondents\n- Low CSF scores, High Barrier scores (3.5-4.2)\n- These organizations face significant quality challenges\n\n💡 **Strategic Use:** The 4-Tier Framework provides specific recommendations for each cluster archetype.",
+      "simple_response": "👥 **What is Clustering?**\n\nThe computer looked at all 120 people's answers and found they naturally fall into **3 groups**:\n\n🟢 **Group 1: Quality Champions** — Great at quality! (about 35%)\n🟡 **Group 2: Getting Better** — Working on it! (about 40%)\n🔴 **Group 3: Need Help** — Struggling with quality (about 25%)\n\nIt's like sorting students into 'A students', 'B students', and 'needs improvement'! 📊",
+      "sources": [
+        "Chapter 4: ML Results — K-Means Clustering"
+      ],
+      "followups": [
+        "What is XGBoost?",
+        "What is the 4-Tier Framework?"
+      ]
+    },
+    {
+      "tag": "deming_quality_philosophy",
+      "patterns": [
+        "who is deming",
+        "deming quality",
+        "pdca cycle",
+        "plan do check act",
+        "deming wheel",
+        "14 points",
+        "deming 14 points",
+        "quality gurus",
+        "juran",
+        "crosby",
+        "quality pioneers"
+      ],
+      "response": "📌 **Quality Pioneers — The Fathers of TQM**\n\n👨‍🏫 **W. Edwards Deming (1900-1993):**\n- Creator of the PDCA cycle (Plan-Do-Check-Act)\n- His 14 Points for Management transformed Japanese industry\n- Famous quote: 'Quality is everyone's responsibility'\n\n👨‍🏫 **Joseph Juran (1904-2008):**\n- Defined quality as 'fitness for use'\n- Created the Juran Trilogy: Quality Planning → Quality Control → Quality Improvement\n\n👨‍🏫 **Philip Crosby (1926-2001):**\n- Championed 'Zero Defects' philosophy\n- Argued that 'Quality is Free' — the cost of poor quality exceeds prevention costs\n\n🏗️ **In This Study:** These philosophies underpin all 8 CSFs — Top Management (Deming), Customer Focus (Juran), Zero Defects (Crosby).",
+      "simple_response": "👨‍🏫 **Who Started TQM?**\n\nThree super-smart people invented the ideas behind TQM:\n\n1. 🇺🇸 **Deming** — Said 'Plan, Do, Check, Act' (PDCA) — always improve!\n2. 🇺🇸 **Juran** — Said quality means 'works perfectly for the customer'\n3. 🇺🇸 **Crosby** — Said 'Zero Defects' — aim for PERFECT!\n\nThey helped Japan build amazing cars and products in the 1950s! 🚗🇯🇵",
+      "sources": [
+        "Chapter 2: Literature Review — TQM History"
+      ],
+      "followups": [
+        "What is TQM?",
+        "What are the CSFs?"
+      ]
+    },
+    {
+      "tag": "coimbatore_construction_industry",
+      "patterns": [
+        "coimbatore construction",
+        "construction in coimbatore",
+        "coimbatore real estate",
+        "building industry coimbatore",
+        "coimbatore growth",
+        "credai coimbatore",
+        "coimbatore builders"
+      ],
+      "response": "📌 **Coimbatore Construction Industry Overview**\n\n🏗️ **Growth Drivers:**\n- IT corridor development (TIDCO, ELCOT zones)\n- NH bypass and Ring Road expansion\n- Metro Rail planning stage\n- Smart City Mission projects\n- Residential boom: 15,000+ new units annually\n\n🏢 **Key Players:** L&T, Ramky, MARG, local builders (SP Foundation, TVS group housing), CREDAI Coimbatore chapter\n\n⚠️ **Quality Challenges:**\n- Rapid expansion outpacing quality control capacity\n- Migrant labor dependency causing skill gaps\n- Subcontractor fragmentation in small-to-medium projects\n- Deadline pressure from aggressive project timelines\n\n📊 **This Study's Relevance:** Provides data-driven quality recommendations specifically tailored to Coimbatore's unique market dynamics.",
+      "simple_response": "🏗️ **What's Happening in Coimbatore?**\n\nCoimbatore is growing FAST! 🚀\n\n- Lots of new buildings going up\n- Big companies like L&T are building there\n- But they need to make sure quality doesn't suffer!\n\nThis study helps Coimbatore builders do a better job! 🏆",
+      "sources": [
+        "Chapter 1: Regional Context"
+      ],
+      "followups": [
+        "Why Coimbatore?",
+        "What are the barriers in Coimbatore?"
+      ]
+    },
+    {
+      "tag": "how_to_use_this_system",
+      "patterns": [
+        "how to use this app",
+        "how does this website work",
+        "navigation guide",
+        "how to navigate",
+        "where do i find",
+        "help me use this",
+        "user guide",
+        "how to use the dashboard",
+        "app tutorial"
+      ],
+      "response": "📌 **How to Use This System**\n\n📱 **Navigation:**\n- **Dashboard** → Overview of all research results and system health\n- **Factors** → View all 8 CSFs and 8 Barriers with details\n- **FDM** → Expert consensus results using Fuzzy Delphi\n- **Survey** → Manage and view survey responses\n- **Statistics** → RII rankings and descriptive analysis\n- **Reliability** → Cronbach's Alpha results\n- **KMO** → KMO and Bartlett's test results\n- **EFA** → Factor analysis with 4 dimensions\n- **ANOVA** → Group comparison results\n- **Framework** → The 4-Tier TQM Implementation Framework\n- **ML** → Machine Learning model comparison and predictions\n- **XAI** → SHAP explainability analysis\n- **AI Chat** → Ask me anything! (you're here now! 😊)\n\n💡 **Tip:** Each page has an 'Explain Screen' button that asks me to explain what you're looking at!",
+      "simple_response": "📱 **How to Use This App!**\n\nUse the menu on the left to explore different pages:\n\n📊 **Dashboard** — The home page with a summary\n🏗️ **Factors** — See what helps and hurts quality\n🤖 **ML** — See the AI predictions\n💬 **AI Chat** — Talk to me! (you're doing it right now! 😊)\n\nJust click around and explore! Everything is interactive! 🌟",
+      "sources": [
+        "System Documentation"
+      ],
+      "followups": [
+        "What is this project about?",
+        "Explain the dashboard"
+      ]
+    },
+    {
+      "tag": "reliability_interpretation",
+      "patterns": [
+        "is 0.759 good",
+        "is the alpha good enough",
+        "interpret cronbach alpha",
+        "what is a good alpha",
+        "alpha benchmark",
+        "acceptable reliability",
+        "nunnally criterion",
+        "reliability standards"
+      ],
+      "response": "📌 **Interpreting Cronbach's Alpha = 0.759**\n\n📊 **Standard Benchmarks (Nunnally, 1978):**\n- α ≥ 0.90 → Excellent\n- α ≥ 0.80 → Good\n- α ≥ 0.70 → Acceptable ✅ ← Our study\n- α ≥ 0.60 → Questionable\n- α < 0.60 → Poor\n\n✅ **0.759 is ACCEPTABLE** — above the 0.70 threshold recommended for social science research.\n\n💡 **Context:** Alpha tends to be lower when items measure diverse constructs (8 CSFs + 8 Barriers span different domains). An alpha of 0.759 across 16 heterogeneous items is actually quite strong.\n\n📊 **Comparison:** Similar TQM studies report alphas between 0.72-0.85, placing our instrument within the expected range.",
+      "simple_response": "✅ **Is 0.759 Good?**\n\nYes! Think of it like a test score:\n- 90%+ = Excellent\n- 80%+ = Good\n- 70%+ = Acceptable ✅ (That's us!)\n- Below 70% = Not great\n\nOur score of 0.759 means the questionnaire is RELIABLE — we can trust the results! 💪",
+      "sources": [
+        "Chapter 4: Reliability Analysis"
+      ],
+      "followups": [
+        "What is Cronbach's Alpha?",
+        "What is KMO?"
+      ]
+    },
+    {
+      "tag": "kmo_interpretation",
+      "patterns": [
+        "is 0.835 good",
+        "is the kmo good",
+        "interpret kmo",
+        "what is a good kmo",
+        "kmo benchmark",
+        "meritorious kmo",
+        "kmo categories",
+        "kaiser meyer olkin interpretation"
+      ],
+      "response": "📌 **Interpreting KMO = 0.835**\n\n📊 **Kaiser's Classification:**\n- 0.90+ → Marvelous\n- 0.80-0.89 → **Meritorious** ✅ ← Our study\n- 0.70-0.79 → Middling\n- 0.60-0.69 → Mediocre\n- 0.50-0.59 → Miserable\n- Below 0.50 → Unacceptable ❌\n\n🏆 **0.835 = MERITORIOUS** — This means the data is excellently suited for factor analysis.\n\n📊 **Bartlett's Test Complement:** p < 0.001 confirms the correlation matrix is NOT an identity matrix — real correlations exist between variables.\n\n💡 **Together:** KMO + Bartlett's = Green light for EFA! ✅",
+      "simple_response": "📊 **Is 0.835 Good?**\n\nYES! It's rated as 'MERITORIOUS' which means REALLY GOOD! 🏆\n\nThe scale goes:\n- 0.90+ = Marvelous 🌟\n- 0.80+ = Meritorious ✅ (That's us!)\n- 0.70+ = Okay\n- Below 0.50 = Bad ❌\n\nOur data is perfect for advanced analysis! 🎯",
+      "sources": [
+        "Chapter 4: KMO and Bartlett's Test"
+      ],
+      "followups": [
+        "What is KMO?",
+        "What is EFA?"
+      ]
+    },
+    {
+      "tag": "normal_distribution",
+      "patterns": [
+        "normal distribution",
+        "is data normally distributed",
+        "normality test",
+        "bell curve",
+        "skewness",
+        "kurtosis",
+        "shapiro wilk",
+        "data distribution",
+        "parametric assumptions"
+      ],
+      "response": "📌 **Data Distribution**\n\nFor parametric tests (ANOVA, EFA) to be valid, data should be approximately normally distributed.\n\n📊 **Assessment:**\n- **Skewness:** Values within ±2.0 for all variables → Acceptable\n- **Kurtosis:** Values within ±7.0 for all variables → Acceptable\n- With N=120, the Central Limit Theorem ensures sampling distribution normality\n\n✅ **Conclusion:** The data meets normality assumptions sufficiently for the statistical methods used.\n\n💡 **Note:** Perfect normality is rarely achieved in social science data. The large sample (N=120) provides robustness against minor deviations.",
+      "simple_response": "📊 **Is Our Data Well-Behaved?**\n\nFor our math to work, the data should look like a 'bell curve' 🔔 — most answers in the middle, fewer at the extremes.\n\nOur data passes the test! ✅\n\nPlus, with 120 responses, we have enough data that small imperfections don't matter. It's like having a big enough sample of candy to know the average flavor! 🍬",
+      "sources": [
+        "Chapter 4: Descriptive Statistics"
+      ],
+      "followups": [
+        "What is ANOVA?",
+        "What is EFA?"
+      ]
+    },
+    {
+      "tag": "response_rate",
+      "patterns": [
+        "response rate",
+        "how many people responded",
+        "survey completion rate",
+        "what was the response rate",
+        "survey return rate",
+        "how many questionnaires returned"
+      ],
+      "response": "📌 **Survey Response Rate**\n\nApproximately **150 questionnaires** were distributed, and **120 complete responses** were received.\n\n📊 **Response Rate: ~80%** — This is considered VERY HIGH for construction industry surveys, where 40-60% is typical.\n\n✅ **Quality Assurance:** Incomplete questionnaires and responses from non-construction professionals were excluded.\n\n💡 **High response rate** reduces non-response bias and increases the representativeness of findings.",
+      "simple_response": "📊 **How Many People Responded?**\n\n150 surveys were sent out, and **120 came back completed** — that's an 80% response rate!\n\nThat's actually AMAZING for a survey — most surveys only get 40-60% back! 🎯\n\nIt means most people took the time to answer carefully! 👍",
+      "sources": [
+        "Chapter 3: Data Collection"
+      ],
+      "followups": [
+        "What is the sample size?",
+        "Who were the respondents?"
+      ]
+    },
+    {
+      "tag": "sampling_method",
+      "patterns": [
+        "sampling method",
+        "how were respondents selected",
+        "sampling technique",
+        "purposive sampling",
+        "convenience sampling",
+        "random sampling",
+        "stratified sampling",
+        "sampling strategy"
+      ],
+      "response": "📌 **Sampling Strategy**\n\n📊 **Method:** Purposive (Judgmental) Sampling combined with Snowball Sampling\n\n🎯 **Why Purposive?**\n- TQM knowledge requires domain expertise — random sampling from the general public would be meaningless\n- Only verified construction professionals with direct project experience were targeted\n\n🔗 **Snowball Component:**\n- Initial contacts through CREDAI Coimbatore, L&T, and GCT alumni networks\n- Respondents referred colleagues with relevant expertise\n\n✅ **Inclusion Criteria:**\n- Currently working in construction in Coimbatore region\n- Minimum 2+ years of professional experience\n- Direct involvement in project quality management",
+      "simple_response": "👥 **How Were People Chosen?**\n\nWe didn't just pick random people off the street! 🚫\n\nWe specifically looked for:\n- 🏗️ People who actually WORK in construction\n- 👷 People in Coimbatore\n- 📅 People with real experience (2+ years)\n\nWe found them through industry groups and personal connections — like a chain where each person helps find the next! 🔗",
+      "sources": [
+        "Chapter 3: Sampling Strategy"
+      ],
+      "followups": [
+        "What is the sample size?",
+        "What is the response rate?"
+      ]
+    },
+    {
+      "tag": "screen_admin",
+      "patterns": [
+        "Explain the Admin screen",
+        "System settings explanation",
+        "Admin page",
+        "Explain screen admin",
+        "Explain Admin in simple terms"
+      ],
+      "response": "⚙️ **System Settings & Administration Screen**\n\nManage dual-mode database storage (MongoDB Atlas vs local in-memory fallback), clear application caches, inspect system telemetry, and manage factor inventories.",
+      "sources": [
+        "Admin Module",
+        "System Configuration"
+      ],
+      "followups": [
+        "Explain the Account screen",
+        "Explain the Dashboard screen"
+      ],
+      "simple_response": "⚙️ **System Settings (Under the Hood)**\n\nThis is where the engineers tune the engine! You can check if the database is running, clear temporary files, and see how fast the server is responding! 🛠️"
+    },
+    {
+      "tag": "screen_auth",
+      "patterns": [
+        "Explain the Auth screen",
+        "Account and roles explanation",
+        "Login page",
+        "Explain screen auth",
+        "Explain Auth in simple terms",
+        "Explain Account & Roles in simple terms"
+      ],
+      "response": "🔐 **Account & Role-Based Access Control Screen**\n\nSwitch seamlessly between 6 academic research roles (Admin, Researcher, Respondent, Scholar, Expert, Viewer) with pre-configured credentials (password: secret) and JWT token diagnostics.",
+      "sources": [
+        "Authentication Module",
+        "RBAC Security Matrix"
+      ],
+      "followups": [
+        "Explain the Dashboard screen",
+        "Explain the Reports screen"
+      ],
+      "simple_response": "🔐 **Account & Roles (The Keys to the Castle)**\n\nSwitch between different hats with one click! Log in as the Boss (Admin), the Scientist (Researcher), the Builder on site (Respondent), or the Examiner (Viewer) using the magic password: **secret**! 🔑"
+    }
+  ]
+}
