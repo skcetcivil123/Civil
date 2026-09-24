@@ -283,22 +283,142 @@ export const reportsApi = {
 }
 
 export const authApi = {
-  login: (credentials) => API.post('/api/auth/login', credentials).catch(() => ({
-    data: {
-      access_token: 'mock_offline_jwt_token',
-      token_type: 'bearer',
-      user: { username: credentials.username || 'admin', role: 'Admin', full_name: 'Dr. TQM Administrator (Offline Mode)' }
+  login: async (credentials) => {
+    const username = (credentials?.username || '').trim().toLowerCase()
+    const password = (credentials?.password || '').trim()
+
+    // Try online backend first
+    try {
+      const res = await API.post('/api/auth/login', { username, password })
+      if (res?.data?.access_token) {
+        localStorage.setItem('tqm_access_token', res.data.access_token)
+        if (res.data.user) {
+          localStorage.setItem('tqm_current_user', JSON.stringify(res.data.user))
+        }
+        window.dispatchEvent(new CustomEvent('tqm:auth-changed', { detail: res.data.user }))
+        return res
+      }
+    } catch (err) {
+      // If server returned a 401 specifically with a valid detail message, and backend is online
+      if (err.response?.status === 401 && err.response?.data?.detail && !err.isSpaFallback) {
+        throw err
+      }
     }
-  })),
+
+    // Offline / Client-Side Fallback Authentication
+    const DEMO_PROFILES = {
+      admin: {
+        id: 'u_admin', username: 'admin', role: 'Admin',
+        full_name: 'Dr. TQM Administrator', email: 'admin@tqm-research.org', password: 'secret'
+      },
+      researcher: {
+        id: 'u_researcher', username: 'researcher', role: 'Researcher',
+        full_name: 'TQM Research Scholar', email: 'scholar@tqm-research.org', password: 'secret'
+      },
+      respondent: {
+        id: 'u_respondent', username: 'respondent', role: 'Respondent',
+        full_name: 'Er. K. Natarajan (Field Engineer)', email: 'respondent@tqm-coimbatore.org', password: 'secret'
+      },
+      scholar: {
+        id: 'u_scholar', username: 'scholar', role: 'Researcher',
+        full_name: 'TQM Academic Investigator', email: 'scholar@psgtech.ac.in', password: 'secret'
+      },
+      expert: {
+        id: 'u_expert', username: 'expert', role: 'Expert',
+        full_name: 'Chief Engr. R. Ramanathan (FDM Expert)', email: 'expert@tqm-panel.edu', password: 'secret'
+      },
+      viewer: {
+        id: 'u_viewer', username: 'viewer', role: 'Viewer',
+        full_name: 'Academic External Evaluator', email: 'evaluator@aicte-india.org', password: 'secret'
+      }
+    }
+
+    const matched = DEMO_PROFILES[username] || Object.values(DEMO_PROFILES).find(p =>
+      p.username.toLowerCase() === username || p.email.toLowerCase() === username
+    )
+
+    const validPasswords = ['secret', 'admin@123', 'research@123', 'guest@123', 'admin123', 'password', 'secret@123']
+    const isPasswordValid = password && (validPasswords.includes(password.toLowerCase()) || (matched && matched.password === password))
+
+    if (matched && isPasswordValid) {
+      const userObj = {
+        id: matched.id,
+        username: matched.username,
+        full_name: matched.full_name,
+        role: matched.role,
+        email: matched.email,
+        is_active: true
+      }
+      const token = `tqm_jwt_verified_${matched.username}_${Date.now()}`
+      localStorage.setItem('tqm_access_token', token)
+      localStorage.setItem('tqm_current_user', JSON.stringify(userObj))
+      window.dispatchEvent(new CustomEvent('tqm:auth-changed', { detail: userObj }))
+      return {
+        data: {
+          access_token: token,
+          token_type: 'bearer',
+          role: matched.role,
+          user: userObj
+        }
+      }
+    }
+
+    const errMsg = !matched
+      ? `User '${credentials?.username}' not recognized. Please use one of: admin, researcher, respondent, scholar, expert, viewer.`
+      : `Invalid password. Standard password for all accounts is: secret`
+
+    const error = new Error(errMsg)
+    error.response = { data: { detail: errMsg } }
+    throw error
+  },
+
+  me: async () => {
+    const token = localStorage.getItem('tqm_access_token')
+    const savedUserStr = localStorage.getItem('tqm_current_user')
+    const savedUser = savedUserStr ? JSON.parse(savedUserStr) : null
+
+    if (!token) {
+      return { data: null }
+    }
+
+    try {
+      const res = await API.get('/api/auth/me')
+      if (res?.data?.username) {
+        localStorage.setItem('tqm_current_user', JSON.stringify(res.data))
+        return res
+      }
+    } catch {
+      // Offline fallback
+    }
+
+    return {
+      data: savedUser || {
+        id: 'u_researcher',
+        username: 'researcher',
+        role: 'Researcher',
+        full_name: 'TQM Research Scholar',
+        email: 'scholar@tqm-research.org'
+      }
+    }
+  },
+
+  logout: () => {
+    localStorage.removeItem('tqm_access_token')
+    localStorage.removeItem('tqm_current_user')
+    window.dispatchEvent(new CustomEvent('tqm:auth-changed', { detail: null }))
+    return Promise.resolve({ data: { success: true } })
+  },
+
   register: (userData) => API.post('/api/auth/register', userData).catch(() => ({
     data: { success: true, user: userData }
   })),
-  me: () => API.get('/api/auth/me').catch(() => ({
-    data: { username: 'admin', role: 'Admin', full_name: 'Dr. TQM Administrator' }
-  })),
+
   getCredentials: () => cachedGet('/api/auth/credentials', null, 60000, [
-    { role: 'Admin', username: 'admin@tqm.edu', password: 'Admin@123', permissions: 'Full administrative access' },
-    { role: 'Researcher', username: 'researcher@tqm.edu', password: 'Research@123', permissions: 'Statistical modeling & ML' },
-    { role: 'Guest', username: 'guest@tqm.edu', password: 'Guest@123', permissions: 'Read-only dashboard & viva' }
+    { role: 'Admin', username: 'admin', password: 'secret', permissions: 'Full administrative access' },
+    { role: 'Researcher', username: 'researcher', password: 'secret', permissions: 'Statistical modeling & ML' },
+    { role: 'Respondent', username: 'respondent', password: 'secret', permissions: 'Field survey response' },
+    { role: 'Scholar', username: 'scholar', password: 'secret', permissions: 'Academic co-investigation' },
+    { role: 'Expert', username: 'expert', password: 'secret', permissions: 'FDM panel ratings' },
+    { role: 'Viewer', username: 'viewer', password: 'secret', permissions: 'Read-only dashboard & viva' }
   ]),
 }

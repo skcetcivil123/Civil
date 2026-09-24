@@ -369,6 +369,19 @@ const SCREEN_CONTEXTS = {
     ],
     chips: ['Data format details', 'Report generation', 'Export options']
   },
+  '/audit': {
+    title: 'Site Quality Audit & CoQ Optimizer',
+    tag: 'audit',
+    icon: Award,
+    color: '#F97316',
+    summary: 'Construction site quality audit, PAF Cost of Quality financial modeling, and automated CAPA generator.',
+    actions: [
+      { id: 'explain', label: '⚡ Explain Audit & CoQ', desc: 'How site inspection checklist items connect to the 4 EFA dimensions and calculate PAF quality savings', query: 'Explain this screen', icon: Sparkles, bg: '#FFF7ED' },
+      { id: 'paf', label: '💰 PAF Model Details', desc: 'Understanding Prevention, Appraisal, Internal Failure, and External Failure economics in construction', query: 'Explain the PAF Cost of Quality model', icon: FileText, bg: '#EFF6FF' },
+      { id: 'capa', label: '🛠️ AI CAPA Protocols', desc: 'How non-conformance remediation plans are generated for Coimbatore regional construction sites', query: 'How does the AI CAPA generator work?', icon: Award, bg: '#F0FDF4' },
+    ],
+    chips: ['PAF economics', 'Site inspection criteria', 'CAPA generation']
+  },
   '/auth': {
     title: 'Account & Roles',
     tag: 'auth',

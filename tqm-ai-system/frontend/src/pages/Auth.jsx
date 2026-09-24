@@ -121,14 +121,15 @@ export default function Auth() {
     setErrorMsg(null)
     authApi.login({ username: u.trim(), password: p })
       .then(res => {
-        localStorage.setItem('tqm_access_token', res.data.access_token)
-        setCurrentUser(res.data.user)
-        setMessage(`Successfully authenticated as ${res.data.user.full_name} (${res.data.role})!`)
+        const userObj = res.data?.user || res.data
+        const role = res.data?.role || userObj?.role || 'Admin'
+        setCurrentUser(userObj)
+        setMessage(`Successfully authenticated as ${userObj.full_name || userObj.username} (${role})!`)
         setLoading(false)
       })
       .catch(err => {
         setLoading(false)
-        const detail = err.response?.data?.detail || 'Authentication failed. Please check your credentials.'
+        const detail = err.response?.data?.detail || err.message || 'Authentication failed. Please check your credentials.'
         setErrorMsg(detail)
       })
   }
@@ -152,9 +153,9 @@ export default function Auth() {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem('tqm_access_token')
+    authApi.logout()
     setCurrentUser(null)
-    setMessage('Session logged out successfully.')
+    setMessage('Session logged out successfully. You are now in Guest mode.')
     setErrorMsg(null)
   }
 

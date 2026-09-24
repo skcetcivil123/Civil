@@ -26,6 +26,7 @@ import Viva from './pages/Viva'
 import Reports from './pages/Reports'
 import Admin from './pages/Admin'
 import Auth from './pages/Auth'
+import QualityAudit from './pages/QualityAudit'
 import ComingSoon from './pages/ComingSoon'
 import AIAssistantDrawer from './components/AIAssistantDrawer'
 import { 
@@ -108,6 +109,7 @@ export default function App() {
               <Route path="/viva" element={<Viva />} />
 
               {/* Reports & Governance */}
+              <Route path="/audit" element={<QualityAudit />} />
               <Route path="/reports" element={<Reports />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/auth" element={<Auth />} />

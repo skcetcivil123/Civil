@@ -197,11 +197,16 @@ body {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 .nav-item.active .nav-item-icon,
 .nav-item:hover .nav-item-icon {
   opacity: 1;
+  transform: scale(1.08);
 }
 .nav-item-disabled {
   opacity: 0.4;
@@ -456,6 +461,7 @@ body {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 9px 18px;
   border-radius: var(--radius-md);

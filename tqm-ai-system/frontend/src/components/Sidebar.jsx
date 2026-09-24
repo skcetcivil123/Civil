@@ -9,7 +9,7 @@ import {
   LayoutDashboard, BookOpen, Users, Calculator, ClipboardList,
   FileSpreadsheet, BarChart2, ShieldCheck, CheckCircle2, Layers,
   Award, Lightbulb, BrainCircuit, Sparkles, MessageSquare,
-  GraduationCap, FileText, Settings, User
+  GraduationCap, FileText, Settings, User, ClipboardCheck
 } from 'lucide-react'
 
 const NAV = [
@@ -44,6 +44,7 @@ const NAV = [
     items: [
       { to: '/framework',       label: '4-Tier TQM Framework', icon: Award },
       { to: '/recommendations', label: 'Action Roadmaps',      icon: Lightbulb },
+      { to: '/audit',           label: 'Site Audit & CoQ Model', icon: ClipboardCheck },
       { to: '/ml',              label: 'Predictive ML Models', icon: BrainCircuit },
       { to: '/xai',             label: 'SHAP Explainability',  icon: Sparkles },
     ]
@@ -84,9 +85,14 @@ export default function Sidebar({ open, onClose }) {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    authApi.me()
-      .then(res => setUser(res.data))
-      .catch(() => setUser(null))
+    const updateUser = () => {
+      authApi.me()
+        .then(res => setUser(res.data))
+        .catch(() => setUser(null))
+    }
+    updateUser()
+    window.addEventListener('tqm:auth-changed', updateUser)
+    return () => window.removeEventListener('tqm:auth-changed', updateUser)
   }, [])
 
   return (

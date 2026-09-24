@@ -24,6 +24,7 @@ const ROUTE_META = {
   '/models':         { title: 'Model Comparison',      subtitle: 'Compare predictive model performance' },
   '/xai':            { title: 'Model Explanation',     subtitle: 'SHAP — understand factor contributions' },
   '/recommendations':{ title: 'Recommendations',       subtitle: 'Evidence-based TQM improvement actions' },
+  '/audit':          { title: 'Site Audit & CoQ Model',subtitle: 'Site inspection checklist, PAF economic model, and CAPA generator' },
   '/chatbot':        { title: 'Research Assistant',    subtitle: 'Ask questions about the project and methodology' },
   '/viva':           { title: 'Viva Practice',         subtitle: 'Test your understanding of the research' },
   '/reports':        { title: 'Reports',               subtitle: 'Generate and download research reports' },
