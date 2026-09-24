@@ -475,8 +475,22 @@ class Repository:
     # ── Users & Auth ──
     @staticmethod
     async def get_user_by_username(username: str) -> Optional[Dict[str, Any]]:
+        uname = (username or '').lower().strip()
+        if not uname:
+            return None
+
+        if await Repository.is_mongo_available():
+            try:
+                db = get_db()
+                doc = await db[col.USERS].find_one({"$or": [{"username": uname}, {"email": uname}]})
+                if doc:
+                    doc["id"] = str(doc.get("_id", doc.get("id")))
+                    return doc
+            except Exception as e:
+                logger.warning(f"Mongo error on get_user: {e}")
+
         for u in _mem_store.users.values():
-            if u["username"].lower() == username.lower():
+            if u["username"].lower() == uname or u.get("email", "").lower() == uname:
                 return u
         return None
 

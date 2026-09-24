@@ -22,8 +22,8 @@ def get_async_client() -> motor.motor_asyncio.AsyncIOMotorClient:
     if _async_client is None:
         _async_client = motor.motor_asyncio.AsyncIOMotorClient(
             settings.mongodb_uri,
-            serverSelectionTimeoutMS=500,
-            connectTimeoutMS=500,
+            serverSelectionTimeoutMS=5000,
+            connectTimeoutMS=5000,
         )
     return _async_client
 
@@ -42,11 +42,11 @@ _ping_cache = {"result": None, "checked_at": 0.0}
 async def ping_db(force: bool = False) -> dict:
     """
     Ping MongoDB and return a status dict.
-    Cached for 60 seconds to guarantee sub-millisecond responses when offline.
+    Cached for fast responses.
     """
     global _ping_cache
     now = time.time()
-    ttl = 60.0 if (_ping_cache["result"] and _ping_cache["result"].get("mongodb") == "connected") else 300.0
+    ttl = 30.0 if (_ping_cache["result"] and _ping_cache["result"].get("mongodb") == "connected") else 10.0
     if not force and _ping_cache["result"] is not None and (now - _ping_cache["checked_at"] < ttl):
         return _ping_cache["result"]
 

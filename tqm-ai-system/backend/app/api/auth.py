@@ -118,20 +118,28 @@ async def login(payload: UserLogin):
     user = await Repository.get_user_by_username(username_lower)
     
     # Check against demo profiles if not found in db
-    if not user and username_lower in DEMO_PROFILES:
-        user = DEMO_PROFILES[username_lower]
+    if not user:
+        for p in DEMO_PROFILES.values():
+            if p["username"].lower() == username_lower or p.get("email", "").lower() == username_lower or username_lower.startswith(p["username"].lower()):
+                user = p
+                break
 
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail=f"User '{payload.username}' not found. Please use one of the demo accounts: admin, researcher, respondent, scholar, expert, viewer (password: secret)."
+            detail=f"User '{payload.username}' not found. Please use one of the demo accounts: admin, researcher, respondent, scholar, expert, viewer (password: secret or Admin@123)."
         )
 
     # Password validation:
-    # 1. Standard demo password "secret" or "<role>123" or "password"
+    # 1. Standard demo passwords: secret, Admin@123, Research@123, Guest@123, admin123, password
     # 2. Or bcrypt hash match if stored
     valid_password = False
-    if payload.password in ["secret", f"{username_lower}123", "password", "admin123"]:
+    accepted_passwords = [
+        "secret", "admin@123", "research@123", "guest@123", "secret@123",
+        "admin123", "password", f"{username_lower}123",
+        user.get("password", "").lower()
+    ]
+    if payload.password.lower() in [p.lower() for p in accepted_passwords if p]:
         valid_password = True
     elif user.get("password_hash"):
         try:
@@ -142,7 +150,7 @@ async def login(payload: UserLogin):
     if not valid_password:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid password. The standard password for all accounts is: secret"
+            detail="Invalid password. The standard password for all accounts is: secret (or Admin@123)"
         )
 
     token = create_access_token(data={"sub": user["username"], "role": user.get("role", "Viewer")})
