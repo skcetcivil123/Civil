@@ -82,10 +82,21 @@ export default function Reports() {
         title="Research Reports & Dataset Exports"
         subtitle="Download academic reports, statistical summaries, and the raw 120-respondent survey dataset."
         action={
-          <button className="btn btn-primary" onClick={handleDownloadCsv}>
-            <Download size={15} style={{ marginRight: 6 }} />
-            Export Raw CSV Data (N=120)
-          </button>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <a
+              href="/TQM_AI_Decision_Support_System_Complete_Guide.pdf"
+              download="TQM_AI_Decision_Support_System_Complete_Guide.pdf"
+              className="btn btn-primary"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}
+            >
+              <FileText size={15} />
+              Download Illustrated PDF Guide
+            </a>
+            <button className="btn btn-ghost" onClick={handleDownloadCsv} style={{ border: '1px solid var(--border)' }}>
+              <Download size={15} style={{ marginRight: 6 }} />
+              Export Raw CSV Data (N=120)
+            </button>
+          </div>
         }
       />
 
