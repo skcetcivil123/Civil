@@ -1,0 +1,9 @@
+{
+  "name": "civil-tqm-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix tqm-ai-system/frontend run build",
+    "vercel-build": "npm --prefix tqm-ai-system/frontend install && npm --prefix tqm-ai-system/frontend run build"
+  }
+}
