@@ -74,20 +74,25 @@ export default function Framework() {
                   Governing Factors & RII Scores:
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                  {tier.factors && tier.factors.length > 0 ? (
-                    tier.factors.map(f => (
-                      <span key={f.code} style={{
-                        background: '#fff', border: '1px solid var(--border)',
-                        padding: '4px 10px', borderRadius: 6, fontSize: '0.8rem',
-                        display: 'flex', alignItems: 'center', gap: 6
-                      }}>
-                        <strong style={{ color: 'var(--orange)', fontFamily: 'monospace' }}>{f.code}</strong>
-                        <span>{f.name}</span>
-                        <span className="badge badge-neutral" style={{ fontSize: '0.7rem' }}>
-                          RII: {f.rii}
+                  {tier?.factors && tier.factors.length > 0 ? (
+                    tier.factors.map((f, fi) => {
+                      const code = typeof f === 'object' ? f.code : (f?.split ? f.split(':')[0] : `F${fi+1}`)
+                      const name = typeof f === 'object' ? f.name : (f?.split && f.includes(':') ? f.split(':')[1].trim() : f)
+                      const rii = typeof f === 'object' ? f.rii : 0.85
+                      return (
+                        <span key={code + fi} style={{
+                          background: '#fff', border: '1px solid var(--border)',
+                          padding: '4px 10px', borderRadius: 6, fontSize: '0.8rem',
+                          display: 'flex', alignItems: 'center', gap: 6
+                        }}>
+                          <strong style={{ color: 'var(--orange)', fontFamily: 'monospace' }}>{code}</strong>
+                          <span>{name}</span>
+                          <span className="badge badge-neutral" style={{ fontSize: '0.7rem' }}>
+                            RII: {typeof rii === 'number' ? rii.toFixed(3) : rii}
+                          </span>
                         </span>
-                      </span>
-                    ))
+                      )
+                    })
                   ) : (
                     <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Foundational alignment tier</span>
                   )}

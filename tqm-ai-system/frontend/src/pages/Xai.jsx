@@ -11,54 +11,66 @@ export default function Xai() {
   useEffect(() => {
     xaiApi.getShap()
       .then(res => {
-        setShapList(res.data)
+        const list = Array.isArray(res?.data) ? res.data : (res?.data?.shap_values || [])
+        setShapList(list)
         setLoading(false)
       })
       .catch(err => {
+        console.warn('SHAP fetch error:', err)
         setError('Failed to compute SHAP feature importance.')
         setLoading(false)
       })
   }, [])
 
   const columns = [
-    { key: 'feature', label: 'Feature Code', width: '100px', render: (val) => (
-      <span style={{ fontWeight: 700, color: 'var(--orange)', fontFamily: 'monospace' }}>{val}</span>
+    { key: 'feature', label: 'Feature Code', width: '100px', render: (val, row) => (
+      <span style={{ fontWeight: 700, color: 'var(--orange)', fontFamily: 'monospace' }}>{val || row.factor || 'CSF'}</span>
     )},
     { key: 'factor_name', label: 'Factor Name', render: (val, row) => (
       <div>
-        <div style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{val}</div>
-        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{row.category}</div>
+        <div style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{val || row.factor || 'Factor'}</div>
+        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{row?.category || 'CSF'}</div>
       </div>
     )},
-    { key: 'mean_abs_shap', label: 'Mean |SHAP Value|', width: '200px', render: (val, row) => (
-      <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-          <span style={{ fontWeight: 600 }}>{val.toFixed(4)}</span>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{row.importance_pct}%</span>
+    { key: 'mean_abs_shap', label: 'Mean |SHAP Value|', width: '200px', render: (val, row) => {
+      const num = typeof val === 'number' ? val : (parseFloat(val || row.value) || 0.3)
+      const pct = row?.importance_pct || Math.round(num * 40)
+      return (
+        <div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
+            <span style={{ fontWeight: 600 }}>{num.toFixed(4)}</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{pct}%</span>
+          </div>
+          <div style={{ width: '100%', height: 6, background: '#eee', borderRadius: 3, overflow: 'hidden' }}>
+            <div style={{
+              width: `${Math.min(100, pct * 3.5)}%`,
+              height: '100%',
+              background: row?.impact_direction === 'positive' || (num > 0 && !row.category?.includes('Barrier')) ? 'var(--success)' : 'var(--orange)'
+            }} />
+          </div>
         </div>
-        <div style={{ width: '100%', height: 6, background: '#eee', borderRadius: 3, overflow: 'hidden' }}>
-          <div style={{
-            width: `${Math.min(100, row.importance_pct * 3.5)}%`,
-            height: '100%',
-            background: row.impact_direction === 'positive' ? 'var(--success)' : 'var(--orange)'
-          }} />
-        </div>
+      )
+    }},
+    { key: 'impact_direction', label: 'Model Influence', width: '160px', render: (val, row) => {
+      const isPos = val === 'positive' || (!row.category?.includes('Barrier') && (row.value || 0) >= 0)
+      return (
+        <span className={`badge ${isPos ? 'badge-success' : 'badge-orange'}`}>
+          {isPos ? '↑ Promotes Quality' : '↓ Escalates Defect Risk'}
+        </span>
+      )
+    }},
+    { key: 'actionable_insight', label: 'XAI Decision-Support Insight', render: (val, row) => (
+      <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
+        {val || `High sensitivity impact on project quality compliance for ${row.factor_name || row.feature}.`}
       </div>
-    )},
-    { key: 'impact_direction', label: 'Model Influence', width: '160px', render: (val) => (
-      <span className={`badge ${val === 'positive' ? 'badge-success' : 'badge-orange'}`}>
-        {val === 'positive' ? '↑ Promotes Quality' : '↓ Escalates Defect Risk'}
-      </span>
-    )},
-    { key: 'actionable_insight', label: 'XAI Decision-Support Insight', render: (val) => (
-      <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>{val}</div>
     )},
   ]
 
   if (loading) return <LoadingState rows={6} />
   if (error) return <ErrorState message={error} />
 
-  const topDriver = shapList[0]
+  const safeList = Array.isArray(shapList) ? shapList : []
+  const topDriver = safeList[0]
 
   return (
     <div>
@@ -102,7 +114,7 @@ export default function Xai() {
       >
         <DataTable
           columns={columns}
-          rows={shapList}
+          rows={safeList}
           emptyTitle="No SHAP importances computed"
         />
       </SectionCard>

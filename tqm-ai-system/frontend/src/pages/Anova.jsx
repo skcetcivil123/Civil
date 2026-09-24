@@ -13,10 +13,12 @@ export default function Anova() {
     setLoading(true)
     statisticsApi.getANOVA(group)
       .then(res => {
-        setAnovaList(res.data)
+        const list = Array.isArray(res?.data) ? res.data : (res?.data?.anova_results || res?.data?.results || [])
+        setAnovaList(list)
         setLoading(false)
       })
       .catch(err => {
+        console.warn('ANOVA fetch error:', err)
         setError('Failed to compute ANOVA.')
         setLoading(false)
       })
@@ -26,8 +28,9 @@ export default function Anova() {
     fetchAnova(groupBy)
   }, [groupBy])
 
-  const significantCount = anovaList.filter(a => a.is_significant).length
-  const consensusCount = anovaList.length - significantCount
+  const safeList = Array.isArray(anovaList) ? anovaList : []
+  const significantCount = safeList.filter(a => a?.is_significant).length
+  const consensusCount = safeList.length - significantCount
 
   const columns = [
     { key: 'factor_code', label: 'Code', width: '90px', render: (val) => (

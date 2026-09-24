@@ -13,18 +13,22 @@ export default function Statistics() {
   useEffect(() => {
     Promise.all([statisticsApi.getDescriptive(), statisticsApi.getRII()])
       .then(([descRes, riiRes]) => {
-        setDescriptive(descRes.data)
-        setRiiList(riiRes.data)
+        const dList = Array.isArray(descRes?.data) ? descRes.data : (descRes?.data?.data || [])
+        const rList = Array.isArray(riiRes?.data) ? riiRes.data : (riiRes?.data?.data || [])
+        setDescriptive(dList)
+        setRiiList(rList)
         setLoading(false)
       })
       .catch(err => {
+        console.warn('Statistics fetch error:', err)
         setError('Failed to compute statistical data.')
         setLoading(false)
       })
   }, [])
 
-  const topCSF = riiList.find(r => r.category === 'CSF')
-  const topBarrier = riiList.find(r => r.category === 'Barrier')
+  const safeRiiList = Array.isArray(riiList) ? riiList : []
+  const topCSF = safeRiiList.find(r => r?.category === 'CSF') || safeRiiList[0]
+  const topBarrier = safeRiiList.find(r => r?.category === 'Barrier')
 
   const riiColumns = [
     { key: 'rank', label: 'Rank', width: '80px', render: (val) => (
@@ -50,17 +54,20 @@ export default function Statistics() {
         {val === 'CSF' ? 'Success Factor' : 'Barrier'}
       </span>
     )},
-    { key: 'rii', label: 'Relative Importance Index (RII)', width: '220px', render: (val) => (
-      <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-          <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{val.toFixed(4)}</span>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{(val * 100).toFixed(1)}%</span>
+    { key: 'rii', label: 'Relative Importance Index (RII)', width: '220px', render: (val) => {
+      const num = typeof val === 'number' ? val : (parseFloat(val) || 0)
+      return (
+        <div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
+            <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{num.toFixed(4)}</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{(num * 100).toFixed(1)}%</span>
+          </div>
+          <div style={{ width: '100%', height: 6, background: '#eee', borderRadius: 3, overflow: 'hidden' }}>
+            <div style={{ width: `${Math.min(100, num * 100)}%`, height: '100%', background: 'var(--orange)' }} />
+          </div>
         </div>
-        <div style={{ width: '100%', height: 6, background: '#eee', borderRadius: 3, overflow: 'hidden' }}>
-          <div style={{ width: `${val * 100}%`, height: '100%', background: 'var(--orange)' }} />
-        </div>
-      </div>
-    )},
+      )
+    }},
     { key: 'tier', label: 'Priority Tier', width: '130px', render: (val) => {
       const cls = val === 'High' ? 'badge-success' : val === 'Medium-High' ? 'badge-orange' : 'badge-neutral'
       return <span className={`badge ${cls}`}>{val}</span>

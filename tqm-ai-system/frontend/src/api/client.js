@@ -14,8 +14,11 @@ import {
   OFFLINE_ANOVA,
   OFFLINE_FRAMEWORK,
   OFFLINE_MODELS,
+  OFFLINE_CLUSTERS,
   OFFLINE_SHAP,
-  OFFLINE_RESPONSES
+  OFFLINE_RESPONSES,
+  OFFLINE_RECOMMENDATIONS,
+  OFFLINE_REPORT_SUMMARY
 } from '../offline/offlineData'
 
 const API = axios.create({
@@ -35,9 +38,24 @@ API.interceptors.request.use((config) => {
   return config
 })
 
-// Response interceptor: handle 401 globally
+// Response interceptor: handle 401 globally and intercept Vercel SPA HTML rewrite fallbacks
 API.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    // If the server returned HTML instead of JSON for an API request (e.g. Vercel SPA routing returned index.html)
+    const contentType = response.headers?.['content-type'] || ''
+    const isHtml = typeof response.data === 'string' && (
+      response.data.includes('<!doctype html') ||
+      response.data.includes('<!DOCTYPE html') ||
+      response.data.includes('<html')
+    )
+    if (contentType.includes('text/html') || isHtml) {
+      const err = new Error('Backend returned HTML (SPA fallback), redirecting to offline dataset')
+      err.isSpaFallback = true
+      err.response = response
+      return Promise.reject(err)
+    }
+    return response
+  },
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('tqm_access_token')
@@ -64,6 +82,9 @@ function cachedGet(url, params = null, ttlMs = 60000, fallback = null) {
   }
   return API.get(url, params ? { params } : {})
     .then(res => {
+      if (typeof res?.data === 'string' && (res.data.includes('<!doctype') || res.data.includes('<html'))) {
+        throw new Error('Server returned HTML instead of JSON')
+      }
       memoryCache.set(cacheKey, { time: Date.now(), response: res })
       return res
     })
@@ -197,13 +218,7 @@ export const statisticsApi = {
 }
 
 export const mlApi = {
-  getClusters: (nClusters = 3) => cachedGet('/api/ml/clusters', { n_clusters: nClusters }, 60000, {
-    clusters: [
-      { id: 1, label: "High Quality Maturity", percent: 28, description: "Firms with formal QA/QC policies and active top management commitment." },
-      { id: 2, label: "Moderate Maturity", percent: 47, description: "Mid-tier contractors with standard checklists but skilled labor shortages." },
-      { id: 3, label: "At-Risk / Low Maturity", percent: 25, description: "Firms with subcontractor fragmentation and reactive inspection habits." }
-    ]
-  }),
+  getClusters: (nClusters = 3) => cachedGet('/api/ml/clusters', { n_clusters: nClusters }, 60000, OFFLINE_CLUSTERS),
   getModels: () => cachedGet('/api/ml/models', null, 60000, OFFLINE_MODELS),
   predict: (data) => API.post('/api/ml/predict', data).catch(() => ({
     data: {
@@ -228,12 +243,7 @@ export const xaiApi = {
 }
 
 export const recommendationsApi = {
-  getAll: () => cachedGet('/api/recommendations', null, 60000, [
-    { id: 'rec_1', phase: 'Months 1-3', title: 'Governance & Budget Allocation', detail: 'Ring-fence 1.5-2.0% of total project budget specifically for quality assurance and appoint certified Quality Officers with non-negotiable stop-pour authority.' },
-    { id: 'rec_2', phase: 'Months 4-6', title: 'Workforce Certification', detail: 'Establish mandatory 3-day mason and bar-bending skill certification programs and implement a buddy mentoring system for migrant laborers.' },
-    { id: 'rec_3', phase: 'Months 7-9', title: 'Process Digitization & Audits', detail: 'Deploy mobile digital QA checklists and shift subcontractor tendering from lowest-bidder (L1) to Quality-Cost Based Selection (QCBS).' },
-    { id: 'rec_4', phase: 'Months 10-12', title: 'Quality Culture & Kaizen', detail: 'Introduce monthly zero-defect site contractor recognition bonuses and benchmark against ISO 9001:2015 standards.' }
-  ]),
+  getAll: () => cachedGet('/api/recommendations', null, 60000, OFFLINE_RECOMMENDATIONS),
 }
 
 // ── 100% Offline AI Chatbot & Viva Voce Simulator ───────────────────────────
@@ -268,16 +278,7 @@ export const chatbotApi = {
 }
 
 export const reportsApi = {
-  getSummary: () => cachedGet('/api/reports/summary', null, 60000, {
-    project_title: "An Empirical Assessment of TQM Implementation in Construction Projects Using FDM and Statistical Analysis",
-    sample_size: 120,
-    experts_count: 10,
-    factors_count: 16,
-    cronbach_alpha: 0.759,
-    kmo: 0.835,
-    efa_variance: 59.9,
-    xgboost_accuracy: 86.7
-  }),
+  getSummary: () => cachedGet('/api/reports/summary', null, 60000, OFFLINE_REPORT_SUMMARY),
   getExportCsvUrl: () => '/api/reports/export/csv',
 }
 

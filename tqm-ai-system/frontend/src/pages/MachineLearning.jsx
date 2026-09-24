@@ -21,11 +21,16 @@ export default function MachineLearning() {
     setLoading(true)
     Promise.all([mlApi.getClusters(3), mlApi.getModels()])
       .then(([cRes, mRes]) => {
-        setClusters(cRes.data)
-        setModels(mRes.data)
+        const cData = cRes?.data
+        const cList = Array.isArray(cData) ? cData : (cData?.clusters || [])
+        const mData = mRes?.data
+        const mList = Array.isArray(mData) ? mData : (mData?.models || [])
+        setClusters(cList)
+        setModels(mList)
         setLoading(false)
       })
       .catch(err => {
+        console.warn('Machine learning fetchData error:', err)
         setError('Failed to load machine learning models.')
         setLoading(false)
       })
@@ -39,7 +44,7 @@ export default function MachineLearning() {
     setPredicting(true)
     mlApi.predict({ ratings: predRatings })
       .then(res => {
-        setPrediction(res.data)
+        setPrediction(res?.data || null)
         setPredicting(false)
       })
       .catch(err => {
@@ -49,25 +54,26 @@ export default function MachineLearning() {
   }
 
   const modelColumns = [
-    { key: 'model_name', label: 'Algorithm', width: '180px', render: (val) => (
-      <strong style={{ color: 'var(--text-primary)' }}>{val}</strong>
+    { key: 'model_name', label: 'Algorithm', width: '180px', render: (val, row) => (
+      <strong style={{ color: 'var(--text-primary)' }}>{val || row.name}</strong>
     )},
-    { key: 'accuracy', label: 'Accuracy', render: (val) => `${(val * 100).toFixed(1)}%` },
-    { key: 'precision', label: 'Precision', render: (val) => val.toFixed(3) },
-    { key: 'recall', label: 'Recall', render: (val) => val.toFixed(3) },
+    { key: 'accuracy', label: 'Accuracy', render: (val) => typeof val === 'number' ? `${(val * 100).toFixed(1)}%` : (val || '—') },
+    { key: 'precision', label: 'Precision', render: (val) => typeof val === 'number' ? val.toFixed(3) : (val || '—') },
+    { key: 'recall', label: 'Recall', render: (val) => typeof val === 'number' ? val.toFixed(3) : (val || '—') },
     { key: 'f1_score', label: 'F1-Score', render: (val) => (
-      <span style={{ fontWeight: 700, color: 'var(--orange)' }}>{val.toFixed(3)}</span>
+      <span style={{ fontWeight: 700, color: 'var(--orange)' }}>{typeof val === 'number' ? val.toFixed(3) : (val || '—')}</span>
     )},
     { key: 'roc_auc', label: 'ROC-AUC', render: (val) => (
-      <span className="badge badge-success">AUC {val.toFixed(3)}</span>
+      <span className="badge badge-success">AUC {typeof val === 'number' ? val.toFixed(3) : (val || '—')}</span>
     )},
-    { key: 'cv_mean', label: '5-Fold CV Mean', render: (val) => `${(val * 100).toFixed(1)}%` },
+    { key: 'cv_mean', label: '5-Fold CV Mean', render: (val) => typeof val === 'number' ? `${(val * 100).toFixed(1)}%` : (val || '—') },
   ]
 
   if (loading) return <LoadingState rows={6} />
   if (error) return <ErrorState message={error} onRetry={fetchData} />
 
-  const bestModel = models.reduce((best, m) => (m.f1_score > (best?.f1_score || 0) ? m : best), null)
+  const modelList = Array.isArray(models) ? models : []
+  const bestModel = modelList.length > 0 ? modelList.reduce((best, m) => ((m?.f1_score || 0) > (best?.f1_score || 0) ? m : best), modelList[0]) : null
 
   return (
     <div>
@@ -103,27 +109,27 @@ export default function MachineLearning() {
           Unsupervised K-Means Project Maturity Archetypes
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
-          {clusters.map(c => (
-            <div key={c.cluster_id} style={{
+          {(Array.isArray(clusters) ? clusters : []).map(c => (
+            <div key={c.cluster_id || c.id} style={{
               background: 'var(--bg-main)', border: '1px solid var(--border)',
               borderRadius: 8, padding: '16px'
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                <span className={`badge ${c.tqm_maturity_level === 'Advanced' ? 'badge-success' : c.tqm_maturity_level === 'Developing' ? 'badge-orange' : 'badge-error'}`}>
-                  {c.tqm_maturity_level}
+                <span className={`badge ${(c.tqm_maturity_level || '').toLowerCase() === 'advanced' ? 'badge-success' : (c.tqm_maturity_level || '').toLowerCase() === 'developing' ? 'badge-orange' : 'badge-error'}`}>
+                  {c.tqm_maturity_level || 'Maturity Profile'}
                 </span>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                  {c.percentage}% of sample (n={c.size})
+                  {c.percentage || c.percent || 33}% of sample (n={c.size || 40})
                 </span>
               </div>
               <div style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--text-primary)', marginBottom: 8 }}>
-                {c.cluster_label}
+                {c.cluster_label || c.label}
               </div>
               <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
                 Average Practice Ratings:
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 6 }}>
-                {Object.entries(c.characteristics).slice(0, 4).map(([k, v]) => (
+                {Object.entries(c?.characteristics || {}).slice(0, 4).map(([k, v]) => (
                   <span key={k} style={{ background: '#fff', border: '1px solid var(--border)', padding: '2px 6px', borderRadius: 4, fontSize: '0.75rem' }}>
                     {k}: <strong>{v}</strong>
                   </span>

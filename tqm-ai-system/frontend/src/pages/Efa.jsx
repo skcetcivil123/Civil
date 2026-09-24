@@ -119,7 +119,7 @@ export default function Efa() {
       >
         <DataTable
           columns={columns}
-          rows={efaData?.loadings_matrix || []}
+          rows={efaData?.loadings_matrix || efaData?.factor_loadings || []}
           emptyTitle="No factor loadings matrix"
         />
       </SectionCard>

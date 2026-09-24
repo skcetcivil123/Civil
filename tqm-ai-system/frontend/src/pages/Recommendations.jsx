@@ -12,10 +12,12 @@ export default function Recommendations() {
   useEffect(() => {
     recommendationsApi.getAll()
       .then(res => {
-        setRecommendations(res.data)
+        const recList = Array.isArray(res?.data) ? res.data : (res?.data?.recommendations || [])
+        setRecommendations(recList)
         setLoading(false)
       })
       .catch(err => {
+        console.warn('Recommendations fetch error:', err)
         setError('Failed to load recommendations.')
         setLoading(false)
       })
@@ -24,9 +26,10 @@ export default function Recommendations() {
   if (loading) return <LoadingState rows={6} />
   if (error) return <ErrorState message={error} />
 
+  const recList = Array.isArray(recommendations) ? recommendations : []
   const filtered = filterUrgency === 'ALL'
-    ? recommendations
-    : recommendations.filter(r => r.urgency.toLowerCase().includes(filterUrgency.toLowerCase()))
+    ? recList
+    : recList.filter(r => (r?.urgency || '').toLowerCase().includes(filterUrgency.toLowerCase()))
 
   return (
     <div>
@@ -81,7 +84,7 @@ export default function Recommendations() {
                 Implementation Action Checklist:
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                {rec.action_items.map((act, i) => (
+                {(rec.action_items || []).map((act, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: '0.84rem', color: 'var(--text-primary)' }}>
                     <CheckCircle2 size={15} color="var(--success)" style={{ flexShrink: 0, marginTop: 3 }} />
                     <span>{act}</span>
