@@ -272,20 +272,26 @@ export default function Survey() {
                       </div>
                       <div style={{ fontSize: '0.875rem', color: 'var(--text-primary)', marginBottom: 10 }}>{qText}</div>
 
-                      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                        {[1, 2, 3, 4, 5].map(ratingVal => (
-                          <label key={ratingVal} style={{ display: 'flex', alignItems: 'center', gap: 4, cursor: 'pointer', fontSize: '0.85rem' }}>
-                            <input
-                              type="radio"
-                              name={`rating_${code}`}
-                              value={ratingVal}
-                              checked={ratings[code] === ratingVal}
-                              onChange={() => handleRatingChange(code, ratingVal)}
-                              style={{ accentColor: 'var(--orange)' }}
-                            />
-                            <span>{ratingVal}</span>
-                          </label>
-                        ))}
+                      <div className="likert-rating-group">
+                        {[1, 2, 3, 4, 5].map(ratingVal => {
+                          const isSelected = ratings[code] === ratingVal
+                          return (
+                            <label
+                              key={ratingVal}
+                              className={`likert-rating-tile ${isSelected ? 'selected' : ''}`}
+                            >
+                              <input
+                                type="radio"
+                                name={`rating_${code}`}
+                                value={ratingVal}
+                                checked={isSelected}
+                                onChange={() => handleRatingChange(code, ratingVal)}
+                                style={{ accentColor: 'var(--orange)' }}
+                              />
+                              <span className="rating-num">{ratingVal}</span>
+                            </label>
+                          )
+                        })}
                       </div>
                     </div>
                   )
@@ -293,25 +299,13 @@ export default function Survey() {
               </div>
             </div>
 
-            <div style={{
-              marginTop: 32,
-              marginBottom: 48,
-              padding: '20px 24px',
-              background: 'var(--bg-card)',
-              borderRadius: 'var(--radius)',
-              border: '1px solid var(--border)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: 16
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div className="survey-submit-bar">
+              <div className="survey-submit-actions">
                 <button
                   type="submit"
                   className="btn btn-primary"
                   disabled={submitting}
-                  style={{ padding: '12px 28px', fontSize: '0.95rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                  style={{ padding: '12px 24px', fontSize: '0.92rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 8 }}
                 >
                   <Send size={16} />
                   {submitting ? 'Submitting...' : 'Submit Questionnaire Response'}
@@ -320,7 +314,7 @@ export default function Survey() {
                   Cancel
                 </button>
               </div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+              <div className="survey-submit-note">
                 Responses are anonymously validated and recorded into the empirical N=120 dataset.
               </div>
             </div>

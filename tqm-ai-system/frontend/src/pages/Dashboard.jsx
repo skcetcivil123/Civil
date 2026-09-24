@@ -100,11 +100,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── Key metrics ── */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-        gap: 16, marginBottom: 28
-      }}>
+      <div className="stat-grid" style={{ marginBottom: 28 }}>
         <StatCard
           icon={BookOpen}
           label="Total Factors"
@@ -144,12 +140,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── Two-column layout ── */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'minmax(0, 360px) minmax(0, 1fr)',
-        gap: 20, marginBottom: 20,
-        alignItems: 'start',
-      }}>
+      <div className="dashboard-main-grid">
 
         {/* Research pipeline */}
         <SectionCard

@@ -503,8 +503,9 @@ export default function AIAssistantDrawer() {
           aria-label="Ask AI about this screen"
           title="Open TQM Research AI Copilot"
         >
-          <Sparkles size={18} />
-          <span>Ask AI / Explain Screen</span>
+          <Sparkles size={17} />
+          <span className="fab-text-desktop">Ask AI / Explain Screen</span>
+          <span className="fab-text-mobile">AI Copilot</span>
         </button>
       )}
 

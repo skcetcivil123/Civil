@@ -104,7 +104,7 @@ export default function Viva() {
         />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 20, alignItems: 'flex-start' }}>
+      <div className="viva-layout-grid">
         {/* Question Selector List */}
         <div className="card card-pad">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>

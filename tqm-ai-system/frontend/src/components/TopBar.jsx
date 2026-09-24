@@ -43,63 +43,65 @@ export default function TopBar({ sidebarOpen, onToggleSidebar, systemHealth }) {
       <button
         onClick={onToggleSidebar}
         aria-label="Toggle navigation"
-        style={{
-          display: 'none',
-          width: 36, height: 36,
-          borderRadius: 'var(--radius-md)',
-          border: '1px solid var(--border)',
-          background: 'transparent',
-          cursor: 'pointer',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'var(--text-secondary)',
-          flexShrink: 0,
-        }}
         className="mobile-menu-btn"
       >
-        {sidebarOpen ? <X size={18} /> : <Menu size={18} />}
+        {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
 
       {/* Page title */}
-      <div style={{ flex: 1, minWidth: 0 }}>
+      <div style={{ flex: 1, minWidth: 0, paddingRight: 8 }}>
         <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)', lineHeight: 1.2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
           {meta.title}
         </div>
         {meta.subtitle && (
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+          <div className="top-header-subtitle" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
             {meta.subtitle}
           </div>
         )}
       </div>
 
       {/* Status indicators */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
-        {systemHealth === null ? (
-          <div className="skeleton" style={{ width: 72, height: 22, borderRadius: 9999 }} />
-        ) : apiOk ? (
-          <span className="badge badge-success" title="API connected">
-            <Wifi size={11} /> Connected
-          </span>
-        ) : (
-          <span className="badge badge-error" title="API not reachable">
-            <WifiOff size={11} /> Offline
-          </span>
-        )}
+      <div className="top-header-actions" style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+        {/* Desktop status badges */}
+        <div className="desktop-status-badges" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          {systemHealth === null ? (
+            <div className="skeleton" style={{ width: 72, height: 22, borderRadius: 9999 }} />
+          ) : apiOk ? (
+            <span className="badge badge-success" title="FastAPI backend connected">
+              <Wifi size={11} /> Connected
+            </span>
+          ) : (
+            <span className="badge badge-error" title="Operating offline in browser">
+              <WifiOff size={11} /> Offline
+            </span>
+          )}
 
-        {systemHealth !== null && (
-          <span
-            className={`badge ${dbOk ? 'badge-success' : 'badge-neutral'}`}
-            title={dbOk ? 'Connected to MongoDB Atlas' : 'Operating on Dual-Mode In-Memory Store'}
-          >
-            <Database size={11} />
-            {dbOk ? 'Atlas DB' : 'Local DB'}
-          </span>
-        )}
+          {systemHealth !== null && (
+            <span
+              className={`badge ${dbOk ? 'badge-success' : 'badge-neutral'}`}
+              title={dbOk ? 'Connected to MongoDB Atlas' : 'Operating on Dual-Mode In-Memory Store'}
+            >
+              <Database size={11} />
+              {dbOk ? 'Atlas DB' : 'Local DB'}
+            </span>
+          )}
+        </div>
+
+        {/* Mobile compact status dot */}
+        <div className="mobile-status-dot" title={apiOk ? 'System Online' : 'Offline Mode'}>
+          <span style={{
+            display: 'inline-block',
+            width: 8, height: 8,
+            borderRadius: '50%',
+            background: apiOk ? 'var(--success)' : 'var(--orange)',
+            boxShadow: apiOk ? '0 0 0 2px rgba(22, 163, 74, 0.2)' : '0 0 0 2px rgba(249, 115, 22, 0.2)'
+          }} />
+        </div>
 
         {/* Explain Screen with AI Button */}
         <button
           onClick={() => window.dispatchEvent(new CustomEvent('tqm:explain-screen'))}
-          className="btn btn-sm"
+          className="btn btn-sm top-explain-btn"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -108,7 +110,7 @@ export default function TopBar({ sidebarOpen, onToggleSidebar, systemHealth }) {
             color: '#FFFFFF',
             fontWeight: 600,
             borderRadius: 9999,
-            padding: '5px 12px',
+            padding: '6px 12px',
             fontSize: '0.78rem',
             border: 'none',
             cursor: 'pointer',
@@ -117,7 +119,7 @@ export default function TopBar({ sidebarOpen, onToggleSidebar, systemHealth }) {
           title="Explain current screen with AI"
         >
           <Sparkles size={13} />
-          <span>Explain Screen</span>
+          <span className="explain-btn-text">Explain Screen</span>
         </button>
       </div>
     </header>

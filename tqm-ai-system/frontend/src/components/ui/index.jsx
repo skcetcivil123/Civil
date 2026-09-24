@@ -49,12 +49,12 @@ export function StatusBadge({ status }) {
 /* ─── PageHeader ─────────────────────────────────────────────────────────── */
 export function PageHeader({ title, subtitle, action }) {
   return (
-    <div className="page-header" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16 }}>
-      <div>
+    <div className="page-header">
+      <div className="page-header-text">
         <h1 className="page-title">{title}</h1>
         {subtitle && <p className="page-subtitle">{subtitle}</p>}
       </div>
-      {action && <div style={{ flexShrink: 0 }}>{action}</div>}
+      {action && <div className="page-header-action">{action}</div>}
     </div>
   )
 }
@@ -64,15 +64,12 @@ export function SectionCard({ title, subtitle, action, children, noPad }) {
   return (
     <div className="card" style={{ marginBottom: 20 }}>
       {(title || action) && (
-        <div style={{
-          display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
-          padding: '18px 24px', borderBottom: '1px solid var(--border)', gap: 16
-        }}>
-          <div>
+        <div className="section-header">
+          <div className="section-header-text">
             {title && <div className="section-title">{title}</div>}
             {subtitle && <div className="section-subtitle" style={{ marginTop: 2 }}>{subtitle}</div>}
           </div>
-          {action && <div style={{ flexShrink: 0 }}>{action}</div>}
+          {action && <div className="section-header-action">{action}</div>}
         </div>
       )}
       <div className={noPad ? '' : 'card-pad'}>{children}</div>
@@ -181,7 +178,7 @@ export function DataTable({ columns, rows, emptyTitle, emptyBody }) {
     return <EmptyState title={emptyTitle || 'No records'} body={emptyBody || 'No data to display yet.'} />
   }
   return (
-    <div style={{ overflowX: 'auto' }}>
+    <div className="table-container">
       <table className="tbl">
         <thead>
           <tr>

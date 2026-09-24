@@ -98,23 +98,34 @@ export default function Sidebar({ open, onClose }) {
       <aside className={`sidebar${open ? ' open' : ''}`}>
         {/* Brand */}
         <div className="sidebar-brand">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{
-              width: 34, height: 34, borderRadius: 8,
-              background: 'linear-gradient(135deg, #F97316, #EA580C)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              flexShrink: 0,
-            }}>
-              <Award size={17} color="#fff" />
-            </div>
-            <div>
-              <div style={{ fontWeight: 700, fontSize: '0.875rem', color: 'var(--text-primary)', lineHeight: 1.2 }}>
-                TQM Research
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{
+                width: 34, height: 34, borderRadius: 8,
+                background: 'linear-gradient(135deg, #F97316, #EA580C)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                flexShrink: 0,
+              }}>
+                <Award size={17} color="#fff" />
               </div>
-              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: 1 }}>
-                Decision Support System
+              <div>
+                <div style={{ fontWeight: 700, fontSize: '0.875rem', color: 'var(--text-primary)', lineHeight: 1.2 }}>
+                  TQM Research
+                </div>
+                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: 1 }}>
+                  Decision Support System
+                </div>
               </div>
             </div>
+
+            {/* Mobile close button */}
+            <button
+              onClick={onClose}
+              className="sidebar-close-btn"
+              aria-label="Close sidebar"
+            >
+              ✕
+            </button>
           </div>
         </div>
 
