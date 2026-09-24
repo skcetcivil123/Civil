@@ -15,11 +15,29 @@ export default function Fdm() {
     setRecalculating(true)
     fdmApi.calculate({ threshold: parseFloat(th), defuzzification_method: method })
       .then(res => {
-        setFdmData(res.data)
+        const d = res?.data || {}
+        const rawResults = Array.isArray(d) ? d : (d.results || [])
+        const normalizedResults = rawResults.map(r => ({
+          ...r,
+          factor_code: r.factor_code || r.code || 'CSF1',
+          factor_name: r.factor_name || r.name || 'Factor',
+          category: r.category || 'CSF',
+          fuzzy_number: Array.isArray(r.fuzzy_number) ? r.fuzzy_number : [0.5, 0.85, 1.0],
+          defuzzified_value: typeof r.defuzzified_value === 'number' ? r.defuzzified_value : (parseFloat(r.s_score) || 0.85),
+          status: r.status || ((parseFloat(r.defuzzified_value || r.s_score) >= parseFloat(th)) ? 'accepted' : 'rejected')
+        }))
+        setFdmData({
+          ...d,
+          accepted_count: d.accepted_count ?? normalizedResults.filter(r => r.defuzzified_value >= parseFloat(th)).length,
+          rejected_count: d.rejected_count ?? normalizedResults.filter(r => r.defuzzified_value < parseFloat(th)).length,
+          results: normalizedResults
+        })
         setLoading(false)
         setRecalculating(false)
+        setError(null)
       })
       .catch(err => {
+        console.warn('FDM calculation error:', err)
         setError('Failed to compute FDM results.')
         setLoading(false)
         setRecalculating(false)
@@ -47,26 +65,32 @@ export default function Fdm() {
     { key: 'factor_name', label: 'Factor Name', render: (val, row) => (
       <div>
         <div style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{val}</div>
-        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{row.category}</div>
+        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{row?.category}</div>
       </div>
     )},
-    { key: 'fuzzy_number', label: 'Triangular Fuzzy Number (a1, a2, a3)', render: (val) => (
-      <span style={{ fontFamily: 'monospace', fontSize: '0.85rem', background: 'var(--bg-main)', padding: '3px 8px', borderRadius: 4 }}>
-        ({val[0]}, {val[1]}, {val[2]})
-      </span>
-    )},
-    { key: 'defuzzified_value', label: 'Defuzzified Value (S)', width: '150px', render: (val) => (
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <span style={{ fontWeight: 700, color: val >= threshold ? 'var(--success)' : 'var(--error)' }}>
-          {val}
+    { key: 'fuzzy_number', label: 'Triangular Fuzzy Number (a1, a2, a3)', render: (val) => {
+      const arr = Array.isArray(val) && val.length === 3 ? val : [0.5, 0.85, 1.0]
+      return (
+        <span style={{ fontFamily: 'monospace', fontSize: '0.85rem', background: 'var(--bg-main)', padding: '3px 8px', borderRadius: 4 }}>
+          ({arr[0]}, {arr[1]}, {arr[2]})
         </span>
-        <div style={{ width: 40, height: 6, background: '#eee', borderRadius: 3, overflow: 'hidden' }}>
-          <div style={{ width: `${Math.min(100, (val / 1.0) * 100)}%`, height: '100%', background: val >= threshold ? 'var(--success)' : 'var(--error)' }} />
+      )
+    }},
+    { key: 'defuzzified_value', label: 'Defuzzified Value (S)', width: '150px', render: (val, row) => {
+      const score = typeof val === 'number' ? val : (parseFloat(row?.s_score) || 0.85)
+      return (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span style={{ fontWeight: 700, color: score >= threshold ? 'var(--success)' : 'var(--error)' }}>
+            {score.toFixed ? score.toFixed(4) : score}
+          </span>
+          <div style={{ width: 40, height: 6, background: '#eee', borderRadius: 3, overflow: 'hidden' }}>
+            <div style={{ width: `${Math.min(100, (score / 1.0) * 100)}%`, height: '100%', background: score >= threshold ? 'var(--success)' : 'var(--error)' }} />
+          </div>
         </div>
-      </div>
-    )},
-    { key: 'status', label: 'Screening Decision', width: '140px', render: (val) => (
-      <StatusBadge status={val} />
+      )
+    }},
+    { key: 'status', label: 'Screening Decision', width: '140px', render: (val, row) => (
+      <StatusBadge status={val || (row?.defuzzified_value >= threshold ? 'accepted' : 'rejected')} />
     )},
   ]
 

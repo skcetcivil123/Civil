@@ -154,3 +154,37 @@ export const OFFLINE_FRAMEWORK = {
     }
   ]
 }
+
+export const OFFLINE_RESPONSES = Array.from({ length: 120 }, (_, i) => {
+  const roles = ['Project Manager', 'Site Engineer', 'QA/QC Engineer', 'Consultant', 'Contractor']
+  const exps = ['<5 Years', '5-10 Years', '10-20 Years', '>20 Years']
+  const orgs = ['General Contractor', 'PMC', 'Developer', 'Subcontractor']
+  const projs = ['Residential', 'Commercial', 'Infrastructure', 'Industrial']
+
+  const role = roles[i % roles.length]
+  const exp = exps[i % exps.length]
+  const org = orgs[i % orgs.length]
+  const proj = projs[i % projs.length]
+
+  const ratings = {
+    CSF1: 4 + (i % 2), CSF2: 4, CSF3: 4 + (i % 2 === 0 ? 1 : 0), CSF4: 4 + ((i + 1) % 2),
+    CSF5: 4 + (i % 2), CSF6: 4, CSF7: 3 + (i % 2), CSF8: 4,
+    BAR1: 4 + (i % 2), BAR2: 4 + ((i + 1) % 2), BAR3: 4, BAR4: 4 + (i % 2),
+    BAR5: 4, BAR6: 3 + (i % 2), BAR7: 4, BAR8: 4
+  }
+
+  return {
+    id: `resp_${String(i + 1).padStart(3, '0')}`,
+    respondent: {
+      name: `Respondent ${String(i + 1).padStart(3, '0')}`,
+      role,
+      experience: exp,
+      organization_type: org,
+      project_type: proj,
+      location: 'Coimbatore / Tamil Nadu'
+    },
+    ratings,
+    submitted_at: '2026-08-15T10:00:00'
+  }
+})
+

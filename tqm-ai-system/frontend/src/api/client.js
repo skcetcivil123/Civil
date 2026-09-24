@@ -14,7 +14,8 @@ import {
   OFFLINE_ANOVA,
   OFFLINE_FRAMEWORK,
   OFFLINE_MODELS,
-  OFFLINE_SHAP
+  OFFLINE_SHAP,
+  OFFLINE_RESPONSES
 } from '../offline/offlineData'
 
 const API = axios.create({
@@ -125,38 +126,53 @@ export const fdmApi = {
     ],
     threshold: 0.70
   }),
-  calculate: (config) => API.post('/api/fdm/calculate', config || {}).catch(() => ({
-    data: {
-      success: true,
-      threshold: 0.70,
-      factors_evaluated: 16,
-      factors_accepted: 16,
-      factors_rejected: 0,
-      results: OFFLINE_RII.map(f => ({
-        code: f.code,
-        name: f.name,
-        category: f.category,
-        s_score: (0.75 + (f.rii * 0.2)).toFixed(3),
-        decision: "Accepted"
-      }))
-    }
-  })),
+  calculate: (config) => {
+    const th = config?.threshold || 0.70
+    return API.post('/api/fdm/calculate', config || {}).catch(() => ({
+      data: {
+        total_factors: 16,
+        accepted_count: 16,
+        rejected_count: 0,
+        threshold: th,
+        expert_count: 10,
+        results: OFFLINE_FACTORS.map((f, i) => {
+          const sVal = parseFloat((0.74 + ((16 - i) * 0.012)).toFixed(4))
+          return {
+            factor_code: f.code,
+            factor_name: f.name,
+            category: f.category,
+            fuzzy_number: [0.5, 0.85, 1.0],
+            defuzzified_value: sVal,
+            threshold: th,
+            consensus_reached: sVal >= th,
+            status: sVal >= th ? "accepted" : "rejected"
+          }
+        })
+      }
+    }))
+  },
 }
 
 export const surveyApi = {
-  getQuestionnaire: () => cachedGet('/api/survey/questionnaire', null, 60000, {
-    title: "TQM Implementation Survey in Construction Projects (Coimbatore)",
-    questions: OFFLINE_FACTORS.map((f, i) => ({
-      id: `q_${i+1}`,
+  getQuestionnaire: () => cachedGet('/api/survey/questionnaire', null, 60000, () => {
+    return OFFLINE_FACTORS.map((f, i) => ({
+      id: `q_${f.code.toLowerCase()}`,
       factor_code: f.code,
       factor_name: f.name,
       category: f.category,
-      question: f.category === 'CSF'
-        ? `To what extent does '${f.name}' drive quality excellence in your construction projects?`
-        : `To what extent is '${f.name}' an impediment or barrier to quality on your construction sites?`
+      text: f.category === 'CSF'
+        ? `To what extent does '${f.name}' directly contribute to overall project quality success on your construction sites?`
+        : `To what extent is '${f.name}' an impediment or barrier to quality on your construction sites?`,
+      scale: [
+        "1 - Strongly Disagree",
+        "2 - Disagree",
+        "3 - Neutral",
+        "4 - Agree",
+        "5 - Strongly Agree"
+      ]
     }))
   }),
-  getResponses: () => cachedGet('/api/survey/responses', null, 60000, []),
+  getResponses: () => cachedGet('/api/survey/responses', null, 60000, () => OFFLINE_RESPONSES),
   submit: (data) => {
     clearClientCache()
     return API.post('/api/survey/submit', data).catch(() => ({

@@ -27,15 +27,26 @@ export default function Survey() {
     setLoading(true)
     Promise.all([surveyApi.getQuestionnaire(), surveyApi.getResponses()])
       .then(([qRes, rRes]) => {
-        setQuestions(qRes.data)
-        setResponses(rRes.data)
+        const qRaw = qRes?.data
+        const qList = Array.isArray(qRaw) ? qRaw : (qRaw?.questions || [])
+        const rRaw = rRes?.data
+        const rList = Array.isArray(rRaw) ? rRaw : (rRaw?.responses || rRaw?.data || [])
+
+        setQuestions(qList)
+        setResponses(rList)
+
         // default ratings
         const initial = {}
-        qRes.data.forEach(q => { initial[q.factor_code] = 4 })
+        qList.forEach(q => {
+          const code = q?.factor_code || q?.code
+          if (code) initial[code] = 4
+        })
         setRatings(initial)
         setLoading(false)
+        setError(null)
       })
       .catch(err => {
+        console.warn('Survey fetchData error:', err)
         setError('Failed to load survey data.')
         setLoading(false)
       })
@@ -232,8 +243,11 @@ export default function Survey() {
                     className="btn btn-ghost btn-sm"
                     onClick={() => {
                       const sample = {}
-                      questions.forEach(q => {
-                        sample[q.factor_code] = q.category === 'CSF' ? (Math.random() > 0.3 ? 5 : 4) : (Math.random() > 0.4 ? 4 : 3)
+                      (questions || []).forEach(q => {
+                        const code = q?.factor_code || q?.code
+                        if (code) {
+                          sample[code] = q?.category === 'CSF' ? (Math.random() > 0.3 ? 5 : 4) : (Math.random() > 0.4 ? 4 : 3)
+                        }
                       })
                       setRatings(sample)
                     }}
@@ -245,33 +259,37 @@ export default function Survey() {
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                {questions.map((q) => (
-                  <div key={q.id} style={{ padding: '12px 16px', background: 'var(--bg-main)', borderRadius: 8, border: '1px solid var(--border)' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                      <span style={{ fontWeight: 700, color: 'var(--orange)', fontFamily: 'monospace' }}>{q.factor_code}</span>
-                      <span className={`badge ${q.category === 'CSF' ? 'badge-success' : 'badge-orange'}`} style={{ fontSize: '0.72rem' }}>
-                        {q.category}
-                      </span>
-                    </div>
-                    <div style={{ fontSize: '0.875rem', color: 'var(--text-primary)', marginBottom: 10 }}>{q.text}</div>
+                {(questions || []).map((q) => {
+                  const code = q?.factor_code || q?.code || 'Q'
+                  const qText = q?.text || q?.question || `Assessment of factor ${code}`
+                  return (
+                    <div key={q.id || code} style={{ padding: '12px 16px', background: 'var(--bg-main)', borderRadius: 8, border: '1px solid var(--border)' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                        <span style={{ fontWeight: 700, color: 'var(--orange)', fontFamily: 'monospace' }}>{code}</span>
+                        <span className={`badge ${q?.category === 'CSF' ? 'badge-success' : 'badge-orange'}`} style={{ fontSize: '0.72rem' }}>
+                          {q?.category || 'Factor'}
+                        </span>
+                      </div>
+                      <div style={{ fontSize: '0.875rem', color: 'var(--text-primary)', marginBottom: 10 }}>{qText}</div>
 
-                    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                      {[1, 2, 3, 4, 5].map(ratingVal => (
-                        <label key={ratingVal} style={{ display: 'flex', alignItems: 'center', gap: 4, cursor: 'pointer', fontSize: '0.85rem' }}>
-                          <input
-                            type="radio"
-                            name={`rating_${q.factor_code}`}
-                            value={ratingVal}
-                            checked={ratings[q.factor_code] === ratingVal}
-                            onChange={() => handleRatingChange(q.factor_code, ratingVal)}
-                            style={{ accentColor: 'var(--orange)' }}
-                          />
-                          <span>{ratingVal}</span>
-                        </label>
-                      ))}
+                      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                        {[1, 2, 3, 4, 5].map(ratingVal => (
+                          <label key={ratingVal} style={{ display: 'flex', alignItems: 'center', gap: 4, cursor: 'pointer', fontSize: '0.85rem' }}>
+                            <input
+                              type="radio"
+                              name={`rating_${code}`}
+                              value={ratingVal}
+                              checked={ratings[code] === ratingVal}
+                              onChange={() => handleRatingChange(code, ratingVal)}
+                              style={{ accentColor: 'var(--orange)' }}
+                            />
+                            <span>{ratingVal}</span>
+                          </label>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
 

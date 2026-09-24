@@ -14,11 +14,14 @@ export default function Factors() {
   const fetchFactors = () => {
     factorsApi.getAll()
       .then(res => {
-        setFactors(res.data)
+        const list = Array.isArray(res?.data) ? res.data : (res?.data?.factors || [])
+        setFactors(list)
         setLoading(false)
+        setError(null)
       })
       .catch(err => {
-        setError('Failed to load TQM factors. Ensure backend is running.')
+        console.warn('Factors fetch error:', err)
+        setError('Failed to load TQM factors.')
         setLoading(false)
       })
   }
@@ -28,16 +31,20 @@ export default function Factors() {
     fetchFactors()
   }, [])
 
-  const filtered = factors.filter(f => {
-    const matchesCat = filterCat === 'ALL' || f.category.toUpperCase() === filterCat
-    const matchesSearch = f.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          f.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          f.description.toLowerCase().includes(searchQuery.toLowerCase())
-    return matchesCat && matchesSearch
+  const factorList = Array.isArray(factors) ? factors : []
+  const filtered = factorList.filter(f => {
+    if (!f) return false
+    const cat = (f.category || '').toUpperCase()
+    const matchesCat = filterCat === 'ALL' || cat === filterCat
+    const q = (searchQuery || '').toLowerCase()
+    const nameStr = (f.name || '').toLowerCase()
+    const codeStr = (f.code || '').toLowerCase()
+    const descStr = (f.description || '').toLowerCase()
+    return matchesCat && (nameStr.includes(q) || codeStr.includes(q) || descStr.includes(q))
   })
 
-  const csfCount = factors.filter(f => f.category === 'CSF').length
-  const barrierCount = factors.filter(f => f.category === 'Barrier').length
+  const csfCount = factorList.filter(f => (f?.category || '').toUpperCase() === 'CSF').length
+  const barrierCount = factorList.filter(f => (f?.category || '').toUpperCase() === 'BARRIER').length
 
   const columns = [
     { key: 'code', label: 'Code', width: '90px', render: (val) => (

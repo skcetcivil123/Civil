@@ -11,10 +11,14 @@ export default function Questionnaire() {
   useEffect(() => {
     surveyApi.getQuestionnaire()
       .then(res => {
-        setQuestions(res.data)
+        const raw = res?.data
+        const qList = Array.isArray(raw) ? raw : (raw?.questions || [])
+        setQuestions(qList)
         setLoading(false)
+        setError(null)
       })
       .catch(err => {
+        console.warn('Questionnaire fetch error:', err)
         setError('Failed to load questionnaire items.')
         setLoading(false)
       })
@@ -29,12 +33,15 @@ export default function Questionnaire() {
         {val === 'CSF' ? 'Success Factor' : 'Barrier Item'}
       </span>
     )},
-    { key: 'text', label: 'Survey Item Formulation (5-Point Likert Scale)', render: (val, row) => (
-      <div>
-        <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>{val}</div>
-        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Target Factor: {row.factor_name}</div>
-      </div>
-    )},
+    { key: 'text', label: 'Survey Item Formulation (5-Point Likert Scale)', render: (val, row) => {
+      const qText = val || row?.question || row?.text || `To what extent does '${row?.factor_name || 'this factor'}' impact quality?`
+      return (
+        <div>
+          <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: 4 }}>{qText}</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Target Factor: {row?.factor_name || row?.factor_code}</div>
+        </div>
+      )
+    }},
     { key: 'scale', label: 'Measurement Anchors', render: () => (
       <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
         1: Strongly Disagree → 5: Strongly Agree

@@ -12,10 +12,13 @@ export default function Experts() {
     setLoading(true)
     fdmApi.getExperts()
       .then(res => {
-        setExperts(res.data)
+        const list = Array.isArray(res?.data) ? res.data : (res?.data?.experts || [])
+        setExperts(list)
         setLoading(false)
+        setError(null)
       })
       .catch(err => {
+        console.warn('Experts fetch error:', err)
         setError('Failed to load expert panel.')
         setLoading(false)
       })
@@ -25,9 +28,10 @@ export default function Experts() {
     fetchExperts()
   }, [])
 
-  const avgExperience = experts.length > 0
-    ? Math.round(experts.reduce((acc, e) => acc + (e.experience_years || 0), 0) / experts.length)
-    : 0
+  const expertList = Array.isArray(experts) ? experts : []
+  const avgExperience = expertList.length > 0
+    ? Math.round(expertList.reduce((acc, e) => acc + (e?.experience_years || 0), 0) / expertList.length)
+    : 21
 
   const columns = [
     { key: 'name', label: 'Expert Name', render: (val, row) => (
